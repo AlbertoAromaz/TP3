@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Pecsa.WebAfiliado.Net4.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta charset="utf-8" /> 
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <%--<asp:PlaceHolder runat="server">        
+        <script src="<%: ResolveUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>
+    </asp:PlaceHolder>--%>
+    <%--<meta name="viewport" content="width=device-width" />--%>
+    <asp:PlaceHolder runat="server">     
+        <%: System.Web.Optimization.Styles.Render("~/bundles/pageCss") %>
+    </asp:PlaceHolder>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server" class="form">
+    <asp:ScriptManager runat="server">
+        <Scripts>
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+        </Scripts>
+    </asp:ScriptManager>
+    <%: System.Web.Optimization.Scripts.Render("~/bundles/pageJs") %>
+    <div id="x1" style="width: 238px;overflow: auto;height: 100%;position: fixed;">
+        
+    <div id="leftSide">
+        <div class="logo"><img src="<%: ResolveUrl("~/Images/logo.png") %>" alt="" /></div>
+    
+        <%--<div class="sidebarSep"></div>
+
+        <div class="genBalance">
+            <a href="#" title="" class="amount">
+                <span>Saldo Crédito:</span>
+                <span class="balanceAmount">8,900.36</span>
+            </a>
+            <a href="#" title="" class="amChanges">
+                <strong class="sPositive">78%</strong>
+            </a>
+        </div>
+
+        <div class="nextUpdate">
+            <ul>
+			    <li><span>Linea Crédito:</span></li>
+			    <li><span class="balanceAmount">11,000.00</span></li>
+		    </ul>
+		    <ul>
+                <li><span>Linea Utilizada:   </span></li>
+			    <li><span class="balanceAmount">2,099.64</span></li>
+            </ul>
+            <div class="pWrapper"><div class="progressG" title="78%"></div></div>
+        </div>--%>
+    
+        <div class="sidebarSep"></div>
+        <ul id="menu" class="nav">
+            
+            <li class="tables"><a href="<%: ResolveUrl("~/Alquiler/Mostrar_Viv.aspx") %>" title=""><span>Alquiler de Viviendas</span></a></li>
+            <li class="files"><a href="<%: ResolveUrl("~/Alquiler/Pagos_reg.aspx") %>" title=""><span>Control de Cobranzas</span></a></li>
+            <li class="widgets"><a href="<%: ResolveUrl("~/Alquiler/Consultas.aspx") %>" title=""><span>Reportes</span></a></li>
+            <%--<li class="tables"><a href="<%: ResolveUrl("~/Cliente/trj/Trj_lst.aspx") %>" title=""><span>Tarjetas</span></a></li>
+            <li class="tables"><a href="<%: ResolveUrl("~/Cliente/cc/cc_lst.aspx") %>" title=""><span>Centro de Costo</span></a></li>--%>
+            <li class="typo"><a href="#" title="" class="exp"><span>Configuración</span></a>
+                <ul class="sub">
+                   <li class="ui"><a href="<%: ResolveUrl("~/Residente/Residente_lst.aspx") %>" title=""><span>Residente</span></a></li>
+                   <li class="dash"><a href="<%: ResolveUrl("~/Vivienda/Vivienda_lst.aspx") %>" title=""><span>Vivienda</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+          
+    </div>
+    
+    <div id="rightSide" style="padding-left: 222px;">
+        <div class="topNav">
+            <div class="wrapper">
+                <div class="welcome"><a href="#" title=""><img src="<%: ResolveUrl("~/Images/userPic.png") %>" alt="" /></a><span>Administrador, Lisseth!</span></div>
+            
+			    <div class="userNav">
+                    <ul>
+					    <%--<li class="dd"><a href="#" title=""><img src="<%: ResolveUrl("~/Images/icons/topnav/settings.png") %>" alt="" /><span>Configuración</span></a>
+                            <ul class="userDropdown">
+                                <li><a href="#" title="">Agrear Usuario</a></li>
+                                <li><a href="#" title="">Cambiar Clave</a></li>
+                            </ul>
+                        </li>--%>
+                        <li>
+                            <asp:Button ID="btnSalir" runat="server" OnClick="btnSalir_Click" CssClass="hidden" />
+                            <a href="javascript:jQuery([id$=btnSalir]).click();void(0);" title="">
+                                <img src="<%: ResolveUrl("~/Images/icons/topnav/logout.png") %>" alt="" />
+                                <span>Salir</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="titleArea">
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        </div>
+
+        <%--<div class="line"></div>--%>
+        <fieldset>
+            <div class="wrapper">
+                <div class="widget">
+                    <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                </div>
+            </div>
+            
+        </fieldset>
+        <div id="inferior">
+            <div>
+                <strong>Copyright © 2015-2016.</strong>
+                <div class="version">
+                        
+                    <b>Version</b> 1.0
+                        
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+
+    
+  
+    </form>
+    
+</body>
+</html>
