@@ -78,3 +78,42 @@ E:\Lisseth\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\es\Microsoft.AspNet.Friend
 E:\Lisseth\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\obj\Debug\IU.WebCondominios.Net4.csprojResolveAssemblyReference.cache
 E:\Lisseth\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\obj\Debug\Pecsa.WebAfiliado.Net4.dll
 E:\Lisseth\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\obj\Debug\Pecsa.WebAfiliado.Net4.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Pecsa.WebAfiliado.Net4.dll.config
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Pecsa.WebAfiliado.Net4.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Pecsa.WebAfiliado.Net4.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Antlr3.Runtime.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\AspNet.ScriptManager.jQuery.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.AspNet.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.Core.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OAuth.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OpenId.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\EntityFramework.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Microsoft.Web.Infrastructure.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Newtonsoft.Json.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\System.Web.Optimization.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\System.Web.Providers.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\WebGrease.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Antlr3.Runtime.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Newtonsoft.Json.xml
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\System.Web.Optimization.xml
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\EntityFramework.xml
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.Core.xml
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OAuth.xml
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OpenId.xml
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.AspNet.xml
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\es\EntityFramework.resources.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\es\System.Web.Providers.resources.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\es\Microsoft.AspNet.Membership.OpenAuth.resources.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\obj\Debug\Pecsa.WebAfiliado.Net4.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\obj\Debug\Pecsa.WebAfiliado.Net4.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\obj\Debug\IU.WebCondominios.Net4.csprojResolveAssemblyReference.cache

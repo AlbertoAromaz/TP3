@@ -16,10 +16,12 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
 
         protected void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text == string.Empty) 
-            {
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "dialogPrecioSucces", "mostrarMensaje('Debe Ingresar los datos');", true);
-            }
+            //if (txtCodigo.Text == string.Empty) 
+            //{
+            //    ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "dialogPrecioSucces", "mostrarMensaje('Debe Ingresar los datos');", true);
+            //}
+
+            Response.Redirect("Vivienda_lst.aspx");
         }
     }
 }

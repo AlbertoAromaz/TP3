@@ -11,13 +11,15 @@
         <h6>Registro de Vivienda</h6>
         <div class="textR">
             <span>
-                <asp:Button ID="btnGrabar" runat="server"  CssClass="hidden" OnClick="btnGrabar_Click" />
+                
             </span>
             <span>
-                <asp:HyperLink ID="HyperLink1" runat="server" CssClass="bFirst buttonYP basicYP" >
-                    <%--<img src="<%: ResolveUrl("~/Images/icons/light/create.png") %>" class="icon" alt="">--%>
+                <%--<asp:HyperLink ID="HyperLink1" runat="server" CssClass="bFirst buttonYP basicYP"  >
+                    <img src="<%: ResolveUrl("~/Images/icons/light/create.png") %>" class="icon" alt="">
                     <span>Grabar</span>
-                </asp:HyperLink>
+                </asp:HyperLink>--%>
+                <asp:LinkButton ID="lkbGrabar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="btnGrabar_Click"><span>Grabar</span></asp:LinkButton>
+               <%-- <asp:Button ID="btnGrabar" runat="server"  CssClass="bFirst buttonYP basicYP" OnClick="btnGrabar_Click" />--%>
             </span>
         </div>
     </div>
@@ -26,75 +28,92 @@
             <span class="span2">
                 <asp:Label ID="Label1" runat="server" Text="Código"></asp:Label>
             </span>
-            <span class="span3">
+            <span class="span1">
                 <asp:TextBox ID="txtCodigo" runat="server" Enabled="False"></asp:TextBox>
             </span>             
             <span class="span2">
-                <asp:Label ID="Label2" runat="server" Text="Fecha Reg."></asp:Label>
-            </span>
-            <span class="span3">
-                <asp:TextBox ID="txtFechaReg" runat="server"></asp:TextBox>
-            </span>
-            <span class="span2">
-                <asp:CheckBox ID="chkEstado" runat="server" Text="Estado" Checked="True" />
+                <asp:CheckBox ID="chkEstado" runat="server" Text="Estado" Checked="True" Enabled="false" />
             </span>
         </div>
+
+        <div class="formRow">
+            <span class="span2">
+                <asp:Label ID="Label2" runat="server" Text="Tipo Vivienda"></asp:Label>
+            </span>
+            <span class="span3">
+                <asp:DropDownList ID="ddlTipoVivienda" runat="server" />
+                           
+            </span>             
+        </div>
+
         <div class="formRow">
             <span class="span2">
                 <asp:Label ID="Label3" runat="server" Text="Ubicación"></asp:Label>
             </span>
-            <span class="span10">
-                <asp:DropDownList ID="ddlUbicacion" runat="server" >
-                    <asp:ListItem>Zona A</asp:ListItem>
-                    <asp:ListItem>Zona B</asp:ListItem>
-                    <asp:ListItem>Zona C</asp:ListItem>
-                </asp:DropDownList>
-            </span>             
-        </div>
-        <div class="formRow">
-            <span class="span2">
-                <asp:Label ID="Label4" runat="server" Text="Número"></asp:Label>
-            </span>
             <span class="span3">
+                <asp:DropDownList ID="ddlUbicacion" runat="server"/>
+            </span>     
+             <span class="span1">
+                <asp:Label ID="Label5" runat="server" Text="Número"></asp:Label>
+            </span>
+            <span class="span1">
                 <asp:TextBox ID="txtNúmero" runat="server" Width="60px"></asp:TextBox>
             </span>
-            <span class="span2">
+                    
+        </div>
+        <div class="formRow">
+              <span class="span2">
                 <asp:Label ID="Label6" runat="server" Text="Metraje"></asp:Label>
             </span>
-            <span class="span5">
+            <span class="span1">
                 <asp:TextBox ID="txtMetraje" runat="server"></asp:TextBox>
             </span>
         </div>
-        <div class="formRow">
-            <span class="span2">
-                <asp:Label ID="Label7" runat="server" Text="Tipo Viv."></asp:Label>
-            </span>
-            <span class="span3">
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                    <asp:ListItem>Casa</asp:ListItem>
-                    <asp:ListItem>Apartamento</asp:ListItem>
-                </asp:DropDownList>
-            </span>
-            <span class="span2">
-                <asp:Label ID="Label9" runat="server" Text="Precio"></asp:Label>
-            </span>
-            <span class="span5">
-                <asp:TextBox ID="txtPrecio" runat="server"></asp:TextBox>
-            </span>
+
+        <div class="titleYP">
+            <h6>Caracteristicas:</h6>
         </div>
         <div class="formRow">
             <span class="span2">
-                <asp:Label ID="Label10" runat="server" Text="Caracteristicas"></asp:Label>
+                 <asp:Label ID="Label4" runat="server" Text="Label4" ForeColor="White" ></asp:Label>
             </span>
-            <span class="span10">
-                <asp:TextBox ID="txtCaracteristicas" runat="server" TextMode="MultiLine"></asp:TextBox>
-            </span>            
-        </div> 
-           <!-- Multiple files uploader -->
+            <span class="span4">
+                <asp:CheckBox ID="chkSalaComedor" runat="server" Text="Sala y Comedor?" Checked="True" />
+            </span>
+        
+        </div>
+        <div class="formRow">
+            <span class="span2">
+                 <asp:Label ID="Label8" runat="server" Text="Label4" ForeColor="White" ></asp:Label>
+            </span>
+            <span class="span1">
+                <asp:Label ID="lblCuartos" runat="server" Text="Nro.Cuartos"></asp:Label>
+            </span>
+            <span class="span1">
+                 <asp:TextBox ID="txtNroCuartos" runat="server" Width="60px"></asp:TextBox>
+            </span>     
+        </div>
+
+         <div class="formRow">
+            <span class="span2">
+                 <asp:Label ID="Label9" runat="server" Text="Label4" ForeColor="White" ></asp:Label>
+            </span>
+            <span class="span1">
+                <asp:Label ID="Label10" runat="server" Text="Nro.Baños"></asp:Label>
+            </span>
+            <span class="span1">
+                <asp:TextBox ID="txtNroBaños" runat="server" Width="60px"></asp:TextBox>
+            </span>     
+        </div>
+
+
+
+        
+   <%--        <!-- Multiple files uploader -->
         <div class="widget">
             <div class="title"><img src="../Images/icons/dark/upload.png" alt="" class="titleIcon" /><h6>Subir Fotos</h6></div>
             <div id="uploader"></div>
-        </div>
+        </div>--%>
     
         
         

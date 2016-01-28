@@ -1,0 +1,5 @@
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\CondominioTest\bin\Debug\CondominioTest.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\CondominioTest\bin\Debug\CondominioTest.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\CondominioTest\obj\Debug\CondominioTest.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\CondominioTest\obj\Debug\CondominioTest.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\CondominioTest\obj\Debug\CondominioTest.csprojResolveAssemblyReference.cache

@@ -13,22 +13,13 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda {
     public partial class Vivienda_reg {
         
         /// <summary>
-        /// Control btnGrabar.
+        /// Control lkbGrabar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGrabar;
-        
-        /// <summary>
-        /// Control HyperLink1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.LinkButton lkbGrabar;
         
         /// <summary>
         /// Control Label1.
@@ -49,6 +40,15 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda {
         protected global::System.Web.UI.WebControls.TextBox txtCodigo;
         
         /// <summary>
+        /// Control chkEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkEstado;
+        
+        /// <summary>
         /// Control Label2.
         /// </summary>
         /// <remarks>
@@ -58,22 +58,13 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control txtFechaReg.
+        /// Control ddlTipoVivienda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaReg;
-        
-        /// <summary>
-        /// Control chkEstado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkEstado;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoVivienda;
         
         /// <summary>
         /// Control Label3.
@@ -94,13 +85,13 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda {
         protected global::System.Web.UI.WebControls.DropDownList ddlUbicacion;
         
         /// <summary>
-        /// Control Label4.
+        /// Control Label5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
         /// Control txtNúmero.
@@ -130,22 +121,49 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda {
         protected global::System.Web.UI.WebControls.TextBox txtMetraje;
         
         /// <summary>
-        /// Control Label7.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control chkSalaComedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.CheckBox chkSalaComedor;
+        
+        /// <summary>
+        /// Control Label8.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
+        /// <summary>
+        /// Control lblCuartos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCuartos;
+        
+        /// <summary>
+        /// Control txtNroCuartos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNroCuartos;
         
         /// <summary>
         /// Control Label9.
@@ -157,15 +175,6 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda {
         protected global::System.Web.UI.WebControls.Label Label9;
         
         /// <summary>
-        /// Control txtPrecio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrecio;
-        
-        /// <summary>
         /// Control Label10.
         /// </summary>
         /// <remarks>
@@ -175,13 +184,13 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda {
         protected global::System.Web.UI.WebControls.Label Label10;
         
         /// <summary>
-        /// Control txtCaracteristicas.
+        /// Control txtNroBaños.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCaracteristicas;
+        protected global::System.Web.UI.WebControls.TextBox txtNroBaños;
         
         /// <summary>
         /// Control HyperLink6.
