@@ -73,9 +73,33 @@ namespace CondominioService.MasterTables
                 TipoVivienda tipoViviendaExistente = TipoViviendaDAO.Obtener(codigoTipoVivienda);
                 Ubicacion ubicacionExistente = UbicacionDAO.Obtener(codigoUbicación);
 
+
+                // Valida si el metraje es cero
+                if (metraje == 0)
+                {
+                    throw new FaultException<RepetidoException>(
+                    new RepetidoException()
+                    {
+                        Mensaje = "Ingrese un metraje de vivienda válido"
+                    },
+                    new FaultReason("Validación de negocio")
+                    );
+                    throw new Exception();
+                   
+                }
+
                 // Valida si la vivienda existe
-                if(ExisteVivienda(Utility.Tables.Action.Insertar, 0,codigoUbicación,numeroVivienda))
-                    throw new Exception(string.Format("Ya existe una vivienda para la ubicación ingresada: {0}-{1}", ubicacionExistente.NombreUbicacion, numeroVivienda.ToString()));
+                if (ExisteVivienda(Utility.Tables.Action.Insertar, 0, codigoUbicación, numeroVivienda))
+                {
+                    throw new FaultException<RepetidoException>(
+                    new RepetidoException()
+                    {
+                        Mensaje = string.Format("Ya existe una vivienda para la ubicación ingresada: {0} - {1}", ubicacionExistente.NombreUbicacion, numeroVivienda.ToString())
+                    },
+                    new FaultReason("Validación de negocio")
+                    );
+                    throw new Exception();
+                }
                                        
                 viviendaACrear = new Vivienda()
                 {
@@ -133,9 +157,32 @@ namespace CondominioService.MasterTables
                 TipoVivienda tipoViviendaExistente = TipoViviendaDAO.Obtener(codigoTipoVivienda);
                 Ubicacion ubicacionExistente = UbicacionDAO.Obtener(codigoUbicación);
 
+                // Valida si el metraje es cero
+                if (metraje == 0)
+                {
+                    throw new FaultException<RepetidoException>(
+                    new RepetidoException()
+                    {
+                        Mensaje = "Ingrese un metraje de vivienda válido"
+                    },
+                    new FaultReason("Validación de negocio")
+                    );
+                    throw new Exception();
+
+                }
+
                 // Valida si la vivienda existe
                 if (ExisteVivienda(Utility.Tables.Action.Actualizar, codigoVivienda, codigoUbicación, numeroVivienda))
-                    throw new Exception(string.Format("Ya existe una vivienda para la ubicación ingresada: {0}-{1}", ubicacionExistente.NombreUbicacion, numeroVivienda.ToString()));
+                {
+                    throw new FaultException<RepetidoException>(
+                    new RepetidoException()
+                    {
+                        Mensaje = string.Format("Ya existe una vivienda para la ubicación ingresada: {0} - {1}", ubicacionExistente.NombreUbicacion, numeroVivienda.ToString())
+                    },
+                    new FaultReason("Validación de negocio")
+                    );
+                    throw new Exception();
+                }
 
                 viviendaAModificar = new Vivienda()
                 {
@@ -225,6 +272,9 @@ namespace CondominioService.MasterTables
         }
 
         #region Validaciones
+
+      
+      
         /// <summary>
         /// 
         /// </summary>

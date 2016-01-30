@@ -7,4 +7,4 @@ E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Condomini
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioTest\bin\Debug\CondominioTest.pdb
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioTest\obj\Debug\CondominioTest.dll
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioTest\obj\Debug\CondominioTest.pdb
-E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioTest\obj\Debug\CondominioTest.csprojResolveAssemblyReference.cache
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioTest\bin\Debug\CondominioTest.dll.config

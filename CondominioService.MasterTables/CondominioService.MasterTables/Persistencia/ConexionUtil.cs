@@ -10,7 +10,7 @@ namespace CondominioService.MasterTables.Persistencia
         public static string ObtenerCadena
         {
             get{
-                return "Data Source=LP-EDELACRUZ\\SQLEXPRESS;Initial Catalog=DBCondominio; User ID=sa;Password=123456";
+                return "Data Source=LP-EDELACRUZ;Initial Catalog=DBCondominio; User ID=sa;Password=123456";
             }
         }
     }

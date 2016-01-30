@@ -6,12 +6,15 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
-    <script language="javascript" type="text/javascript">
+    <%--<script language="javascript" type="text/javascript">
         function ValidateGrabar() {
+            alert("hola");
             var tipoVivienda = document.getElementById('txtNúmeroVivienda').value;
+           
             alert(tipoVivienda);
+            return false;
         }
-    </script>
+    </script>--%>
 
     <div class="titleYP">
        <h6>Registro de Vivienda</h6>
@@ -20,7 +23,7 @@
                 
             </span>
             <span>
-              <asp:LinkButton ID="lkbGrabar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="btnGrabar_Click" OnClientClick="ValidateGrabar();"><span>Grabar</span></asp:LinkButton>
+              <asp:LinkButton ID="lkbGrabar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="btnGrabar_Click"><span>Grabar</span></asp:LinkButton>
             </span>
             <span>
               <asp:LinkButton ID="lkbCancelar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="btnCancelar_Click"><span>Cancelar</span></asp:LinkButton>

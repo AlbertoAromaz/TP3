@@ -3,8 +3,8 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:3644/ViviendaService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:3644/ViviendaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:3644/ViviendaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CondominioService.MasterTables.Dominio" />
+      <xsd:import schemaLocation="http://localhost:3644/ViviendaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IViviendaService_CrearVivienda_InputMessage">
@@ -13,11 +13,17 @@
   <wsdl:message name="IViviendaService_CrearVivienda_OutputMessage">
     <wsdl:part name="parameters" element="tns:CrearViviendaResponse" />
   </wsdl:message>
+  <wsdl:message name="IViviendaService_CrearVivienda_RepetidoExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/CondominioService.MasterTables.Dominio" name="detail" element="q1:RepetidoException" />
+  </wsdl:message>
   <wsdl:message name="IViviendaService_ObtenerVivienda_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerVivienda" />
   </wsdl:message>
   <wsdl:message name="IViviendaService_ObtenerVivienda_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerViviendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViviendaService_ObtenerVivienda_RepetidoExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/CondominioService.MasterTables.Dominio" name="detail" element="q2:RepetidoException" />
   </wsdl:message>
   <wsdl:message name="IViviendaService_ModificarVivienda_InputMessage">
     <wsdl:part name="parameters" element="tns:ModificarVivienda" />
@@ -53,10 +59,12 @@
     <wsdl:operation name="CrearVivienda">
       <wsdl:input wsaw:Action="http://tempuri.org/IViviendaService/CrearVivienda" message="tns:IViviendaService_CrearVivienda_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IViviendaService/CrearViviendaResponse" message="tns:IViviendaService_CrearVivienda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IViviendaService/CrearViviendaRepetidoExceptionFault" name="RepetidoExceptionFault" message="tns:IViviendaService_CrearVivienda_RepetidoExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerVivienda">
       <wsdl:input wsaw:Action="http://tempuri.org/IViviendaService/ObtenerVivienda" message="tns:IViviendaService_ObtenerVivienda_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IViviendaService/ObtenerViviendaResponse" message="tns:IViviendaService_ObtenerVivienda_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IViviendaService/ObtenerViviendaRepetidoExceptionFault" name="RepetidoExceptionFault" message="tns:IViviendaService_ObtenerVivienda_RepetidoExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ModificarVivienda">
       <wsdl:input wsaw:Action="http://tempuri.org/IViviendaService/ModificarVivienda" message="tns:IViviendaService_ModificarVivienda_InputMessage" />
@@ -89,6 +97,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="RepetidoExceptionFault">
+        <soap:fault use="literal" name="RepetidoExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ObtenerVivienda">
       <soap:operation soapAction="http://tempuri.org/IViviendaService/ObtenerVivienda" style="document" />
@@ -98,6 +109,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="RepetidoExceptionFault">
+        <soap:fault use="literal" name="RepetidoExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ModificarVivienda">
       <soap:operation soapAction="http://tempuri.org/IViviendaService/ModificarVivienda" style="document" />

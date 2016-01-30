@@ -9,14 +9,20 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
 {
     public partial class Vivienda_lst : System.Web.UI.Page
     {
-        private ViviendaWS.ViviendaServiceClient proxyVivienda = new ViviendaWS.ViviendaServiceClient();
 
+        #region Variables
+        private ViviendaWS.ViviendaServiceClient proxyVivienda = new ViviendaWS.ViviendaServiceClient();
+        private TipoViviendaWS.TipoViviendaServiceClient proxyTipoVivienda = new TipoViviendaWS.TipoViviendaServiceClient();
+        private UbicacionWS.UbicacionServiceClient proxyUbicacion = new UbicacionWS.UbicacionServiceClient();
+        #endregion
+       
         #region Form Methods
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                LLenarCombos();
                 BuscarViviendas(0, 0, 0);
             }
         }
@@ -34,12 +40,36 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
 
         protected void grdListaVivienda_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-           // if(e.CommandName=="")
+            if (e.CommandName == "Editar")
+            { 
+               // e.CommandArgument()
+            }
         }
 
         #endregion
 
         #region Private Methods
+
+        private void LLenarCombos()
+        {
+            // llenar Tipo Vivienda
+            List<TipoViviendaWS.TipoVivienda> lstTipoVivienda = new List<TipoViviendaWS.TipoVivienda>();
+            lstTipoVivienda = proxyTipoVivienda.ListarTipoVivienda().ToList();
+            ddlTipoVivienda.DataTextField = "NombreTipoVivienda";
+            ddlTipoVivienda.DataValueField = "CodigoTipoVivienda";
+            ddlTipoVivienda.DataSource = lstTipoVivienda;
+            ddlTipoVivienda.DataBind();
+
+            // llenar ubicación
+            List<UbicacionWS.Ubicacion> lstUbicacion = new List<UbicacionWS.Ubicacion>();
+            lstUbicacion = proxyUbicacion.ListarUbicacion().ToList();
+            ddlUbicacion.DataTextField = "NombreUbicacion";
+            ddlUbicacion.DataValueField = "CodigoUbicacion";
+            ddlUbicacion.DataSource = lstUbicacion;
+            ddlUbicacion.DataBind();
+
+
+        }
 
         private void BuscarViviendas(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda)
         {

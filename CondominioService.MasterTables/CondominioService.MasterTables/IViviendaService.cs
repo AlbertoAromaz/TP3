@@ -12,9 +12,11 @@ namespace CondominioService.MasterTables
     [ServiceContract]
     public interface IViviendaService
     {
+        [FaultContract(typeof(RepetidoException))]
         [OperationContract]
         Vivienda CrearVivienda(int codigoTipoVivienda, int codigoUbicación, int numeroVivienda, decimal metraje, Boolean tieneSalaComedor, int nroCuartos, int nroBanos);
 
+       [FaultContract(typeof(RepetidoException))]
         [OperationContract]
         Vivienda ObtenerVivienda(int codigoVivienda);
 

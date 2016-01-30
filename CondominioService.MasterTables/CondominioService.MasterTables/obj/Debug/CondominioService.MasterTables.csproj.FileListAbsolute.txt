@@ -17,4 +17,3 @@ E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Condomini
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\bin\NHibernate.dll
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.dll
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.pdb
-E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.csprojResolveAssemblyReference.cache

@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondominioService.MasterTables", "CondominioService.MasterTables\CondominioService.MasterTables.csproj", "{25BD144E-E68D-4381-9C39-36D723BA441D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondominioTest", "CondominioTest\CondominioTest.csproj", "{FCC65BA0-BF91-4082-9130-061E21E50989}"
+	ProjectSection(ProjectDependencies) = postProject
+		{25BD144E-E68D-4381-9C39-36D723BA441D} = {25BD144E-E68D-4381-9C39-36D723BA441D}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{5541E937-8B3E-4380-B21D-2FDB7244485E}"
 	ProjectSection(SolutionItems) = preProject

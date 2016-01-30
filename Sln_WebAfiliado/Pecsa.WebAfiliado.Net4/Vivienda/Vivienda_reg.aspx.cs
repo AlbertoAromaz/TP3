@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -41,14 +42,14 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
         {
             try
             {
-                int codigoVivienda = int.Parse(txtCodigoVivienda.Text);
+                int codigoVivienda = (txtCodigoVivienda.Text==string.Empty)?0: int.Parse(txtCodigoVivienda.Text);
                 int codigoTipoVivienda = int.Parse(ddlTipoVivienda.SelectedValue);
                 int codigoUbicacion = int.Parse(ddlUbicacion.SelectedValue);
-                int numeroVivienda = int.Parse(txtNúmeroVivienda.Text);
-                decimal metraje = decimal.Parse(txtMetraje.Text);
+                int numeroVivienda = (txtNúmeroVivienda.Text == string.Empty) ? 0 : int.Parse(txtNúmeroVivienda.Text);
+                decimal metraje = (txtMetraje.Text == string.Empty) ? 0 : decimal.Parse(txtMetraje.Text);
                 Boolean tieneSalaComedor = chkSalaComedor.Checked;
-                int nroCuartos = int.Parse(txtNroCuartos.Text);
-                int nroBanos = int.Parse(txtNroBanos.Text);
+                int nroCuartos = (txtNroCuartos.Text == string.Empty) ? 0 : int.Parse(txtNroCuartos.Text);
+                int nroBanos = (txtNroBanos.Text == string.Empty) ? 0 : int.Parse(txtNroBanos.Text);
 
                 if(codigoVivienda.Equals(0))
                     proxyVivienda.CrearVivienda(codigoTipoVivienda,codigoUbicacion,numeroVivienda,metraje,tieneSalaComedor,nroCuartos,nroBanos);
@@ -57,9 +58,9 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
 
                 Response.Redirect("Vivienda_lst.aspx");
             }
-            catch(Exception ex)
+            catch(FaultException<ViviendaWS.RepetidoException> fe)
             {
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "dialogPrecioSucces", string.Format("mostraMensaje('{0}');",ex.Message), true);
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "dialogPrecioSucces", string.Format("mostrarMensaje('{0}');", fe.Detail.Mensaje), true);
             }
         
         }
@@ -99,12 +100,39 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
             // llenar ubicación
             List<UbicacionWS.Ubicacion> lstUbicacion = new List<UbicacionWS.Ubicacion>();
             lstUbicacion = proxyUbicacion.ListarUbicacion().ToList();
-            ddlTipoVivienda.DataTextField = "NombreUbicacion";
-            ddlTipoVivienda.DataValueField = "CodigoUbicacion";
-            ddlTipoVivienda.DataSource = lstUbicacion;
-            ddlTipoVivienda.DataBind();
+            ddlUbicacion.DataTextField = "NombreUbicacion";
+            ddlUbicacion.DataValueField = "CodigoUbicacion";
+            ddlUbicacion.DataSource = lstUbicacion;
+            ddlUbicacion.DataBind();
 
 
         }
+
+        private bool Validar(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda, decimal metraje) {
+
+            if(codigoTipoVivienda==0)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "dialogPrecioSucces", string.Format("mostraMensaje('{0}');", "Debe seleccionar el Tipo de Vivienda"), true);
+                return false;
+            }
+
+            if (codigoUbicacion == 0)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "dialogPrecioSucces", string.Format("mostraMensaje('{0}');", "Debe seleccionar la Ubicación"), true);
+                return false;
+            }
+
+            if (metraje == 0)
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "dialogPrecioSucces", string.Format("mostraMensaje('{0}');", "Ingrese un metraje de vivienda válido"), true);
+                return false;
+            }
+
+           
+            return true;
+
+        }
+    
+    
     }
 }

@@ -36,6 +36,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Ubicacion" nillable="true" type="tns:Ubicacion" />
+  <xs:complexType name="RepetidoException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RepetidoException" nillable="true" type="tns:RepetidoException" />
   <xs:complexType name="ArrayOfVivienda">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Vivienda" nillable="true" type="tns:Vivienda" />

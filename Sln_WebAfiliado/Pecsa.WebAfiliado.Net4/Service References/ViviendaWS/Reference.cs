@@ -436,14 +436,77 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RepetidoException", Namespace="http://schemas.datacontract.org/2004/07/CondominioService.MasterTables.Dominio")]
+    [System.SerializableAttribute()]
+    public partial class RepetidoException : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodigoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MensajeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Codigo {
+            get {
+                return this.CodigoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodigoField, value) != true)) {
+                    this.CodigoField = value;
+                    this.RaisePropertyChanged("Codigo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Mensaje {
+            get {
+                return this.MensajeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MensajeField, value) != true)) {
+                    this.MensajeField = value;
+                    this.RaisePropertyChanged("Mensaje");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ViviendaWS.IViviendaService")]
     public interface IViviendaService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IViviendaService/CrearVivienda", ReplyAction="http://tempuri.org/IViviendaService/CrearViviendaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Pecsa.WebAfiliado.Net4.ViviendaWS.RepetidoException), Action="http://tempuri.org/IViviendaService/CrearViviendaRepetidoExceptionFault", Name="RepetidoException", Namespace="http://schemas.datacontract.org/2004/07/CondominioService.MasterTables.Dominio")]
         Pecsa.WebAfiliado.Net4.ViviendaWS.Vivienda CrearVivienda(int codigoTipoVivienda, int codigoUbicación, int numeroVivienda, decimal metraje, bool tieneSalaComedor, int nroCuartos, int nroBanos);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IViviendaService/ObtenerVivienda", ReplyAction="http://tempuri.org/IViviendaService/ObtenerViviendaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Pecsa.WebAfiliado.Net4.ViviendaWS.RepetidoException), Action="http://tempuri.org/IViviendaService/ObtenerViviendaRepetidoExceptionFault", Name="RepetidoException", Namespace="http://schemas.datacontract.org/2004/07/CondominioService.MasterTables.Dominio")]
         Pecsa.WebAfiliado.Net4.ViviendaWS.Vivienda ObtenerVivienda(int codigoVivienda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IViviendaService/ModificarVivienda", ReplyAction="http://tempuri.org/IViviendaService/ModificarViviendaResponse")]
