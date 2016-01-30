@@ -68,10 +68,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dominio\Residente.hbm.xml" />
-    <Content Include="Dominio\Vivienda.hbm.xml">
+    <EmbeddedResource Include="Dominio\Residente.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Vivienda.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
     <Content Include="ResidenteService.svc" />
     <Content Include="TipoViviendaService.svc" />
     <Content Include="UbicacionService.svc" />

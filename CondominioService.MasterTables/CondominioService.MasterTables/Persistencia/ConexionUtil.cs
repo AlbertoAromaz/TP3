@@ -9,7 +9,7 @@ namespace CondominioService.MasterTables.Persistencia
     {
         public static string ObtenerCadena()
         {
-            return "Data Source=localhost;Initial Catalog=DBCondominio;Integrated Security=SSPI;";
+            return "Data Source=LP-EDELACRUZ\\SQLEXPRESS;Initial Catalog=DBCondominio;Integrated Security=SSPI;";
         }
     }
 }
