@@ -13,13 +13,13 @@ namespace CondominioService.MasterTables
     public interface IViviendaService
     {
         [OperationContract]
-        Vivienda CrearVivienda(Vivienda objVivienda);
+        Vivienda CrearVivienda(int codigoTipoVivienda, int codigoUbicación, int numeroVivienda, decimal metraje, Boolean tieneSalaComedor, int nroCuartos, int nroBanos);
 
         [OperationContract]
         Vivienda ObtenerVivienda(int codigoVivienda);
 
         [OperationContract]
-        Vivienda ModificarVivienda(Vivienda objVivienda);
+        Vivienda ModificarVivienda(int codigoVivienda, int codigoTipoVivienda, int codigoUbicación, int numeroVivienda, decimal metraje, Boolean tieneSalaComedor, int nroCuartos, int nroBanos);
 
         [OperationContract]
         void EliminarVivienda(int codigoVivienda);

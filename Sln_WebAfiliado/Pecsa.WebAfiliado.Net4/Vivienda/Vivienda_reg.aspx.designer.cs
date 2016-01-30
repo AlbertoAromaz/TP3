@@ -31,13 +31,13 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control txtCodigo.
+        /// Control txtCodigoVivienda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigo;
+        protected global::System.Web.UI.WebControls.TextBox txtCodigoVivienda;
         
         /// <summary>
         /// Control chkEstado.
@@ -94,13 +94,13 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Control txtNúmero.
+        /// Control txtNúmeroVivienda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNúmero;
+        protected global::System.Web.UI.WebControls.TextBox txtNúmeroVivienda;
         
         /// <summary>
         /// Control Label6.
@@ -184,13 +184,13 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda {
         protected global::System.Web.UI.WebControls.Label Label10;
         
         /// <summary>
-        /// Control txtNroBaños.
+        /// Control txtNroBanos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNroBaños;
+        protected global::System.Web.UI.WebControls.TextBox txtNroBanos;
         
         /// <summary>
         /// Control HyperLink6.

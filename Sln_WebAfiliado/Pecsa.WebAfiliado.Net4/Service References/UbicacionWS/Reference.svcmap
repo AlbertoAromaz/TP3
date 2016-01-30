@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6d973d6c-bee7-4953-87f8-d19abf3f88f0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:3644/UbicacionService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UbicacionService.wsdl" MetadataType="Wsdl" ID="f8a2240b-23b2-4547-84a0-032b15d7b8b6" SourceId="1" SourceUrl="http://localhost:3644/UbicacionService.svc?wsdl" />
+    <MetadataFile FileName="UbicacionService.xsd" MetadataType="Schema" ID="8cbd60dc-2e64-45be-9153-d8803dc2a83c" SourceId="1" SourceUrl="http://localhost:3644/UbicacionService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UbicacionService1.xsd" MetadataType="Schema" ID="bf7bc772-6456-4e1c-b405-f8fad8aaf7b9" SourceId="1" SourceUrl="http://localhost:3644/UbicacionService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UbicacionService2.xsd" MetadataType="Schema" ID="9877251a-03f2-4b6c-a336-a82eb5df8018" SourceId="1" SourceUrl="http://localhost:3644/UbicacionService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

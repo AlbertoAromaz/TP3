@@ -14,6 +14,10 @@ namespace CondominioService.MasterTables
     public class ViviendaService : IViviendaService
     {
 
+        #region Const
+        private const string actionInsertar = "I";
+
+        #endregion
         #region properties
         private ViviendaDAO viviendaDAO = null;
         private ViviendaDAO ViviendaDAO
@@ -50,58 +54,163 @@ namespace CondominioService.MasterTables
 
 
         #endregion
-
-        public Vivienda CrearVivienda(Vivienda objVivienda)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codigoTipoVivienda"></param>
+        /// <param name="codigoUbicación"></param>
+        /// <param name="numeroVivienda"></param>
+        /// <param name="metraje"></param>
+        /// <param name="tieneSalaComedor"></param>
+        /// <param name="nroCuartos"></param>
+        /// <param name="nroBanos"></param>
+        /// <returns></returns>
+        public Vivienda CrearVivienda(int codigoTipoVivienda, int codigoUbicación,int numeroVivienda, decimal metraje, Boolean tieneSalaComedor, int nroCuartos, int nroBanos)
         {
-            //try
-            //{
-            //    //Ubicacion ubicacionExistente = ubicacionDAO.Obtener(codigoTipoUbicacion);
-            //    //TipoVivienda tipoViviendaExistente = TipoViviendaDAO.Obtener(codigoTipoVivienda);
+            Vivienda viviendaACrear;
+            try
+            {
+                TipoVivienda tipoViviendaExistente = TipoViviendaDAO.Obtener(codigoTipoVivienda);
+                Ubicacion ubicacionExistente = UbicacionDAO.Obtener(codigoUbicación);
 
-            //    //Vivienda viviendaACrear = new Vivienda()
-            //    //{
-            //    //    Ubicacion.CodigoUbicacion = objVivienda.Ubicacion.CodigoUbicacion,
-            //    //    TipoVivienda.CodigoTipoVivienda = objVivienda.TipoVivienda.CodigoTipoVivienda,
-            //    //    Metraje = objVivienda.Metraje,
-            //    //    NumeroVivienda = objVivienda.NumeroVivienda,
-                   
+                // Valida si la vivienda existe
+                if(ExisteVivienda(Utility.Tables.Action.Insertar, 0,codigoUbicación,numeroVivienda))
+                    throw new Exception(string.Format("Ya existe una vivienda para la ubicación ingresada: {0}-{1}", ubicacionExistente.NombreUbicacion, numeroVivienda.ToString()));
+                                       
+                viviendaACrear = new Vivienda()
+                {
+                    TipoVivienda = tipoViviendaExistente,
+                    Ubicacion = ubicacionExistente,
+                    NumeroVivienda =  numeroVivienda,
+                    Metraje = metraje,
+                    TieneSalaComedor= tieneSalaComedor,
+                    NroCuartos = nroCuartos,
+                    NroBano = nroBanos,
+                    Estado = Boolean.Parse(Utility.Tables.Estado.Activo),
+                    
+                };
 
-            //    //};
+            }
+            catch
+            {
 
-            //}
-            //catch {
-
-            //    throw;
-            //}
-
-
-            ////return ViviendaDAO.Crear(viviendaACrear);
-            throw new NotImplementedException();
+                throw;
+            }
+            
+            return ViviendaDAO.Crear(viviendaACrear);
+            
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codigoVivienda"></param>
+        /// <returns></returns>
         public Vivienda ObtenerVivienda(int codigoVivienda)
         {
-            throw new NotImplementedException();
+            return ViviendaDAO.Obtener(codigoVivienda);
         }
 
-        public Vivienda ModificarVivienda(Vivienda objVivienda)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codigoVivienda"></param>
+        /// <param name="codigoTipoVivienda"></param>
+        /// <param name="codigoUbicación"></param>
+        /// <param name="numeroVivienda"></param>
+        /// <param name="metraje"></param>
+        /// <param name="tieneSalaComedor"></param>
+        /// <param name="nroCuartos"></param>
+        /// <param name="nroBanos"></param>
+        /// <returns></returns>
+        public Vivienda ModificarVivienda(int codigoVivienda, int codigoTipoVivienda, int codigoUbicación, int numeroVivienda, decimal metraje, Boolean tieneSalaComedor, int nroCuartos, int nroBanos)
         {
-            throw new NotImplementedException();
+            Vivienda viviendaAModificar;
+            try
+            {
+                TipoVivienda tipoViviendaExistente = TipoViviendaDAO.Obtener(codigoTipoVivienda);
+                Ubicacion ubicacionExistente = UbicacionDAO.Obtener(codigoUbicación);
+
+                // Valida si la vivienda existe
+                if (ExisteVivienda(Utility.Tables.Action.Actualizar, codigoVivienda, codigoUbicación, numeroVivienda))
+                    throw new Exception(string.Format("Ya existe una vivienda para la ubicación ingresada: {0}-{1}", ubicacionExistente.NombreUbicacion, numeroVivienda.ToString()));
+
+                viviendaAModificar = new Vivienda()
+                {
+                    CodigoVivienda = codigoVivienda,
+                    TipoVivienda = tipoViviendaExistente,
+                    Ubicacion = ubicacionExistente,
+                    NumeroVivienda = numeroVivienda,
+                    Metraje = metraje,
+                    TieneSalaComedor = tieneSalaComedor,
+                    NroCuartos = nroCuartos,
+                    NroBano = nroBanos,
+
+                };
+
+            }
+            catch
+            {
+
+                throw;
+            }
+
+            return ViviendaDAO.Modificar(viviendaAModificar);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codigoVivienda"></param>
         public void EliminarVivienda(int codigoVivienda)
         {
-            throw new NotImplementedException();
+            //Vivienda viviendaExistente = ViviendaDAO.Obtener(codigoVivienda);
+            //ViviendaDAO.Eliminar(viviendaExistente);
+            try
+            {
+                Vivienda viviendaAEliminar = ObtenerVivienda(codigoVivienda);
+                viviendaAEliminar.Estado = Boolean.Parse(Utility.Tables.Estado.Inactivo);
+                viviendaDAO.Modificar(viviendaAEliminar);
+
+            }
+            catch
+            {
+                throw;
+            }
+            
+
+            
         }
 
         public List<Vivienda> ListarViviendas()
         {
-            throw new NotImplementedException();
+            return ViviendaDAO.ListarTodos().ToList();
         }
 
         public decimal ObtenerCostoDeVivienda(int codigoVivienda, DateTime fechaContrato)
         {
             throw new NotImplementedException();
         }
+
+        #region Validaciones
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="action">I: Insertar; U: Actualiza</param>
+        /// <param name="codigoVivienda"></param>
+        /// <param name="codigoUbicacion"></param>
+        /// <param name="numeroVivienda"></param>
+        /// <returns></returns>
+        private bool ExisteVivienda(string action, int codigoVivienda, int codigoUbicacion, int numeroVivienda)
+        {
+            List<Vivienda> lstVivienda = new List<Vivienda>();
+            lstVivienda = ListarViviendas();
+
+            return lstVivienda.Any(r => (action == Utility.Tables.Action.Insertar && r.Ubicacion.CodigoUbicacion == codigoUbicacion && r.NumeroVivienda == numeroVivienda)
+                                       || (action == Utility.Tables.Action.Actualizar && r.CodigoVivienda != codigoVivienda && r.Ubicacion.CodigoUbicacion == codigoUbicacion && r.NumeroVivienda == numeroVivienda));
+        }
+        #endregion
+
+
     }
 }

@@ -36,12 +36,7 @@ namespace CondominioService.MasterTables.Dominio
         [DataMember]
         public Boolean Estado { get; set; }
 
-        [DataMember]
-        public string Result { get; set; }
-
-        [DataMember]
-        public string Message { get; set; }
-
+        
 
     }
 }

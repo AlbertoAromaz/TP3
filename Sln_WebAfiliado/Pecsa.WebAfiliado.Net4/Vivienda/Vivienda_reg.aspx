@@ -7,19 +7,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="titleYP">
-        <%--<img src="<%: ResolveUrl("~/Images/icons/dark/files.png") %>" alt="" class="titleIcon" />--%>
-        <h6>Registro de Vivienda</h6>
+       <h6>Registro de Vivienda</h6>
         <div class="textR">
             <span>
                 
             </span>
             <span>
-                <%--<asp:HyperLink ID="HyperLink1" runat="server" CssClass="bFirst buttonYP basicYP"  >
-                    <img src="<%: ResolveUrl("~/Images/icons/light/create.png") %>" class="icon" alt="">
-                    <span>Grabar</span>
-                </asp:HyperLink>--%>
-                <asp:LinkButton ID="lkbGrabar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="btnGrabar_Click"><span>Grabar</span></asp:LinkButton>
-               <%-- <asp:Button ID="btnGrabar" runat="server"  CssClass="bFirst buttonYP basicYP" OnClick="btnGrabar_Click" />--%>
+              <asp:LinkButton ID="lkbGrabar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="btnGrabar_Click"><span>Grabar</span></asp:LinkButton>
             </span>
         </div>
     </div>
@@ -29,7 +23,7 @@
                 <asp:Label ID="Label1" runat="server" Text="Código"></asp:Label>
             </span>
             <span class="span1">
-                <asp:TextBox ID="txtCodigo" runat="server" Enabled="False"></asp:TextBox>
+                <asp:TextBox ID="txtCodigoVivienda" runat="server" Enabled="False"></asp:TextBox>
             </span>             
             <span class="span2">
                 <asp:CheckBox ID="chkEstado" runat="server" Text="Estado" Checked="True" Enabled="false" />
@@ -57,7 +51,7 @@
                 <asp:Label ID="Label5" runat="server" Text="Número"></asp:Label>
             </span>
             <span class="span1">
-                <asp:TextBox ID="txtNúmero" runat="server" Width="60px"></asp:TextBox>
+                <asp:TextBox ID="txtNúmeroVivienda" runat="server" Width="60px"></asp:TextBox>
             </span>
                     
         </div>
@@ -102,7 +96,7 @@
                 <asp:Label ID="Label10" runat="server" Text="Nro.Baños"></asp:Label>
             </span>
             <span class="span1">
-                <asp:TextBox ID="txtNroBaños" runat="server" Width="60px"></asp:TextBox>
+                <asp:TextBox ID="txtNroBanos" runat="server" Width="60px"></asp:TextBox>
             </span>     
         </div>
 

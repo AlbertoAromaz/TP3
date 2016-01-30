@@ -68,6 +68,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Dominio\Vivienda.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TipoViviendaService.svc" />
     <Content Include="UbicacionService.svc" />
     <Content Include="ViviendaService.svc" />
@@ -93,6 +96,7 @@
     <Compile Include="UbicacionService.svc.cs">
       <DependentUpon>UbicacionService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Utility\AtributosGenerales.cs" />
     <Compile Include="ViviendaService.svc.cs">
       <DependentUpon>ViviendaService.svc</DependentUpon>
     </Compile>

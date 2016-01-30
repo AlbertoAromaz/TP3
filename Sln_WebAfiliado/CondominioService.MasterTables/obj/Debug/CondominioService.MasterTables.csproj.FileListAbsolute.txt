@@ -7,3 +7,4 @@ E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAf
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.dll
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.pdb
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.csprojResolveAssemblyReference.cache
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\CondominioService.MasterTables\bin\Dominio\Vivienda.hbm.xml
