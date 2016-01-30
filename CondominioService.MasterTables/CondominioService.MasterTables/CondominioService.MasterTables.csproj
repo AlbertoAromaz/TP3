@@ -72,6 +72,8 @@
     <EmbeddedResource Include="Dominio\Vivienda.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dominio\Ubicacion.hbm.xml" />
+    <EmbeddedResource Include="Dominio\TipoVivienda.hbm.xml" />
     <Content Include="ResidenteService.svc" />
     <Content Include="TipoViviendaService.svc" />
     <Content Include="UbicacionService.svc" />

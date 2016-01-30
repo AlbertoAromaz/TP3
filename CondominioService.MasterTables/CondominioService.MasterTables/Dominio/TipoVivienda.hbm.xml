@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="CondominioService.MasterTables"
+                   namespace="CondominioService.MasterTables.Dominio"
+                   default-lazy="false">
+  <class name="TipoVivienda" table="t_tipovivienda">
+    <id name="CodigoTipoVivienda" column="CodigoTipoVivienda">
+      <generator class="identity" />
+    </id>
+    <property name="NombreTipoVivienda" column="NombreTipoVivienda" />
+  </class>
+</hibernate-mapping>
+
