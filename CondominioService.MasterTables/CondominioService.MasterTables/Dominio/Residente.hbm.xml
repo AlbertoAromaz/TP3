@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="CondominioService.MasterTables"
+                   namespace="CondominioService.MasterTables.Dominio"
+                   default-lazy="false">
+<class name="Residente" table="t_residente">
+  <id  column="Codigo" name="Codigo">
+    <generator class="identity" />
+  </id>  
+  <property column="TipoDoc"  name="TipoDocumento"/>
+  <property column="NroDoc"  name="NroDocumento"/> 
+  <property column="Nombres"  name="Nombres"/>
+  <property column="Ape_Paterno"  name="ApellidoPaterno"/>
+  <property column="Ape_Materno"  name="ApellidoMaterno"/>
+  <property column="Sexo"  name="Sexo"/>
+  <property column="Fecha_Nacimiento"  name="FechaNacimiento"/>
+  <property column="Telefono"  name="Telefono"/>
+  <property column="Celular"  name="Celular"/>
+  <property column="Correo"  name="Correo"/>
+  <property column="Estado"  name="Estado"/>
+  <property column="UsuarioCreacion"  name="UsuarioCreacion" />
+  <property column="FechaCreacion"  name="FechaCreacion" />
+  <property column="UsuarioModificacion"  name="UsuarioModificacion" />
+  <property column="FechaModificacion"  name="FechaModificacion" />
+  
+</class>
+</hibernate-mapping>

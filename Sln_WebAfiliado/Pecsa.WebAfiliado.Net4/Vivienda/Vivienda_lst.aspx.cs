@@ -9,6 +9,9 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
 {
     public partial class Vivienda_lst : System.Web.UI.Page
     {
+        private ViviendaWS.ViviendaServiceClient proxyVivienda = new ViviendaWS.ViviendaServiceClient();
+
+        #region Form Methods
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) 
@@ -31,6 +34,8 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
             }
         }
     }
+
+        #endregion
 
     public class Vivienda
     {

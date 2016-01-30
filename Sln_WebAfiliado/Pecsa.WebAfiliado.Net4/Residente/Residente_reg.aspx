@@ -10,10 +10,10 @@
         <h6>Registro de Residentes</h6>
         <div class="textR">
             <span>
-                <asp:Button ID="btnGrabar" runat="server" CssClass="hidden" />
+                <asp:Button ID="btnGrabar" runat="server" CssClass="hidden" OnClick="btnGrabar_Click"  />
             </span>
             <span>
-                <asp:HyperLink ID="HyperLink1" runat="server" CssClass="bFirst buttonYP basicYP" NavigateUrl="javascript:jQuery('[id$=btnGrabar]').click();void(0);">
+                <asp:HyperLink ID="HyperLink1" runat="server" CssClass="bFirst buttonYP basicYP"  NavigateUrl="javascript:jQuery('[id$=btnGrabar]').click();">
                     <%--<img src="<%: ResolveUrl("~/Images/icons/light/create.png") %>" class="icon" alt="">--%>
                     <span>Grabar</span>
                 </asp:HyperLink>
@@ -22,11 +22,18 @@
     </div>
     <div class="fluid">
         <div class="formRow">
-            <span class="span2">
-                <asp:Label ID="Label1" runat="server" Text="Código"></asp:Label>
+            <span class="span2">               
+                     <asp:Label ID="Label1" runat="server" Text="Código"></asp:Label>              
             </span>
             <span class="span3">
-                <asp:TextBox ID="txtCodigo" runat="server" Enabled="False"></asp:TextBox>
+                 <asp:UpdatePanel ID="updateCodigo" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <asp:TextBox ID="txtCodigo" runat="server" Enabled="False"></asp:TextBox>
+                    </ContentTemplate>
+                     <Triggers>
+                         <asp:AsyncPostBackTrigger ControlID="btnGrabar" EventName="Click"/>
+                     </Triggers>
+                </asp:UpdatePanel>
             </span>
             <span class="span2">
                 <asp:Label ID="Label5" runat="server" Text="Fecha Reg"></asp:Label>
@@ -43,7 +50,7 @@
                 <asp:Label ID="Label2" runat="server" Text="Tipo Doc."></asp:Label>
             </span>
             <span class="span3">
-                <asp:DropDownList ID="DropDownList2" runat="server">
+                <asp:DropDownList ID="ddlTipoDocumento" runat="server">
                     <asp:ListItem>DNI</asp:ListItem>
                     <asp:ListItem>C. E.</asp:ListItem>
             </asp:DropDownList>
@@ -52,7 +59,7 @@
                 <asp:Label ID="Label9" runat="server" Text="Número Doc."></asp:Label>
             </span>
             <span class="span5">
-                <asp:TextBox ID="TextBox5" runat="server" ></asp:TextBox>
+                <asp:TextBox ID="txtNroDoc" runat="server" ></asp:TextBox>
             </span>
         </div>
         <div class="formRow">
@@ -68,7 +75,7 @@
                 <asp:Label ID="Label13" runat="server" Text="Apellido Paterno"></asp:Label>
             </span>
             <span class="span10">
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoP" runat="server"></asp:TextBox>
             </span>
         </div>
         <div class ="formRow">
@@ -76,7 +83,7 @@
                 <asp:Label ID="Label14" runat="server" Text="Apellido Materno"></asp:Label>
             </span>
             <span class="span10">
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtApellidoM" runat="server"></asp:TextBox>
             </span>
         </div>
         
@@ -86,7 +93,7 @@
             </span>
             <span class="span3">
                 
-                <asp:DropDownList ID="DropDownList1" runat="server" >
+                <asp:DropDownList ID="ddlSexo" runat="server" >
                     <asp:ListItem>Masculino</asp:ListItem>
                     <asp:ListItem>Femenino</asp:ListItem>
                 </asp:DropDownList>
@@ -96,7 +103,7 @@
                 <asp:Label ID="Label6" runat="server" Text="F.N."></asp:Label>
             </span>
             <span class="span5">
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtFechaNac" runat="server"></asp:TextBox>
             </span>
         </div>
         <div class="formRow">
@@ -166,24 +173,21 @@
             width: 400
         }).parent().appendTo('.form');
 
-        function valida()
-        {
+        function valida() {
 
-           var nombre = $('[id$=txtNombres]').val();
-           var ApeMat = $('[id$=TextBox1]').val();
-           var ApePat = $('[id$=TextBox2]').val();
+            var nombre = $('[id$=txtNombres]').val();
+            var ApeMat = $('[id$=TextBox1]').val();
+            var ApePat = $('[id$=TextBox2]').val();
 
-           var dni = $('[id$=TextBox5]').val();
-           var dni1 = "40530678";
+            var dni = $('[id$=TextBox5]').val();
+            var dni1 = "40530678";
 
-            if(nombre == ""|| ApeMat =="" ||ApeMat == "")
-            {
+            if (nombre == "" || ApeMat == "" || ApeMat == "") {
                 alert("Ingrese los datos necesarios");
                 return false;
             }
 
-            if (dni == dni1)
-            {
+            if (dni == dni1) {
                 alert("El residente ya se encuentra registrado");
                 return false;
             }
@@ -197,5 +201,6 @@
             alert(dni);
 
         }
+
     </script>
 </asp:Content>

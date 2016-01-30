@@ -29,6 +29,11 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
         {
             GrabarVivienda();
         }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Vivienda_lst.aspx");
+        }
         #endregion
 
         #region private methods

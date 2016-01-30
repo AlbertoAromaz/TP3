@@ -27,19 +27,14 @@
             <span class="span2">
                 <asp:Label ID="Label2" runat="server" Text="Ubicación" Enabled="False"></asp:Label>
             </span>
-            <span class="span4">
-                <asp:DropDownList ID="ddlUbicacion" runat="server" Enabled="false">
+            <span class="span6">
+                <asp:DropDownList ID="ddlUbicacion" runat="server" >
                     <asp:ListItem>Zona A</asp:ListItem>
                     <asp:ListItem>Zona B</asp:ListItem>
                     <asp:ListItem>Zona C</asp:ListItem>
                 </asp:DropDownList>
             </span>
-             <span class="span2">
-                <asp:Label ID="Label4" runat="server" Text="Número"></asp:Label>
-            </span>
-            <span class="span4">
-                <asp:TextBox ID="txtNúmero" runat="server" Width="80px" Enabled="false"></asp:TextBox>
-            </span>
+            
             
         </div>
          <div class="formRow">
@@ -69,7 +64,7 @@
         </div> 
     </div>
      <div class="title">
-         <h6>Cliente</h6>         
+         <h6>Datos del Residente</h6>         
     </div>
     <div class="fluid">
         <div class="formRow">
@@ -89,42 +84,46 @@
              </div>
     </div>
      <div class="title">
-         <h6>Reglas de Generación de Cuotas</h6>         
+         <h6>Datos del Contrato</h6>         
     </div>
     <div class="fluid">
         <div class="formRow">
+            <span class="span3">
+                <asp:Label ID="Label3" runat="server" Text="Fecha Contrato"></asp:Label>
+            </span>
+            <span class="span6">
+                <asp:TextBox ID="TextBox3" runat="server" CssClass="datepicker"></asp:TextBox>
+
+            </span>
+            
+        </div>
+        <div class="formRow">
+            <span class="span3">
+                <asp:Label ID="Label5" runat="server" Text="Periodo Alquiler"></asp:Label>
+            </span>
             <span class="span2">
-                <asp:Label ID="Label3" runat="server" Text="Frecuencia"></asp:Label>
-            </span>
-            <span class="span4">
-                <asp:DropDownList ID="DropDownList2" runat="server">
-                    <asp:ListItem>Mensual</asp:ListItem>
-                    <asp:ListItem>Quincenal</asp:ListItem>
-                </asp:DropDownList>
-            </span>
-            <span class="span2">
-                <asp:Label ID="Label5" runat="server" Text="Concepto"></asp:Label>
-            </span>
-            <span class="span4">
-                <asp:DropDownList ID="DropDownList3" runat="server">
-                    <asp:ListItem>Alquiler</asp:ListItem>
-                    <asp:ListItem>Comprar</asp:ListItem>
-                </asp:DropDownList>
+                <asp:TextBox ID="TextBox2" runat="server" ></asp:TextBox>
             </span>
         </div>
         <div class="formRow">
-            <span class="span2">
-                <asp:Label ID="Label8" runat="server" Text="E. Inicio"></asp:Label>
-            </span>
-            <span class="span4">
-                <asp:TextBox ID="TextBox3" runat="server" CssClass="datepicker"></asp:TextBox>
+            <span class="span3">
+                <asp:Label ID="Label8" runat="server" Text="Costo Mensual"></asp:Label>
             </span>
             <span class="span2">
-                <asp:Label ID="Label9" runat="server" Text="E. Final"></asp:Label>
+                <asp:TextBox ID="TextBox4" runat="server" ></asp:TextBox>
             </span>
-            <span class="span4">
-                <asp:TextBox ID="TextBox2" runat="server" CssClass="datepicker"></asp:TextBox>
-            </span>
+            
         </div>
+        <div class="formRow">
+            </div>
+    </div>
+    <div class="title">
+    </div>
+    <div class="fluid">
+        <div class="formRow">
+            <span class="span4">
+                <a href="#" title="" class="wButton greenwB m2"><span>Generar Contrato</span></a>
+            </span>
+        </div>    
     </div>
 </asp:Content>

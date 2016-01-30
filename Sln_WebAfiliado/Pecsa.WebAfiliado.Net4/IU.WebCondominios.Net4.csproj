@@ -352,9 +352,28 @@
     <Content Include="Scripts\plugins\wizard\jquery.form.js" />
     <Content Include="Scripts\plugins\wizard\jquery.form.wizard.js" />
     <Content Include="Scripts\plugins\wizard\jquery.validate.js" />
+    <None Include="Service References\ResidenteWS\configuration91.svcinfo" />
+    <None Include="Service References\ResidenteWS\configuration.svcinfo" />
+    <Content Include="Service References\ResidenteWS\Pecsa.WebAfiliado.Net4.ResidenteWS.Residente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ResidenteWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\TipoViviendaWS\Pecsa.WebAfiliado.Net4.TipoViviendaWS.TipoVivienda.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\ResidenteWS\ResidenteService.wsdl" />
+    <None Include="Service References\ResidenteWS\ResidenteService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResidenteWS\ResidenteService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResidenteWS\ResidenteService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\TipoViviendaWS\TipoViviendaService.wsdl" />
     <None Include="Service References\TipoViviendaWS\TipoViviendaService.xsd">
       <SubType>Designer</SubType>
@@ -490,6 +509,11 @@
     <Compile Include="Residente\Residente_reg.aspx.designer.cs">
       <DependentUpon>Residente_reg.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ResidenteWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\TipoViviendaWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -552,6 +576,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ResidenteWS\" />
     <WCFMetadataStorage Include="Service References\TipoViviendaWS\" />
     <WCFMetadataStorage Include="Service References\UbicacionWS\" />
     <WCFMetadataStorage Include="Service References\ViviendaWS\" />

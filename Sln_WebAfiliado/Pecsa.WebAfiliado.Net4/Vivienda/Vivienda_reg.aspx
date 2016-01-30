@@ -15,6 +15,9 @@
             <span>
               <asp:LinkButton ID="lkbGrabar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="btnGrabar_Click"><span>Grabar</span></asp:LinkButton>
             </span>
+            <span>
+              <asp:LinkButton ID="lkbCancelar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="btnCancelar_Click"><span>Cancelar</span></asp:LinkButton>
+            </span>
         </div>
     </div>
     <div class="fluid">

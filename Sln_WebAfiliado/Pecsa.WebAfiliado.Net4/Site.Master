@@ -58,7 +58,7 @@
         <div class="sidebarSep"></div>
         <ul id="menu" class="nav">
             
-            <li class="tables"><a href="<%: ResolveUrl("~/Alquiler/Mostrar_Viv.aspx") %>" title=""><span>Alquiler de Viviendas</span></a></li>
+            <li class="tables"><a href="<%: ResolveUrl("~/Alquiler/Alquiler_reg.aspx") %>" title=""><span>Alquiler de Viviendas</span></a></li>
             <li class="files"><a href="<%: ResolveUrl("~/Alquiler/Pagos_reg.aspx") %>" title=""><span>Control de Cobranzas</span></a></li>
             <li class="widgets"><a href="<%: ResolveUrl("~/Alquiler/Consultas.aspx") %>" title=""><span>Reportes</span></a></li>
             <%--<li class="tables"><a href="<%: ResolveUrl("~/Cliente/trj/Trj_lst.aspx") %>" title=""><span>Tarjetas</span></a></li>
