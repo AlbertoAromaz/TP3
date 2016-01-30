@@ -69,7 +69,7 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
         {
             string getRequestQueryStringVivienda = "";
             getRequestQueryStringVivienda = Request.QueryString["CODIGO_VIVIENDA"];
-            if (getRequestQueryStringVivienda != string.Empty)
+            if (getRequestQueryStringVivienda != null && getRequestQueryStringVivienda != string.Empty)
             {
                 ViviendaWS.Vivienda viviendaResultado = new ViviendaWS.Vivienda();
                 viviendaResultado = proxyVivienda.ObtenerVivienda(int.Parse(getRequestQueryStringVivienda));

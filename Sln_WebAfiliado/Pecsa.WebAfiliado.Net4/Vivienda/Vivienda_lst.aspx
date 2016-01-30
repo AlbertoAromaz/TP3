@@ -11,6 +11,9 @@
         <h6>Lista de Viviendas</h6>
         <div class="textR">
 
+             <span>
+                    <asp:Button ID="btnBuscar" runat="server"  CssClass="hidden" />
+                </span>
             <span>
               <asp:LinkButton ID="lkbLimpiar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="btnLimpiar_Click"><span>Limpiar</span></asp:LinkButton>
             </span>
@@ -28,7 +31,7 @@
                 <asp:Label ID="Label2" runat="server" Text="Tipo Vivienda"></asp:Label>
             </span>
             <span class="span3">
-                <asp:DropDownList ID="ddlTipoVivienda" runat="server" />
+                <asp:DropDownList ID="ddlTipoVivienda" runat="server" Enabled="true" />
                            
             </span>             
         </div>
@@ -37,7 +40,7 @@
                 <asp:Label ID="Label3" runat="server" Text="Ubicación"></asp:Label>
             </span>
             <span class="span3">
-                <asp:DropDownList ID="ddlUbicacion" runat="server"/>
+                <asp:DropDownList ID="ddlUbicacion" runat="server" Enabled="true"/>
             </span>     
              <span class="span1">
                 <asp:Label ID="Label5" runat="server" Text="Número"></asp:Label>
@@ -55,8 +58,8 @@
                     <asp:GridView ID="grdListaVivienda" runat="server" AutoGenerateColumns="False" ShowHeader="true" ShowHeaderWhenEmpty="True" CssClass="sTable" Width="100%" DataKeyNames="CodigoVivienda" OnRowCommand="grdListaVivienda_RowCommand" >
                         <Columns>
                             <asp:BoundField HeaderText="Codigo" DataField="CodigoVivienda" ControlStyle-Width="30px" />
-                            <asp:BoundField HeaderText="Tipo" DataField="TipoVivienda.NombreTipoVivienda" />
-                            <asp:BoundField HeaderText="Ubicacion" DataField="Ubicacion.NombreUbicacion" />
+                           <%-- <asp:BoundField HeaderText="Tipo" DataField="TipoVivienda.NombreTipoVivienda" />
+                            <asp:BoundField HeaderText="Ubicacion" DataField="Ubicacion.NombreUbicacion" />--%>
                             <asp:BoundField HeaderText="Numero" DataField="NumeroVivienda" />
                             <asp:BoundField HeaderText="Metraje" DataField="Metraje" />
                             <asp:TemplateField HeaderStyle-Width="25px" ItemStyle-HorizontalAlign="Center">

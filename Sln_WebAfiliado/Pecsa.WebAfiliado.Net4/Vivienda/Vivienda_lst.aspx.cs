@@ -44,7 +44,10 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
         private void BuscarViviendas(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda)
         {
             List<ViviendaWS.Vivienda> lstVivienda = new List<ViviendaWS.Vivienda>();
-            lstVivienda = proxyVivienda.BuscarVivienda(codigoTipoVivienda, codigoUbicacion, numeroVivienda).ToList();
+            //lstVivienda = proxyVivienda.BuscarVivienda(codigoTipoVivienda, codigoUbicacion, numeroVivienda).ToList();
+            lstVivienda = proxyVivienda.ListarViviendas().Where(r => ((r.TipoVivienda.CodigoTipoVivienda == codigoTipoVivienda || codigoTipoVivienda == 0)
+                                                                          || (r.Ubicacion.CodigoUbicacion == codigoUbicacion || codigoUbicacion == 0)
+                                                                          || (r.NumeroVivienda == numeroVivienda || numeroVivienda == 0))).ToList();
 
             PintarGrid(lstVivienda);
 

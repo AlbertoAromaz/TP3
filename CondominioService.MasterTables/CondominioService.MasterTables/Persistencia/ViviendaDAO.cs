@@ -20,7 +20,7 @@ namespace CondominioService.MasterTables.Persistencia
             List<Vivienda> lstVivienda = new List<Vivienda>();
             //Vivienda objVivienda;
 
-            
+
             //MySqlConnection mysqlConnection = new MySqlConnection(ConexionUtil.ObtenerCadena);
             //MySqlCommand mysqlCommand;
             //MySqlDataReader mysqlDataReader;
@@ -28,8 +28,9 @@ namespace CondominioService.MasterTables.Persistencia
             //mysqlConnection.Open();
             //try
             //{
-            //    mysqlCommand = mysqlConnection.CreateCommand();
-            //    mysqlCommand.CommandText = "SP_VIVIENDA_BUSCAR";
+            //    //mysqlCommand = mysqlConnection.CreateCommand();
+            //    mysqlCommand = new MySqlCommand("SP_VIVIENDA_BUSCAR", mysqlConnection);
+            //   // mysqlCommand.CommandText = "SP_VIVIENDA_BUSCAR";
             //    mysqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             //    mysqlCommand.Parameters.AddWithValue("@codigoTipoVivienda", codigoTipoVivienda);
             //    mysqlCommand.Parameters.AddWithValue("@codigoUbicacion", codigoUbicacion);
@@ -43,7 +44,7 @@ namespace CondominioService.MasterTables.Persistencia
             //        objVivienda.Ubicacion = new Ubicacion();
             //        AddViviendaToList(objVivienda, mysqlDataReader);
             //        lstVivienda.Add(objVivienda);
-                    
+
             //    }
             //}
             //catch
@@ -66,10 +67,11 @@ namespace CondominioService.MasterTables.Persistencia
             //mysqlConnection.Open();
             //try
             //{
-            //    mysqlCommand = mysqlConnection.CreateCommand();
-            //    mysqlCommand.CommandText = "SP_VIVIENDA_LISTAR";
+            //    //mysqlCommand = mysqlConnection.CreateCommand();
+            //    //mysqlCommand.CommandText = "SP_VIVIENDA_LISTAR";
+            //    mysqlCommand = new MySqlCommand("SP_VIVIENDA_LISTAR", mysqlConnection);
             //    mysqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
-               
+
 
             //    mysqlDataReader = mysqlCommand.ExecuteReader();
             //    while (mysqlDataReader.Read())
