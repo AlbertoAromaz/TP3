@@ -8,13 +8,15 @@
       <generator class="identity" />
     </id>
     <many-to-one name="TipoVivienda" column="CodigoTipoVivienda" />
-    <many-to-one name="Ubicacion" column="CodigoTipoUbicacion" />
+    <many-to-one name="Ubicacion" column="CodigoUbicacion" />
     <property name="NumeroVivienda" column="NumeroVivienda" />
     <property name="Metraje" column="Metraje" />
     <property name="TieneSalaComedor" column="TieneSalaComedor" />
     <property name="NroCuartos" column="NroCuartos" />
     <property name="NroBano" column="NroBano" />
     <property name="Estado" column="Estado" />
+    <property name="UsuarioCreacion" column="UsuarioCreacion" />
+    <property name="UsuarioModificacion" column="UsuarioModificacion" />
   </class>
 </hibernate-mapping>
 

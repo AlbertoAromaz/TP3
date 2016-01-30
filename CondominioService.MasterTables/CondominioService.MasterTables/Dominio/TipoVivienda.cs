@@ -14,5 +14,14 @@ namespace CondominioService.MasterTables.Dominio
 
         [DataMember]
         public string NombreTipoVivienda { get; set; }
+
+        [DataMember]
+        public Boolean Estado { get; set; }
+
+        [DataMember]
+        public string UsuarioCreacion { get; set; }
+
+        [DataMember]
+        public string UsuarioModificacion { get; set; }
     }
 }

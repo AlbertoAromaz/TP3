@@ -11,20 +11,28 @@
       <xs:element minOccurs="0" name="TieneSalaComedor" type="xs:boolean" />
       <xs:element minOccurs="0" name="TipoVivienda" nillable="true" type="tns:TipoVivienda" />
       <xs:element minOccurs="0" name="Ubicacion" nillable="true" type="tns:Ubicacion" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Vivienda" nillable="true" type="tns:Vivienda" />
   <xs:complexType name="TipoVivienda">
     <xs:sequence>
       <xs:element minOccurs="0" name="CodigoTipoVivienda" type="xs:int" />
+      <xs:element minOccurs="0" name="Estado" type="xs:boolean" />
       <xs:element minOccurs="0" name="NombreTipoVivienda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TipoVivienda" nillable="true" type="tns:TipoVivienda" />
   <xs:complexType name="Ubicacion">
     <xs:sequence>
       <xs:element minOccurs="0" name="CodigoUbicacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Estado" type="xs:boolean" />
       <xs:element minOccurs="0" name="NombreUbicacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioModificacion" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Ubicacion" nillable="true" type="tns:Ubicacion" />

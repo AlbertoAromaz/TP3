@@ -21,7 +21,7 @@ namespace CondominioService.MasterTables.Persistencia
                     var _Conf = new Configuration();
                     _Conf.SetProperty("connection.provider", "NHibernate.Connection.DriverConnectionProvider");
                     _Conf.SetProperty("connection.driver_class", "NHibernate.Driver.SqlClientDriver");
-                    _Conf.SetProperty("connection.connection_string", ConexionUtil.ObtenerCadena());
+                    _Conf.SetProperty("connection.connection_string", ConexionUtil.ObtenerCadena);
                     _Conf.SetProperty("adonet.batch_size", "10");
                     _Conf.SetProperty("show_sql", "true");
                     _Conf.SetProperty("dialect", "NHibernate.Dialect.MsSql2000Dialect");

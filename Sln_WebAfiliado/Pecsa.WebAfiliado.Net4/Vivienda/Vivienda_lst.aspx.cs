@@ -34,19 +34,17 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
 
         protected void grdListaVivienda_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if(e.CommandName=="")
+           // if(e.CommandName=="")
         }
 
         #endregion
 
         #region Private Methods
 
-        private void BuscarViviendas(int codigoTipoVivienda, int CodigoUbicacion, int numeroVivienda)
+        private void BuscarViviendas(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda)
         {
             List<ViviendaWS.Vivienda> lstVivienda = new List<ViviendaWS.Vivienda>();
-            lstVivienda = proxyVivienda.ListarViviendas().Where(r=> (  (r.TipoVivienda.CodigoTipoVivienda ==  codigoTipoVivienda || codigoTipoVivienda==0)
-                                                                              ||(r.Ubicacion.CodigoUbicacion ==  CodigoUbicacion || CodigoUbicacion==0)  
-                                                                              ||(r.NumeroVivienda ==  numeroVivienda || numeroVivienda==0) )).ToList();
+            lstVivienda = proxyVivienda.BuscarVivienda(codigoTipoVivienda, codigoUbicacion, numeroVivienda).ToList();
 
             PintarGrid(lstVivienda);
 

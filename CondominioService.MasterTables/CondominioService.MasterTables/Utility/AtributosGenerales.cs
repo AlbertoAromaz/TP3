@@ -15,8 +15,8 @@ namespace CondominioService.MasterTables.Utility
 
         public class Estado
         {
-            public const string Activo = "1";
-            public const string Inactivo="0";
+            public const Boolean  Activo = true;
+            public const Boolean Inactivo=false;
         }
     }
 

@@ -8,6 +8,9 @@
       <generator class="identity" />
     </id>
     <property name="NombreUbicacion" column="NombreUbicacion" />
+    <property name="Estado" column="Estado" />
+    <property name="UsuarioCreacion" column="UsuarioCreacion" />
+    <property name="UsuarioModificacion" column="UsuarioModificacion" />
   </class>
 </hibernate-mapping>
 

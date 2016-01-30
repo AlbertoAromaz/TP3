@@ -86,7 +86,9 @@ namespace CondominioService.MasterTables
                     TieneSalaComedor= tieneSalaComedor,
                     NroCuartos = nroCuartos,
                     NroBano = nroBanos,
-                    Estado = Boolean.Parse(Utility.Tables.Estado.Activo),
+                    Estado = Utility.Tables.Estado.Activo,
+                    UsuarioCreacion = string.Empty,
+                   
                     
                 };
 
@@ -145,6 +147,7 @@ namespace CondominioService.MasterTables
                     TieneSalaComedor = tieneSalaComedor,
                     NroCuartos = nroCuartos,
                     NroBano = nroBanos,
+                    UsuarioModificacion = string.Empty,
 
                 };
 
@@ -164,16 +167,15 @@ namespace CondominioService.MasterTables
         /// <param name="codigoVivienda"></param>
         public void EliminarVivienda(int codigoVivienda)
         {
-            //Vivienda viviendaExistente = ViviendaDAO.Obtener(codigoVivienda);
-            //ViviendaDAO.Eliminar(viviendaExistente);
+            
             try
             {
                 Vivienda viviendaAEliminar = ObtenerVivienda(codigoVivienda);
-                viviendaAEliminar.Estado = Boolean.Parse(Utility.Tables.Estado.Inactivo);
+                viviendaAEliminar.Estado = Utility.Tables.Estado.Inactivo;
                 viviendaDAO.Modificar(viviendaAEliminar);
 
             }
-            catch
+            catch 
             {
                 throw;
             }
@@ -181,12 +183,42 @@ namespace CondominioService.MasterTables
 
             
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<Vivienda> ListarViviendas()
         {
             return ViviendaDAO.ListarTodos().ToList();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codigoTipoVivienda"></param>
+        /// <param name="codigoUbicacion"></param>
+        /// <param name="numeroVivienda"></param>
+        /// <returns></returns>
+        public List<Vivienda> BuscarVivienda(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda)
+        {
+            List<Vivienda> lstVivienda = new List<Vivienda>();
+            try
+            {
+                lstVivienda = ViviendaDAO.BuscarVivienda(codigoTipoVivienda, codigoUbicacion, numeroVivienda);
+            }
+            catch 
+            {
+                throw;
+            }
+            return lstVivienda;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codigoVivienda"></param>
+        /// <param name="fechaContrato"></param>
+        /// <returns></returns>
         public decimal ObtenerCostoDeVivienda(int codigoVivienda, DateTime fechaContrato)
         {
             throw new NotImplementedException();

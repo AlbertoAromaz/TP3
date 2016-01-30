@@ -49,6 +49,12 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Pecsa.WebAfiliado.Net4.ViviendaWS.Ubicacion UbicacionField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioCreacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioModificacionField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -176,6 +182,32 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsuarioCreacion {
+            get {
+                return this.UsuarioCreacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioCreacionField, value) != true)) {
+                    this.UsuarioCreacionField = value;
+                    this.RaisePropertyChanged("UsuarioCreacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsuarioModificacion {
+            get {
+                return this.UsuarioModificacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioModificacionField, value) != true)) {
+                    this.UsuarioModificacionField = value;
+                    this.RaisePropertyChanged("UsuarioModificacion");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -199,7 +231,16 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
         private int CodigoTipoViviendaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreTipoViviendaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioCreacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioModificacionField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -225,6 +266,19 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((this.EstadoField.Equals(value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string NombreTipoVivienda {
             get {
                 return this.NombreTipoViviendaField;
@@ -233,6 +287,32 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
                 if ((object.ReferenceEquals(this.NombreTipoViviendaField, value) != true)) {
                     this.NombreTipoViviendaField = value;
                     this.RaisePropertyChanged("NombreTipoVivienda");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsuarioCreacion {
+            get {
+                return this.UsuarioCreacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioCreacionField, value) != true)) {
+                    this.UsuarioCreacionField = value;
+                    this.RaisePropertyChanged("UsuarioCreacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsuarioModificacion {
+            get {
+                return this.UsuarioModificacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioModificacionField, value) != true)) {
+                    this.UsuarioModificacionField = value;
+                    this.RaisePropertyChanged("UsuarioModificacion");
                 }
             }
         }
@@ -260,7 +340,16 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
         private int CodigoUbicacionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreUbicacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioCreacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioModificacionField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -286,6 +375,19 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((this.EstadoField.Equals(value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string NombreUbicacion {
             get {
                 return this.NombreUbicacionField;
@@ -294,6 +396,32 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
                 if ((object.ReferenceEquals(this.NombreUbicacionField, value) != true)) {
                     this.NombreUbicacionField = value;
                     this.RaisePropertyChanged("NombreUbicacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsuarioCreacion {
+            get {
+                return this.UsuarioCreacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioCreacionField, value) != true)) {
+                    this.UsuarioCreacionField = value;
+                    this.RaisePropertyChanged("UsuarioCreacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsuarioModificacion {
+            get {
+                return this.UsuarioModificacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioModificacionField, value) != true)) {
+                    this.UsuarioModificacionField = value;
+                    this.RaisePropertyChanged("UsuarioModificacion");
                 }
             }
         }
@@ -326,6 +454,9 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IViviendaService/ListarViviendas", ReplyAction="http://tempuri.org/IViviendaService/ListarViviendasResponse")]
         Pecsa.WebAfiliado.Net4.ViviendaWS.Vivienda[] ListarViviendas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IViviendaService/BuscarVivienda", ReplyAction="http://tempuri.org/IViviendaService/BuscarViviendaResponse")]
+        Pecsa.WebAfiliado.Net4.ViviendaWS.Vivienda[] BuscarVivienda(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IViviendaService/ObtenerCostoDeVivienda", ReplyAction="http://tempuri.org/IViviendaService/ObtenerCostoDeViviendaResponse")]
         decimal ObtenerCostoDeVivienda(int codigoVivienda, System.DateTime fechaContrato);
@@ -376,6 +507,10 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
         
         public Pecsa.WebAfiliado.Net4.ViviendaWS.Vivienda[] ListarViviendas() {
             return base.Channel.ListarViviendas();
+        }
+        
+        public Pecsa.WebAfiliado.Net4.ViviendaWS.Vivienda[] BuscarVivienda(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda) {
+            return base.Channel.BuscarVivienda(codigoTipoVivienda, codigoUbicacion, numeroVivienda);
         }
         
         public decimal ObtenerCostoDeVivienda(int codigoVivienda, System.DateTime fechaContrato) {

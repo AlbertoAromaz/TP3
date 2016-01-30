@@ -33,9 +33,16 @@ namespace CondominioService.MasterTables.Dominio
         [DataMember]
         public int NroBano { get; set; }
 
+        public string NombreVivienda { get; set; }
+
         [DataMember]
         public Boolean Estado { get; set; }
 
+        [DataMember]
+        public string UsuarioCreacion { get; set; }
+
+        [DataMember]
+        public string UsuarioModificacion { get; set; }
         
 
     }
