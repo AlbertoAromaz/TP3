@@ -10,12 +10,13 @@
         <%--<img src="<%: ResolveUrl("~/Images/icons/dark/list.png") %>" alt="" class="titleIcon" />--%>
         <h6>Lista de Viviendas</h6>
         <div class="textR">
-                <span>
-                    <asp:Button ID="btnBuscar" runat="server"  CssClass="hidden" />
-                </span>
-                <span>
-                    <asp:HyperLink ID="lnkBuscar" runat="server" CssClass="bFirst buttonYP basicYP" > <%--<img src="<%: ResolveUrl("~/Images/icons/light/buscar.png") %>" class="icon" alt="">--%><span>Buscar &nbsp;</span> </asp:HyperLink>
-                </span>
+
+            <span>
+              <asp:LinkButton ID="lkbLimpiar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="btnLimpiar_Click"><span>Limpiar</span></asp:LinkButton>
+            </span>
+            <span>
+              <asp:LinkButton ID="lkbBuscar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="btnBuscar_Click"><span>Buscar</span></asp:LinkButton>
+            </span>
                 <span>
                     <asp:HyperLink ID="lnkNuevo" runat="server" CssClass="bFirst buttonYP basicYP" NavigateUrl="~/Vivienda/Vivienda_reg.aspx"> <%--<img src="<%: ResolveUrl("~/Images/icons/light/nuevo.png") %>" class="icon" alt="">--%><span>Nuevo</span> </asp:HyperLink>
                 </span>
@@ -23,37 +24,41 @@
     </div>
     <div class="fluid">
         <div class="formRow">
-            <span class="span1m">
-                <asp:Label ID="Label1" runat="server" Text="Zona"></asp:Label>
+            <span class="span2">
+                <asp:Label ID="Label2" runat="server" Text="Tipo Vivienda"></asp:Label>
             </span>
-            <span class="span7">
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                    <asp:ListItem>Zona A</asp:ListItem>
-                    <asp:ListItem>Zona B</asp:ListItem>
-                    <asp:ListItem>Zona C</asp:ListItem>
-                </asp:DropDownList>
+            <span class="span3">
+                <asp:DropDownList ID="ddlTipoVivienda" runat="server" />
+                           
+            </span>             
+        </div>
+        <div class="formRow">
+            <span class="span2">
+                <asp:Label ID="Label3" runat="server" Text="Ubicación"></asp:Label>
             </span>
-            <span class="span1m">
-                <asp:Label ID="Label2" runat="server" Text="Numero"></asp:Label>
+            <span class="span3">
+                <asp:DropDownList ID="ddlUbicacion" runat="server"/>
+            </span>     
+             <span class="span1">
+                <asp:Label ID="Label5" runat="server" Text="Número"></asp:Label>
             </span>
-            <span class="span2">              
-                <asp:TextBox ID="txtNroDocumento" runat="server"></asp:TextBox>
+            <span class="span1">
+                <asp:TextBox ID="txtNúmeroVivienda" runat="server" Width="60px"></asp:TextBox>
             </span>
-            
+                    
         </div>
         
         <div class="formRow">
             <div class="widget">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
-                    <asp:GridView ID="grdListaVivienda" runat="server" AutoGenerateColumns="False" ShowHeader="true" ShowHeaderWhenEmpty="True" CssClass="sTable" Width="100%" DataKeyNames="Numero" >
+                    <asp:GridView ID="grdListaVivienda" runat="server" AutoGenerateColumns="False" ShowHeader="true" ShowHeaderWhenEmpty="True" CssClass="sTable" Width="100%" DataKeyNames="CodigoVivienda" OnRowCommand="grdListaVivienda_RowCommand" >
                         <Columns>
-                            <asp:BoundField HeaderText="Item" DataField="ItemGrid" ControlStyle-Width="30px" />
-                            <asp:BoundField HeaderText="Ubicación" DataField="Ubicacion" />
-                            <asp:BoundField HeaderText="Número" DataField="Numero" />
-                            <asp:BoundField HeaderText="Tipo Viv." DataField="Tipo" />
+                            <asp:BoundField HeaderText="Codigo" DataField="CodigoVivienda" ControlStyle-Width="30px" />
+                            <asp:BoundField HeaderText="Tipo" DataField="TipoVivienda.NombreTipoVivienda" />
+                            <asp:BoundField HeaderText="Ubicacion" DataField="Ubicacion.NombreUbicacion" />
+                            <asp:BoundField HeaderText="Numero" DataField="NumeroVivienda" />
                             <asp:BoundField HeaderText="Metraje" DataField="Metraje" />
-                            <asp:BoundField HeaderText="Caracteristicas" DataField="Caracteristicas" />
                             <asp:TemplateField HeaderStyle-Width="25px" ItemStyle-HorizontalAlign="Center">
                                 <ItemTemplate>
                                     <asp:ImageButton ID="btnEditar" runat="server" CommandName="Editar" ImageUrl="~/Images/icons/light/pencil.png" />
