@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5f3b1875-a077-4ad2-966b-9e21d0b52a91" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:3644/ViviendaService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ViviendaService.xsd" MetadataType="Schema" ID="cf3659fb-efd1-49bd-9255-c00be1960b3c" SourceId="1" SourceUrl="http://localhost:3644/ViviendaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ViviendaService1.xsd" MetadataType="Schema" ID="ba65357a-56c8-4edf-af64-d737af04b486" SourceId="1" SourceUrl="http://localhost:3644/ViviendaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ViviendaService.disco" MetadataType="Disco" ID="5e24043f-46a2-4c76-9e8a-6bff59b4d2f2" SourceId="1" SourceUrl="http://localhost:3644/ViviendaService.svc?disco" />
+    <MetadataFile FileName="ViviendaService2.xsd" MetadataType="Schema" ID="2d44b90b-d138-4de5-94ce-43b65e968237" SourceId="1" SourceUrl="http://localhost:3644/ViviendaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ViviendaService.wsdl" MetadataType="Wsdl" ID="059f844f-9890-4f62-a63c-333c005e3392" SourceId="1" SourceUrl="http://localhost:3644/ViviendaService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
