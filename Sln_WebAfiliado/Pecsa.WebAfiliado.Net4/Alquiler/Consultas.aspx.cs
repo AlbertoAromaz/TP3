@@ -15,14 +15,13 @@ namespace IU.WebCondominios.Net4
             {
                 List<CuotasxCobrar> lstCuotasxCobrar = new List<CuotasxCobrar>();
                 CuotasxCobrar obj = new CuotasxCobrar 
-                { 
-                    ItemGrid = "1",
-                    Ubicacion = "Zona A",
-                    Numero = "104",
+                {
+                    NroCuota = "1",
+                    Vivienda = "Zona A - 104",
                     Residente = "Jose Perez Ramos",
-                    Concepto = "Alquiler Cuota",
-                    FechaAdeudo = "30/01/2016",
-                    Moneda = "Soles",
+                    FechaPago = "30/01/2016",
+                    FechaVencimiento = "30/01/2016",
+                    Estado = "Cancelado",
                     Importe = "1,200.00"
                 
                 };
@@ -36,14 +35,14 @@ namespace IU.WebCondominios.Net4
 
     public class CuotasxCobrar
     {
-        public string ItemGrid {get; set;}
-        public string Ubicacion { get; set; }
-        public string Numero { get; set; }
+        public string NroCuota { get; set; }
+        public string Vivienda { get; set; }
         public string Residente { get; set; }
-        public string Concepto { get; set; }
-        public string FechaAdeudo { get; set; }
-        public string Moneda { get; set; }
-        public string Importe { get; set; }  
+        public string Importe { get; set; }
+        public string Estado { get; set; }
+        public string FechaVencimiento { get; set; }
+        public string FechaPago { get; set; }
+        
     
     }
 }

@@ -17,7 +17,7 @@
                     <asp:HyperLink ID="lnkBuscar" runat="server" CssClass="bFirst buttonYP basicYP" > <%--<img src="<%: ResolveUrl("~/Images/icons/light/buscar.png") %>" class="icon" alt="">--%><span>Buscar &nbsp;</span> </asp:HyperLink>
                 </span>
                 <span>
-                    <asp:HyperLink ID="lnkNuevo" runat="server" CssClass="bFirst buttonYP basicYP" NavigateUrl="~/Residente/Residente_reg.aspx"> <%--<img src="<%: ResolveUrl("~/Images/icons/light/nuevo.png") %>" class="icon" alt="">--%><span>Nuevo</span> </asp:HyperLink>
+                    <asp:HyperLink ID="lnkNuevo" runat="server" CssClass="bFirst buttonYP basicYP"  NavigateUrl="~/Residente/Residente_reg.aspx"> <%--<img src="<%: ResolveUrl("~/Images/icons/light/nuevo.png") %>" class="icon" alt="">--%><span>Nuevo</span> </asp:HyperLink>
                 </span>
             </div>
     </div>
@@ -39,14 +39,14 @@
             
         </div>
         
-        <div class="formRow">
+        <%--<div class="formRow">--%>
             <div class="widget">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
-                    <asp:GridView ID="grdListaResidentes" runat="server" AutoGenerateColumns="False" ShowHeader="true" ShowHeaderWhenEmpty="True" CssClass="sTable" Width="100%" DataKeyNames="Nombres" >
+                    <asp:GridView ID="grdListaResidentes" runat="server" AutoGenerateColumns="False" ShowHeader="true" ShowHeaderWhenEmpty="True" CssClass="sTable" Width="100%" DataKeyNames="Codigo" OnRowCommand="grdListaResidentes_RowCommand" >
                         <Columns>
-                            <asp:BoundField HeaderText="Item" DataField="ItemGrid" ControlStyle-Width="30px" />
-                            <asp:BoundField HeaderText="Tipo Doc." DataField="TipoDoc" />
+                            <asp:BoundField HeaderText="Item" DataField="Codigo" ControlStyle-Width="30px" />
+                            <asp:BoundField HeaderText="Tipo Doc." DataField="TipoDocumento" />
                             <asp:BoundField HeaderText="Nro. Doc." DataField="NroDocumento" />
                             <asp:BoundField HeaderText="Nombres" DataField="Nombres" />
                             <asp:BoundField HeaderText="Telefono" DataField="Telefono" />
@@ -66,6 +66,6 @@
             </asp:UpdatePanel>
             </div>
         </div>
-    </div>
+    <%--</div>--%>
 </asp:Content>
 

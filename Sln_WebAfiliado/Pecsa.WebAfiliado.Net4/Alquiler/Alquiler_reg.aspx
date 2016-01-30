@@ -13,7 +13,7 @@
                 <asp:Button ID="btnGrabar" runat="server" CssClass="hidden" />
             </span>
             <span>
-                <asp:HyperLink ID="lnkGrabar" runat="server" CssClass="bFirst buttonYP basicYP" NavigateUrl="javascript:jQuery('[id$=btnGrabar]').click();">
+                <asp:HyperLink ID="lnkGrabar" runat="server" CssClass="bFirst buttonYP basicYP" NavigateUrl="javascript:jQuery('[id$=btnGrabar]').click();void(0);">
                 <img src="<%: ResolveUrl("~/Images/icons/light/create.png") %>" class="icon" alt=""><span>Grabar</span>
                 </asp:HyperLink>
             </span>
@@ -72,10 +72,20 @@
                   <asp:Label ID="Label1" runat="server" Text="Nombres"></asp:Label> 
             </span>
             <span class="span8">
-                <asp:TextBox ID="TextBox1" runat="server" Enabled="false"></asp:TextBox>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:TextBox ID="txtResidente" runat="server" Enabled="false"></asp:TextBox>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="grdListaResidentes" EventName="RowCommand"/>
+                    </Triggers>
+                </asp:UpdatePanel>
+            
             </span>
             <span class="span2">
-                <a href="#" title="" class="wButton greenwB m2"><span>Buscar</span></a>
+                <a href="javascript:jQuery('[id$=btnBuscarResidente]').click();void(0);" title="" class="wButton greenwB m2"><span>Buscar</span></a>
+                <asp:Button ID="btnBuscarResidente" runat="server" OnClick="btnBuscarResidente_Click" CssClass="hidden" />
+                
             </span>
         </div>
          <div class="formRow">
@@ -126,4 +136,81 @@
             </span>
         </div>    
     </div>
+
+    <div id="modal-Residente">
+        <fieldset>
+            <div class="wrapper">
+                <div class="widget">
+                    <div class="titleYP">
+                        <h6>Lista de Residentes</h6>
+                        <div class="textR">
+                            <span>
+                                <asp:HyperLink ID="HyperLink11" runat="server" CssClass="bFirst buttonYP basicYP" NavigateUrl="javascript:$('#modal-Residente').dialog('close');void(0);">
+                        <span>Cancelar</span>
+                                </asp:HyperLink>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="fluid">
+                        <div class="formRow">
+                            <div class="widget">
+                                <asp:UpdatePanel ID="UpdatePanel9" runat="server">
+                                    <ContentTemplate>
+                                         <asp:GridView ID="grdListaResidentes" runat="server" AutoGenerateColumns="False" ShowHeader="true" ShowHeaderWhenEmpty="True" CssClass="sTable" Width="100%" 
+                                             DataKeyNames="Nombres" 
+                                             OnRowCommand="grdListaResidentes_RowCommand">
+                                        <Columns>
+                                            <asp:BoundField HeaderText="Item" DataField="ItemGrid" ControlStyle-Width="30px" />
+                                            <asp:BoundField HeaderText="Tipo Doc." DataField="TipoDoc" />
+                                            <asp:BoundField HeaderText="Nro. Doc." DataField="NroDocumento" />
+                                            <asp:BoundField HeaderText="Nombres" DataField="Nombres" />
+                                            <asp:BoundField HeaderText="Telefono" DataField="Telefono" />
+                                            <asp:BoundField HeaderText="Celular" DataField="Celular" />
+                                            <asp:BoundField HeaderText="Correo Electronico" DataField="Correo" />
+                                            <asp:TemplateField HeaderStyle-Width="25px" ItemStyle-HorizontalAlign="Center">
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="btnSelectCC" runat="server" CommandName="SelectCC" ImageUrl="~/Images/icons/light/select.png" />
+                                                </ItemTemplate>
+                                                <HeaderStyle Width="25px" />
+                                                <ItemStyle HorizontalAlign="Center" />
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>
+                                        
+                          
+                                    </ContentTemplate>
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="btnBuscarResidente" EventName="Click" />
+                                    </Triggers>
+                                </asp:UpdatePanel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <asp:HiddenField id="hddCodigo" runat="server"></asp:HiddenField>
+    
+    <script>
+
+        function openAsociarResidente() {
+            $(".ui-dialog-titlebar").hide();
+            $("#modal-Residente").dialog('open');
+        }
+
+        function successResidente() {
+            $("#modal-Residente").dialog('close');
+        }
+
+        $("#modal-Residente").dialog({
+            autoOpen: false,
+            resizable: false,
+            closeOnEscape: false,
+            modal: true,
+            width: 800
+        }).parent().appendTo('.form');
+
+
+    </script>
 </asp:Content>

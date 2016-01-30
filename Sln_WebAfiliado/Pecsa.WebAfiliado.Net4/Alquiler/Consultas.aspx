@@ -6,7 +6,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="titleYP">
         <%--<img src="<%: ResolveUrl("~/Images/icons/dark/list.png") %>" alt="" class="titleIcon" />--%>
-        <h6>Cuotas por Cobrar</h6>
+        <h6>consulta de Pagos</h6>
     </div>
 
     <div class="fluid">
@@ -22,10 +22,13 @@
                 </asp:DropDownList>
             </span>
             <span class="span2">
-                <asp:Label ID="Label4" runat="server" Text="Número"></asp:Label>
+                <asp:Label ID="Label4" runat="server" Text="Estado"></asp:Label>
             </span>
             <span class="span3">
-                <asp:TextBox ID="txtNúmero" runat="server" ></asp:TextBox>
+                 <asp:DropDownList ID="ddlEstado" runat="server">
+                    <asp:ListItem>Cancelado</asp:ListItem>
+                    <asp:ListItem>Pendiente</asp:ListItem>                    
+                </asp:DropDownList>
             </span>
             <span class="span2">
                 <a href="#" title="" class="button greenB"><span>Buscar</span></a>
@@ -44,13 +47,13 @@
         </div>
         <div class="formRow">
             <span class="span2">
-                <asp:Label ID="Label8" runat="server" Text="E. Inicio"></asp:Label>
+                <asp:Label ID="Label8" runat="server" Text="Fec. Inicio"></asp:Label>
             </span>
             <span class="span3">
                 <asp:TextBox ID="TextBox3" runat="server" CssClass="datepicker"></asp:TextBox>
             </span>
             <span class="span2">
-                <asp:Label ID="Label9" runat="server" Text="E. Final"></asp:Label>
+                <asp:Label ID="Label9" runat="server" Text="Fec.  Final"></asp:Label>
             </span>
             <span class="span3">
                 <asp:TextBox ID="TextBox2" runat="server" CssClass="datepicker"></asp:TextBox>
@@ -61,17 +64,16 @@
             <div class="widget">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
-                    <asp:GridView ID="grdListaCuotasxCobrar" runat="server" AutoGenerateColumns="False" ShowHeader="true" ShowHeaderWhenEmpty="True" CssClass="sTable" Width="100%" DataKeyNames="Numero" >
+                    <asp:GridView ID="grdListaCuotasxCobrar" runat="server" AutoGenerateColumns="False" ShowHeader="true" ShowHeaderWhenEmpty="True" CssClass="sTable" Width="100%" DataKeyNames="NroCuota" >
                         <Columns>
-                            <asp:BoundField HeaderText="Item" DataField="ItemGrid" ControlStyle-Width="30px" />
-                            <asp:BoundField HeaderText="Ubicación" DataField="Ubicacion" />
-                            <asp:BoundField HeaderText="Número" DataField="Numero" />
+                            <asp:BoundField HeaderText="# Cuota" DataField="NroCuota" ControlStyle-Width="30px" />
+                            <asp:BoundField HeaderText="Vivienda" DataField="Vivienda" />
                             <asp:BoundField HeaderText="Residente" DataField="Residente" />
-                            <asp:BoundField HeaderText="Concepto" DataField="Concepto" />
-                            <asp:BoundField HeaderText="Fecha Adeudo" DataField="FechaAdeudo" />
-                            <asp:BoundField HeaderText="Moneda" DataField="Moneda" />
                             <asp:BoundField HeaderText="Importe" DataField="Importe" />
-                            
+                            <asp:BoundField HeaderText="Estado" DataField="Estado" />
+                            <asp:BoundField HeaderText="Fecha Vencimiento" DataField="FechaVencimiento" />
+                            <asp:BoundField HeaderText="Fecha Pago" DataField="FechaPago" />
+                                                        
                         </Columns>
                     </asp:GridView>
                 </ContentTemplate>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Residente_reg.aspx.cs" Inherits="Pecsa.WebAfiliado.Net4.Residentes.Residente_reg" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Residente_reg.aspx.cs" Inherits="IU.WebCondominios.Net4.Residentes.Residente_reg" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
@@ -10,17 +10,19 @@
         <h6>Registro de Residentes</h6>
         <div class="textR">
             <span>
-                <asp:Button ID="btnGrabar" runat="server" CssClass="hidden" OnClick="btnGrabar_Click"  />
+                <asp:Button ID="btnGrabar" runat="server" CssClass="hidden" OnClick="btnGrabar_Click" OnClientClick="return valida();"  />
             </span>
             <span>
-                <asp:HyperLink ID="HyperLink1" runat="server" CssClass="bFirst buttonYP basicYP"  NavigateUrl="javascript:jQuery('[id$=btnGrabar]').click();">
+                <asp:HyperLink ID="HyperLink1" runat="server" CssClass="bFirst buttonYP basicYP"  NavigateUrl="javascript:jQuery('[id$=btnGrabar]').click();void(0);">
                     <%--<img src="<%: ResolveUrl("~/Images/icons/light/create.png") %>" class="icon" alt="">--%>
                     <span>Grabar</span>
                 </asp:HyperLink>
             </span>
         </div>
     </div>
-    <div class="fluid">
+    <asp:UpdatePanel ID="updateResi" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+            <div class="fluid">
         <div class="formRow">
             <span class="span2">               
                      <asp:Label ID="Label1" runat="server" Text="Código"></asp:Label>              
@@ -129,7 +131,13 @@
             </span>
         </div>
     </div>
-        <div id="modal-Mensaje">
+            
+    </ContentTemplate>  
+        <Triggers>
+           
+        </Triggers>
+    </asp:UpdatePanel>
+    <div id="modal-Mensaje">
         <fieldset>
             <div class="wrapper">
                 <div class="widget">
@@ -152,13 +160,11 @@
             </div>
         </fieldset>
     </div>
+    <asp:HiddenField ID="hddCodigoResidente" runat="server" />
 
     <script type="text/javascript">
 
-        $('[id$=btnGrabar]').click(function () {
-            valida();
-        });
-
+        
         function mostrarMensaje(valor) {
             $(".ui-dialog-titlebar").hide();
             $("#valorMensaje").html(valor);
@@ -180,26 +186,14 @@
             var ApePat = $('[id$=TextBox2]').val();
 
             var dni = $('[id$=TextBox5]').val();
-            var dni1 = "40530678";
+            
 
-            if (nombre == "" || ApeMat == "" || ApeMat == "") {
-                alert("Ingrese los datos necesarios");
-                return false;
-            }
-
-            if (dni == dni1) {
-                alert("El residente ya se encuentra registrado");
+            if (nombre == '' || ApeMat == '' || ApeMat == '' || dni=='') {
+                mostrarMensaje('Ingrese los datos necesarios');
                 return false;
             }
 
             return true;
-            //var mensaje = "";
-            //if (dni == "123")
-            //{
-            //    mensaje = "Debe ingresar el numero de DNI";
-            //}
-            alert(dni);
-
         }
 
     </script>

@@ -24,7 +24,7 @@
 	# inferior
 ==================================================*/
 
-.hidden { visibility: hidden; }
+.hidden { visibility: hidden; width: 0px; }
 /* #Switcher
 ================================================== */
 
