@@ -17,7 +17,8 @@ namespace CondominioService.MasterTables.Persistencia
             get
             {
                 if (_Fabrica == null)
-                {
+                {   
+
                     var _Conf = new Configuration();
                     _Conf.SetProperty("connection.provider", "NHibernate.Connection.DriverConnectionProvider");
                     _Conf.SetProperty("connection.driver_class", "NHibernate.Driver.SqlClientDriver");
