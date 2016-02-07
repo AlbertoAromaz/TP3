@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace CondominioService.MasterTables.Dominio
+namespace CondominioService.Contrato.Dominio
 {
     [DataContract]
     public class TipoVivienda

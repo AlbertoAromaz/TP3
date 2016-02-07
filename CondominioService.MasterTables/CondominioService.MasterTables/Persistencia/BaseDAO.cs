@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using NHibernate;
 
-namespace CondominioService.MasterTables.Persistencia
+namespace CondominioService.Contrato.Persistencia
 {
     public class BaseDAO<Entidad, Id>
     {

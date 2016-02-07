@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MySql.Data.MySqlClient;
-using CondominioService.MasterTables.Dominio;
-namespace CondominioService.MasterTables.Persistencia
+using CondominioService.Contrato.Dominio;
+namespace CondominioService.Contrato.Persistencia
 {
     public class ViviendaDAO:BaseDAO<Vivienda, int>
     {

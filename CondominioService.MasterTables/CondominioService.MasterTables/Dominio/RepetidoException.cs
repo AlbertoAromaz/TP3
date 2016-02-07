@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace CondominioService.MasterTables.Dominio
+namespace CondominioService.Contrato.Dominio
 {
     [DataContract]
     public class RepetidoException
