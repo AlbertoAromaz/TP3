@@ -170,8 +170,8 @@ GO
 CREATE TABLE [dbo].[t_costoxvivienda](
 	[CodigoCostoxVivienda] [int] IDENTITY(1,1) NOT NULL,
 	[CodigoVivienda] [int] NOT NULL,
-	[FechaIniVigencia] [datetime] NULL,
-	[FechaFinVigencia] [datetime] NULL,
+	[FechaIniVigencia] [date] NULL,
+	[FechaFinVigencia] [date] NULL,
 	[Costo][decimal](10,2) NOT NULL,
 	[Estado] [char](1) NULL,
 	[UsuarioCreacion] [varchar](60) NULL,

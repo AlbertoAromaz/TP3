@@ -1,0 +1,8 @@
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\bin\CondominioService.Facturacion.dll.config
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\bin\CondominioService.Facturacion.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\bin\CondominioService.Facturacion.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\bin\Iesi.Collections.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\bin\NHibernate.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.csprojResolveAssemblyReference.cache

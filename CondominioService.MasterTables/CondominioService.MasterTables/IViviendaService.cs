@@ -32,8 +32,7 @@ namespace CondominioService.MasterTables
         [OperationContract]
         List<Vivienda> BuscarVivienda(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda);
 
-        [OperationContract]
-        decimal ObtenerCostoDeVivienda(int codigoVivienda, DateTime fechaContrato);
+        
 
     }
 }

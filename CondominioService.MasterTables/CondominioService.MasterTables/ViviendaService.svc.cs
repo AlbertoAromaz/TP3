@@ -54,6 +54,9 @@ namespace CondominioService.MasterTables
 
 
         #endregion
+
+
+        #region methods
         /// <summary>
         /// 
         /// </summary>
@@ -265,16 +268,7 @@ namespace CondominioService.MasterTables
             return lstVivienda;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="codigoVivienda"></param>
-        /// <param name="fechaContrato"></param>
-        /// <returns></returns>
-        public decimal ObtenerCostoDeVivienda(int codigoVivienda, DateTime fechaContrato)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         #region Validaciones
 
@@ -296,6 +290,8 @@ namespace CondominioService.MasterTables
             return lstVivienda.Any(r => (action == Utility.Tables.Action.Insertar && r.Ubicacion.CodigoUbicacion == codigoUbicacion && r.NumeroVivienda == numeroVivienda)
                                        || (action == Utility.Tables.Action.Actualizar && r.CodigoVivienda != codigoVivienda && r.Ubicacion.CodigoUbicacion == codigoUbicacion && r.NumeroVivienda == numeroVivienda));
         }
+        #endregion
+
         #endregion
 
 

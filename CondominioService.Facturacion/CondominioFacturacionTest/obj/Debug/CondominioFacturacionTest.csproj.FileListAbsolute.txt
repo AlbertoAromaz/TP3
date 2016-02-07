@@ -1,0 +1,5 @@
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\bin\Debug\CondominioFacturacionTest.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\bin\Debug\CondominioFacturacionTest.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.csprojResolveAssemblyReference.cache
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.pdb

@@ -1,0 +1,5 @@
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioContratoAquilerTest\bin\Debug\CondominioContratoAquilerTest.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioContratoAquilerTest\bin\Debug\CondominioContratoAquilerTest.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioContratoAquilerTest\obj\Debug\CondominioContratoAquilerTest.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioContratoAquilerTest\obj\Debug\CondominioContratoAquilerTest.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioContratoAquilerTest\obj\Debug\CondominioContratoAquilerTest.csprojResolveAssemblyReference.cache

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondominioService.ContratoAquiler", "CondominioService.ContratoAquiler\CondominioService.ContratoAquiler.csproj", "{1AA63C26-D2FA-4024-AF77-64DA9051BDF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{EFF6FD32-96E5-475D-B7E3-A15404FC446E}"
+	ProjectSection(SolutionItems) = preProject
+		Librerias\Iesi.Collections.dll = Librerias\Iesi.Collections.dll
+		Librerias\NHibernate.dll = Librerias\NHibernate.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CondominioContratoAquilerTest", "CondominioContratoAquilerTest\CondominioContratoAquilerTest.csproj", "{A1DA8E85-1248-42A4-AA35-C4EE1F0D2709}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AA63C26-D2FA-4024-AF77-64DA9051BDF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA63C26-D2FA-4024-AF77-64DA9051BDF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA63C26-D2FA-4024-AF77-64DA9051BDF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA63C26-D2FA-4024-AF77-64DA9051BDF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1DA8E85-1248-42A4-AA35-C4EE1F0D2709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1DA8E85-1248-42A4-AA35-C4EE1F0D2709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1DA8E85-1248-42A4-AA35-C4EE1F0D2709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1DA8E85-1248-42A4-AA35-C4EE1F0D2709}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

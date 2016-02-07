@@ -1,0 +1,8 @@
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\CondominioService.ContratoAquiler.dll.config
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\CondominioService.ContratoAquiler.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\CondominioService.ContratoAquiler.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\Iesi.Collections.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\NHibernate.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.dll
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.csprojResolveAssemblyReference.cache
