@@ -33,7 +33,8 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Vivienda_lst.aspx");
+            RemoverSession();
+            Response.Redirect("~/Vivienda/Vivienda_lst.aspx", true);
         }
         #endregion
 
@@ -42,6 +43,8 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
         {
             try
             {
+                RemoverSession();
+
                 int codigoVivienda = (txtCodigoVivienda.Text==string.Empty)?0: int.Parse(txtCodigoVivienda.Text);
                 int codigoTipoVivienda = int.Parse(ddlTipoVivienda.SelectedValue);
                 int codigoUbicacion = int.Parse(ddlUbicacion.SelectedValue);
@@ -56,7 +59,7 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
                 else
                     proxyVivienda.ModificarVivienda(codigoTipoVivienda,codigoTipoVivienda, codigoUbicacion, numeroVivienda, metraje, tieneSalaComedor, nroCuartos, nroBanos);
 
-                Response.Redirect("Vivienda_lst.aspx");
+                Response.Redirect("~/Vivienda/Vivienda_lst.aspx", true);
             }
             catch(FaultException<ViviendaWS.RepetidoException> fe)
             {
@@ -64,16 +67,15 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
             }
         
         }
-        #endregion
 
         private void MostrarVivienda()
         {
-            string getRequestQueryStringVivienda = "";
-            getRequestQueryStringVivienda = Request.QueryString["CODIGO_VIVIENDA"];
-            if (getRequestQueryStringVivienda != null && getRequestQueryStringVivienda != string.Empty)
+            string getSessionVivienda = string.Empty;
+            getSessionVivienda = (Session["CODIGO_VIVIENDA"]!=null)? Session["CODIGO_VIVIENDA"].ToString(): string.Empty;
+            if (getSessionVivienda != string.Empty)
             {
                 ViviendaWS.Vivienda viviendaResultado = new ViviendaWS.Vivienda();
-                viviendaResultado = proxyVivienda.ObtenerVivienda(int.Parse(getRequestQueryStringVivienda));
+                viviendaResultado = proxyVivienda.ObtenerVivienda(int.Parse(getSessionVivienda));
                 txtCodigoVivienda.Text = viviendaResultado.CodigoVivienda.ToString();
                 ddlTipoVivienda.SelectedValue = viviendaResultado.TipoVivienda.CodigoTipoVivienda.ToString();
                 ddlUbicacion.SelectedValue = viviendaResultado.Ubicacion.CodigoUbicacion.ToString();
@@ -84,12 +86,12 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
                 txtNroCuartos.Text = viviendaResultado.NroCuartos.ToString();
                 txtNroBanos.Text = viviendaResultado.NroBano.ToString();
             }
-        
+
         }
 
         private void LLenarCombos()
-        { 
-           // llenar Tipo Vivienda
+        {
+            // llenar Tipo Vivienda
             List<TipoViviendaWS.TipoVivienda> lstTipoVivienda = new List<TipoViviendaWS.TipoVivienda>();
             lstTipoVivienda = proxyTipoVivienda.ListarTipoVivienda().ToList();
             ddlTipoVivienda.DataTextField = "NombreTipoVivienda";
@@ -108,9 +110,10 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
 
         }
 
-        private bool Validar(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda, decimal metraje) {
+        private bool Validar(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda, decimal metraje)
+        {
 
-            if(codigoTipoVivienda==0)
+            if (codigoTipoVivienda == 0)
             {
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "dialogPrecioSucces", string.Format("mostraMensaje('{0}');", "Debe seleccionar el Tipo de Vivienda"), true);
                 return false;
@@ -128,10 +131,18 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
                 return false;
             }
 
-           
+
             return true;
 
         }
+        private void RemoverSession()
+        {
+            if (Session["CODIGO_VIVIENDA"] != null)
+                Session["CODIGO_VIVIENDA"] = null;
+        }
+        #endregion
+
+       
     
     
     }

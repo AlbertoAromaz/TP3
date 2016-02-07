@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using IU.WebCondominios.Net4.Util;
 
 namespace Pecsa.WebAfiliado.Net4.Vivienda
 {
@@ -29,7 +30,11 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            BuscarViviendas(int.Parse(ddlTipoVivienda.SelectedValue), int.Parse(ddlUbicacion.SelectedValue), int.Parse(txtNúmeroVivienda.Text));
+            int codigoTipoVivienda = (ddlTipoVivienda.SelectedValue == string.Empty) ? 0 : int.Parse(ddlTipoVivienda.SelectedValue);
+            int codigoUbicacion = (ddlUbicacion.SelectedValue == string.Empty) ? 0 : int.Parse(ddlUbicacion.SelectedValue);
+            int numeroVivienda = (txtNúmeroVivienda.Text == string.Empty) ? 0 : int.Parse(txtNúmeroVivienda.Text);
+
+            BuscarViviendas(codigoTipoVivienda, codigoUbicacion, numeroVivienda);
         }
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
@@ -40,9 +45,21 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
 
         protected void grdListaVivienda_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "Editar")
-            { 
-               // e.CommandArgument()
+            Session["CODIGO_VIVIENDA"] = null;
+
+            GridViewRow gvr = (GridViewRow)((Control)e.CommandSource).NamingContainer;
+            int index = gvr.RowIndex;
+            if (grdListaVivienda.DataKeys[index] != null)
+            {
+                int codigoVivienda = Validator.CInt32(grdListaVivienda.DataKeys[index]["CodigoVivienda"]);
+
+                if (e.CommandName == "Editar")
+                {
+
+                    Session["CODIGO_VIVIENDA"] = codigoVivienda;
+                    Response.Redirect("~/Vivienda/Vivienda_reg.aspx", true);
+                 }
+
             }
         }
 
@@ -74,10 +91,10 @@ namespace Pecsa.WebAfiliado.Net4.Vivienda
         private void BuscarViviendas(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda)
         {
             List<ViviendaWS.Vivienda> lstVivienda = new List<ViviendaWS.Vivienda>();
-            //lstVivienda = proxyVivienda.BuscarVivienda(codigoTipoVivienda, codigoUbicacion, numeroVivienda).ToList();
-            lstVivienda = proxyVivienda.ListarViviendas().Where(r => ((r.TipoVivienda.CodigoTipoVivienda == codigoTipoVivienda || codigoTipoVivienda == 0)
-                                                                          || (r.Ubicacion.CodigoUbicacion == codigoUbicacion || codigoUbicacion == 0)
-                                                                          || (r.NumeroVivienda == numeroVivienda || numeroVivienda == 0))).ToList();
+            lstVivienda = proxyVivienda.BuscarVivienda(codigoTipoVivienda, codigoUbicacion, numeroVivienda).ToList();
+            //lstVivienda = proxyVivienda.ListarViviendas().Where(r => ((r.TipoVivienda.CodigoTipoVivienda == codigoTipoVivienda || codigoTipoVivienda == 0)
+            //                                                              || (r.Ubicacion.CodigoUbicacion == codigoUbicacion || codigoUbicacion == 0)
+            //                                                              || (r.NumeroVivienda == numeroVivienda || numeroVivienda == 0))).ToList();
 
             PintarGrid(lstVivienda);
 

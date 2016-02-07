@@ -22,6 +22,12 @@ namespace CondominioService.MasterTables.Dominio
         public string UsuarioCreacion { get; set; }
 
         [DataMember]
+        public DateTime FechaCreacion { get; set; }
+
+        [DataMember]
         public string UsuarioModificacion { get; set; }
+
+        [DataMember]
+        public DateTime FechaModificacion { get; set; }
     }
 }

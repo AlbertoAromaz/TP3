@@ -16,7 +16,9 @@
     <property name="NroBano" column="NroBano" />
     <property name="Estado" column="Estado" />
     <property name="UsuarioCreacion" column="UsuarioCreacion" />
+    <property name="FechaCreacion" column="FechaCreacion" />
     <property name="UsuarioModificacion" column="UsuarioModificacion" />
+    <property column="FechaModificacion"  name="FechaModificacion" />
   </class>
 </hibernate-mapping>
 

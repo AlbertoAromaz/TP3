@@ -10,6 +10,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CodigoTipoVivienda" type="xs:int" />
       <xs:element minOccurs="0" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="NombreTipoVivienda" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UsuarioCreacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UsuarioModificacion" nillable="true" type="xs:string" />

@@ -58,8 +58,8 @@
                     <asp:GridView ID="grdListaVivienda" runat="server" AutoGenerateColumns="False" ShowHeader="true" ShowHeaderWhenEmpty="True" CssClass="sTable" Width="100%" DataKeyNames="CodigoVivienda" OnRowCommand="grdListaVivienda_RowCommand" >
                         <Columns>
                             <asp:BoundField HeaderText="Codigo" DataField="CodigoVivienda" ControlStyle-Width="30px" />
-                           <%-- <asp:BoundField HeaderText="Tipo" DataField="TipoVivienda.NombreTipoVivienda" />
-                            <asp:BoundField HeaderText="Ubicacion" DataField="Ubicacion.NombreUbicacion" />--%>
+                            <asp:BoundField HeaderText="Tipo" DataField="TipoVivienda.NombreTipoVivienda" />
+                            <asp:BoundField HeaderText="Ubicacion" DataField="Ubicacion.NombreUbicacion" />
                             <asp:BoundField HeaderText="Numero" DataField="NumeroVivienda" />
                             <asp:BoundField HeaderText="Metraje" DataField="Metraje" />
                             <asp:TemplateField HeaderStyle-Width="25px" ItemStyle-HorizontalAlign="Center">

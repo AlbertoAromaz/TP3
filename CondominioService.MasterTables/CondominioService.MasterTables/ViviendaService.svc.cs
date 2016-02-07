@@ -112,6 +112,9 @@ namespace CondominioService.MasterTables
                     NroBano = nroBanos,
                     Estado = Utility.Tables.Estado.Activo,
                     UsuarioCreacion = string.Empty,
+                    FechaCreacion = DateTime.Now,
+                    UsuarioModificacion = string.Empty,
+                    FechaModificacion = DateTime.Now,
                    
                     
                 };
@@ -195,6 +198,7 @@ namespace CondominioService.MasterTables
                     NroCuartos = nroCuartos,
                     NroBano = nroBanos,
                     UsuarioModificacion = string.Empty,
+                    FechaModificacion = DateTime.Now,
 
                 };
 
@@ -236,7 +240,8 @@ namespace CondominioService.MasterTables
         /// <returns></returns>
         public List<Vivienda> ListarViviendas()
         {
-            return ViviendaDAO.ListarTodos().ToList();
+            //return ViviendaDAO.ListarTodos().ToList();
+            return ViviendaDAO.ListarVivienda();
         }
 
         /// <summary>

@@ -4,6 +4,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CodigoVivienda" type="xs:int" />
       <xs:element minOccurs="0" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Metraje" type="xs:decimal" />
       <xs:element minOccurs="0" name="NroBano" type="xs:int" />
       <xs:element minOccurs="0" name="NroCuartos" type="xs:int" />
@@ -20,6 +22,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CodigoTipoVivienda" type="xs:int" />
       <xs:element minOccurs="0" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="NombreTipoVivienda" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UsuarioCreacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UsuarioModificacion" nillable="true" type="xs:string" />
@@ -30,6 +34,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CodigoUbicacion" type="xs:int" />
       <xs:element minOccurs="0" name="Estado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="NombreUbicacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UsuarioCreacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UsuarioModificacion" nillable="true" type="xs:string" />
