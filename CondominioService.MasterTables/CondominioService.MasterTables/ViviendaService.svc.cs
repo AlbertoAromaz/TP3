@@ -4,10 +4,10 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using CondominioService.MasterTables.Dominio;
-using CondominioService.MasterTables.Persistencia;
+using CondominioService.Contrato.Dominio;
+using CondominioService.Contrato.Persistencia;
 
-namespace CondominioService.MasterTables
+namespace CondominioService.Contrato
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "ViviendaService" en el código, en svc y en el archivo de configuración a la vez.
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ViviendaService.svc o ViviendaService.svc.cs en el Explorador de soluciones e inicie la depuración.
