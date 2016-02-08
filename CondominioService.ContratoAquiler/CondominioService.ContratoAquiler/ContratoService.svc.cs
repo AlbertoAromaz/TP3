@@ -6,34 +6,29 @@ using System.ServiceModel;
 using System.Text;
 using CondominioService.ContratoAquiler.Dominio;
 using CondominioService.ContratoAquiler.Persistencia;
+using System.Net;
+using System.ServiceModel.Web;
 
 namespace CondominioService.ContratoAquiler
 {
     public class ContratoService : IContratoService
     {
-        #region properties
-        private ContratoDAO contratoDAO = null;
-        private ContratoDAO ContratoDAO
-        {
-            get
-            {
-                if (contratoDAO == null)
-                    contratoDAO = new ContratoDAO();
-                return contratoDAO;
-            }
-        }            
-        #endregion
-
+        private ContratoDAO ContratoDAO = new ContratoDAO();
         public Dominio.Contrato GenerarContrato(Dominio.Contrato ContratoACrear)
         {
-            // Generar Contrato 
-            Contrato ContratoExiste = contratoDAO.ObtenerContrato(ContratoACrear.CodigoContrato);
-            // Generar Cuotas            
-            return contratoDAO.Crear(ContratoACrear);
+            Contrato ContratoExiste = ContratoDAO.ObtenerContrato(ContratoACrear.CodigoContrato);
+            if (ContratoExiste != null)  // si es nulo no existe
+            {
+                throw new WebFaultException<string>(
+                    "no se pudo", HttpStatusCode.InternalServerError);
+            }
+
+            return ContratoDAO.Crear(ContratoACrear);
         }
+
         public Dominio.Contrato Obtener(string codigocontrato)
         {
-            return contratoDAO.ObtenerContrato(int.Parse(codigocontrato));
+            return ContratoDAO.ObtenerContrato(int.Parse(codigocontrato));
         }
         public Dominio.Contrato ModificarContrato(Dominio.Contrato contratoAModificar)
         {

@@ -16,7 +16,7 @@ namespace CondominioContratoAquilerTest
 
 
         [TestMethod]
-        public void CREARTest()
+        public void CrearContrato()
         {
             // Prueba de creacion de contrato via HTTP POST
             string postdata = "{\"CodigoContrato\":\"10\",\"CodigoResidente\":\"10\",\"CodigoVivienda\":\"6\",\"CostoMensual\":\"500.00\",\"FechaContrato\":\"2017-12-02\",\"Periodo\":\"201602\"}";
@@ -33,15 +33,34 @@ namespace CondominioContratoAquilerTest
             string contratoJson = reader.ReadToEnd();
             JavaScriptSerializer js = new JavaScriptSerializer();
             Contrato contratoCreado = js.Deserialize<Contrato>(contratoJson);
-            Assert.AreEqual("10", contratoCreado.CodigoContrato);
+            Assert.AreEqual("50", contratoCreado.CodigoContrato);
             Assert.AreEqual("10", contratoCreado.CodigoResidente);
             Assert.AreEqual("6", contratoCreado.CodigoVivienda);
             Assert.AreEqual("500.00", contratoCreado.CostoMensual);
             Assert.AreEqual("2017-12-02", contratoCreado.FechaContrato);
-            Assert.AreEqual("201602", contratoCreado.Periodo);
+            Assert.AreEqual("201612", contratoCreado.Periodo);
         }
 
-              
+        [TestMethod]
+        public void ObtenerContrato()
+        {
+            // Prueba obtencion del contrato via HTTP GET
+            HttpWebRequest req2 = (HttpWebRequest)WebRequest
+                .Create("http://localhost:5364/ContratoService.svc/ContratoService/7");
+            req2.Method = "GET";
+            HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
+            StreamReader reader2 = new StreamReader(res2.GetResponseStream());
+            string contratoJson2 = reader2.ReadToEnd();
+            JavaScriptSerializer js2 = new JavaScriptSerializer();
+            Contrato contratoObtenido = js2.Deserialize<Contrato>(contratoJson2);
+
+            Assert.AreEqual("7", contratoObtenido.CodigoContrato.ToString());
+            Assert.AreEqual("9", contratoObtenido.CodigoResidente.ToString());
+            Assert.AreEqual("1", contratoObtenido.CodigoVivienda.ToString());
+            Assert.AreEqual("500.00", contratoObtenido.CostoMensual.ToString());
+            Assert.AreEqual("02/12/2016 05:00:00 a.m.", contratoObtenido.FechaContrato.ToString());
+            Assert.AreEqual("201602", contratoObtenido.Periodo.ToString());
+        }
 
         [TestMethod]
         public void ObtenerCostoAquilerMensual()
