@@ -15,7 +15,7 @@ namespace CondominioService.ContratoAquiler
     {
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "ContratoService", ResponseFormat = WebMessageFormat.Json)]
-        Contrato GenerarContrato(Contrato ContratoACrear);
+        Contrato GenerarContrato(Contrato contratoACrear);
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "ContratoService/{codigoContrato}", ResponseFormat = WebMessageFormat.Json)]

@@ -1,54 +1,76 @@
-﻿using System;
+﻿using CondominioService.ContratoAquiler.Dominio;
+using CondominioService.ContratoAquiler.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
-using CondominioService.ContratoAquiler.Dominio;
-using CondominioService.ContratoAquiler.Persistencia;
-using System.Net;
 using System.ServiceModel.Web;
+using System.Text;
 
 namespace CondominioService.ContratoAquiler
 {
     public class ContratoService : IContratoService
     {
-        private ContratoDAO ContratoDAO = new ContratoDAO();
-        public Dominio.Contrato GenerarContrato(Dominio.Contrato ContratoACrear)
+        private ContratoDAO contratoDAO = new ContratoDAO();
+        private ContratoDAO ContratoDAO
         {
-            Contrato ContratoExiste = ContratoDAO.ObtenerContrato(ContratoACrear.CodigoContrato);
-            if (ContratoExiste != null)  // si es nulo no existe
+            get
             {
-                throw new WebFaultException<string>(
-                    "no se pudo", HttpStatusCode.InternalServerError);
+                if (contratoDAO == null)
+                  contratoDAO = new ContratoDAO();
+                  return contratoDAO;                
             }
 
-            return ContratoDAO.Crear(ContratoACrear);
         }
+
+
+        
+        public Dominio.Contrato GenerarContrato(Dominio.Contrato contrato)
+        {
+            Contrato contratoACrear = new Contrato()
+            {
+                CodigoResidente = contrato.CodigoResidente,
+                CodigoVivienda = contrato.CodigoVivienda,
+                FechaContrato = contrato.FechaContrato,
+                FechaIniResidencia = contrato.FechaIniResidencia,
+                CostoMensual = contrato.CostoMensual,
+                Periodo = contrato.Periodo,
+                Estado = contrato.Estado,
+                UsuarioCreacion = contrato.UsuarioCreacion,
+                FechaCreacion = contrato.FechaCreacion,
+                UsuarioModificacion = contrato.UsuarioModificacion,
+                FechaModificacion = contrato.FechaModificacion
+
+            };
+            return ContratoDAO.Crear(contratoACrear);
+        }
+
 
         public Dominio.Contrato Obtener(string codigocontrato)
         {
-            return ContratoDAO.ObtenerContrato(int.Parse(codigocontrato));
+            return contratoDAO.ObtenerContrato(int.Parse(codigocontrato));
         }
+
+
         public Dominio.Contrato ModificarContrato(Dominio.Contrato contratoAModificar)
         {
             throw new NotImplementedException();
         }
-
         public void EliminarContrato(string codigoContrato)
         {
-            ContratoDAO.ObtenerContrato(int.Parse(codigoContrato));    
+            contratoDAO.ObtenerContrato(int.Parse(codigoContrato));    
 
         }
-
         public List<Dominio.Contrato> ListarContratos()
         {
-            return ContratoDAO.ListarContrato();
+            return contratoDAO.ListarContrato();
         }
 
         public decimal ObtenerCostoAquilerMensual(string codigoVivienda, string fechaContrato)
         {
-            return ContratoDAO.ObtenerCostoAquilerMensual(int.Parse(codigoVivienda), DateTime.Parse(fechaContrato));
+            return contratoDAO.ObtenerCostoAquilerMensual(int.Parse(codigoVivienda), DateTime.Parse(fechaContrato));
         }
     }
 }
