@@ -62,6 +62,31 @@ namespace CondominioContratoAquilerTest
         }
 
         [TestMethod]
+        public void ModificarContrato()
+        {
+            string posdata = "{\"Codigocontrto\":\"7\",\"CodigoResidente\":\"9\",\"CodigoVivienda\":\"1\",\"CostoMensual\":\"550.00\"}"; //JSON
+            byte[] data = Encoding.UTF8.GetBytes(posdata);
+            HttpWebRequest req = (HttpWebRequest)WebRequest
+                .Create("http://localhost:5364/ContratoService.svc/ContratoService");
+            req.Method = "PUT";
+            req.ContentLength = data.Length;
+            req.ContentType = "application/json";
+            var reqStream = req.GetRequestStream();
+            reqStream.Write(data, 0, data.Length);
+            HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+
+            StreamReader reader = new StreamReader(res.GetResponseStream());
+            string contratoJson = reader.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Contrato contratoCreado = js.Deserialize<Contrato>(contratoJson);
+            Assert.AreEqual("7", contratoCreado.CodigoContrato);
+            Assert.AreEqual("9", contratoCreado.CodigoResidente);
+            Assert.AreEqual("1", contratoCreado.CodigoVivienda);
+            Assert.AreEqual("550.00", contratoCreado.CostoMensual);
+
+        }
+
+        [TestMethod]
         public void ObtenerCostoAquilerMensual()
         {
             // Prueba de Obtener Costo Aquiler Mensual  vía HTTP GET

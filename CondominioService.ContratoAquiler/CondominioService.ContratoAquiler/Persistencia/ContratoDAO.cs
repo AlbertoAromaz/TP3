@@ -77,7 +77,20 @@ namespace CondominioService.ContratoAquiler.Persistencia
     }
     public Contrato ModificarContrato(Contrato ContratoAModificar)
     {
-        return null;
+        Contrato contratoModificado = null;
+        string sql = "UPDATE t_contrato SET CostoMensual = @cos WHERE codigocontrato = @codc";
+        using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena)) 
+        {
+            con.Open();
+            using (SqlCommand com = new SqlCommand(sql, con))
+            {
+                com.Parameters.Add(new SqlParameter("@codc", contratoModificado.CodigoContrato));
+                com.Parameters.Add(new SqlParameter("@cos",contratoModificado.CostoMensual));
+                com.ExecuteNonQuery();
+            }
+        }
+        contratoModificado = ObtenerContrato(ContratoAModificar.CodigoContrato);
+        return contratoModificado;
     }
 
     public void EliminarContrato(int codigocontrato)
