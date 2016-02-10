@@ -25,7 +25,6 @@ namespace CondominioService.ContratoAquiler
 
         }
 
-
         
         public Dominio.Contrato GenerarContrato(Dominio.Contrato contrato)
         {
@@ -34,14 +33,14 @@ namespace CondominioService.ContratoAquiler
                 CodigoResidente = contrato.CodigoResidente,
                 CodigoVivienda = contrato.CodigoVivienda,
                 FechaContrato = contrato.FechaContrato,
-                FechaIniResidencia = contrato.FechaIniResidencia,
+                //FechaIniResidencia = contrato.FechaIniResidencia,
                 CostoMensual = contrato.CostoMensual,
                 Periodo = contrato.Periodo,
-                Estado = contrato.Estado,
-                UsuarioCreacion = contrato.UsuarioCreacion,
-                FechaCreacion = contrato.FechaCreacion,
-                UsuarioModificacion = contrato.UsuarioModificacion,
-                FechaModificacion = contrato.FechaModificacion
+                //Estado = contrato.Estado,
+                //UsuarioCreacion = contrato.UsuarioCreacion,
+                //FechaCreacion = contrato.FechaCreacion,
+                //UsuarioModificacion = contrato.UsuarioModificacion,
+                //FechaModificacion = contrato.FechaModificacion
 
             };
             return ContratoDAO.Crear(contratoACrear);
@@ -56,13 +55,16 @@ namespace CondominioService.ContratoAquiler
 
         public Dominio.Contrato ModificarContrato(Dominio.Contrato contratoAModificar)
         {
-            throw new NotImplementedException();
+            return contratoDAO.ModificarContrato(contratoAModificar);
         }
+
         public void EliminarContrato(string codigoContrato)
         {
-            contratoDAO.ObtenerContrato(int.Parse(codigoContrato));    
+            contratoDAO.EliminarContrato(int.Parse(codigoContrato));    
 
         }
+
+
         public List<Dominio.Contrato> ListarContratos()
         {
             return contratoDAO.ListarContrato();

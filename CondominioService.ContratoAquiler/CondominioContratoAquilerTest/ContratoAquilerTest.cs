@@ -20,8 +20,7 @@ namespace CondominioContratoAquilerTest
             // Prueba de creacion de contrato via HTTP POST
             string postdata = "{\"CodigoResidente\":\"10\",\"CodigoVivienda\":\"6\",\"CostoMensual\":\"500.00\",\"FechaContrato\":\"02/12/2016\",\"Periodo\":\"201602\"}";
             byte[] data = Encoding.UTF8.GetBytes(postdata);
-            HttpWebRequest req = (HttpWebRequest)WebRequest
-                .Create("http://localhost:5364/ContratoService.svc/ContratoService");
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:5364/ContratoService.svc/ContratoService");
             req.Method = "POST";
             req.ContentLength = data.Length;
             req.ContentType = "application/json";
@@ -64,7 +63,8 @@ namespace CondominioContratoAquilerTest
         [TestMethod]
         public void ModificarContrato()
         {
-            string posdata = "{\"Codigocontrto\":\"7\",\"CodigoResidente\":\"9\",\"CodigoVivienda\":\"1\",\"CostoMensual\":\"550.00\"}"; //JSON
+            //string posdata = "{\"Codigocontrto\":\"7\",\"CodigoResidente\":\"9\",\"CodigoVivienda\":\"1\",\"CostoMensual\":\"550.00\"}"; //JSON
+            string posdata = "{\"Codigocontrto\":\"7\",\"CostoMensual\":\"550.00\"}"; //JSON
             byte[] data = Encoding.UTF8.GetBytes(posdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest
                 .Create("http://localhost:5364/ContratoService.svc/ContratoService");
@@ -80,10 +80,30 @@ namespace CondominioContratoAquilerTest
             JavaScriptSerializer js = new JavaScriptSerializer();
             Contrato contratoCreado = js.Deserialize<Contrato>(contratoJson);
             Assert.AreEqual("7", contratoCreado.CodigoContrato);
-            Assert.AreEqual("9", contratoCreado.CodigoResidente);
-            Assert.AreEqual("1", contratoCreado.CodigoVivienda);
-            Assert.AreEqual("550.00", contratoCreado.CostoMensual);
+            //Assert.AreEqual("9", contratoCreado.CodigoResidente);
+            //Assert.AreEqual("1", contratoCreado.CodigoVivienda);
+            Assert.AreEqual("500.00", contratoCreado.CostoMensual);
 
+        }
+
+        [TestMethod]
+        public void EliminarContrato()
+        {
+            HttpWebRequest req2 = (HttpWebRequest)WebRequest
+                .Create("http://localhost:5364/ContratoService.svc/ContratoService/7");
+            req2.Method = "DELETE";
+            req2.GetResponse();
+
+            // Obtener codigo eliminado
+            HttpWebRequest req3 = (HttpWebRequest)WebRequest
+                .Create("http://localhost:5364/ContratoService.svc/ContratoService/7");
+            req3.Method = "GET";
+            HttpWebResponse res3 = (HttpWebResponse)req3.GetResponse();
+            StreamReader reader2 = new StreamReader(res3.GetResponseStream());
+            string contratoJson2 = reader2.ReadToEnd();
+            JavaScriptSerializer js2 = new JavaScriptSerializer();
+            Contrato contratoObtenido = js2.Deserialize<Contrato>(contratoJson2);
+            Assert.AreEqual(null, contratoObtenido);
         }
 
         [TestMethod]
