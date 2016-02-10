@@ -12,24 +12,25 @@ namespace CondominioService.ContratoAquiler.Persistencia
     public Contrato GenerarContrato(Contrato contratoAgenerar)
         {
             Contrato contratoGenerado = null;
-            string sql = "INSERT INTO t_contrato VALUES (@codc, @codv, @codr, @fecc, @fecir, @cos, @per, @est, @usec, @feccr, @usem, @fecm)";
+            //string sql = "INSERT INTO t_contrato VALUES (@codc, @codv, @codr, @fecc, @fecir, @cos, @per, @est, @usec, @feccr, @usem, @fecm)";
+            string sql = "INSERT INTO t_contrato VALUES (@codv, @codr, @fecc, @cos, @per)";
             using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena)) 
             {
                 con.Open();
                 using (SqlCommand com = new SqlCommand(sql, con))
                 {
-                    com.Parameters.Add(new SqlParameter("@codc", contratoAgenerar.CodigoContrato));
+                    //com.Parameters.Add(new SqlParameter("@codc", contratoAgenerar.CodigoContrato));
                     com.Parameters.Add(new SqlParameter("@codv", contratoAgenerar.CodigoVivienda));
                     com.Parameters.Add(new SqlParameter("@codr", contratoAgenerar.CodigoResidente));
-                    com.Parameters.Add(new SqlParameter("@fecc", contratoAgenerar.FechaContrato));
-                    com.Parameters.Add(new SqlParameter("@fecir", contratoAgenerar.FechaIniResidencia));
+                    com.Parameters.Add(new SqlParameter("@fecc", contratoAgenerar.FechaContrato.Date));
+                    //com.Parameters.Add(new SqlParameter("@fecir", contratoAgenerar.FechaIniResidencia));
                     com.Parameters.Add(new SqlParameter("@cos", contratoAgenerar.CostoMensual));
                     com.Parameters.Add(new SqlParameter("@per",contratoAgenerar.Periodo));
-                    com.Parameters.Add(new SqlParameter("@est", contratoAgenerar.Estado));
-                    com.Parameters.Add(new SqlParameter("@usec",contratoAgenerar.UsuarioCreacion));
-                    com.Parameters.Add(new SqlParameter("@feccr", contratoAgenerar.FechaCreacion));
-                    com.Parameters.Add(new SqlParameter("@usem", contratoAgenerar.UsuarioModificacion));
-                    com.Parameters.Add(new SqlParameter("@fecm", contratoAgenerar.FechaModificacion));
+                    //com.Parameters.Add(new SqlParameter("@est", contratoAgenerar.Estado));
+                    //com.Parameters.Add(new SqlParameter("@usec",contratoAgenerar.UsuarioCreacion));
+                    //com.Parameters.Add(new SqlParameter("@feccr", contratoAgenerar.FechaCreacion));
+                    //com.Parameters.Add(new SqlParameter("@usem", contratoAgenerar.UsuarioModificacion));
+                    //com.Parameters.Add(new SqlParameter("@fecm", contratoAgenerar.FechaModificacion));
                     com.ExecuteNonQuery();  
                 }
  
@@ -57,14 +58,14 @@ namespace CondominioService.ContratoAquiler.Persistencia
                             CodigoVivienda = (int)resultado["codigovivienda"],
                             CodigoResidente = (int)resultado["codigoresidente"],
                             FechaContrato = (DateTime)resultado["fechacontrato"],
-                            FechaIniResidencia = (DateTime)resultado["fechainiresidencia"],
+                            //FechaIniResidencia = (DateTime)resultado["fechainiresidencia"],
                             CostoMensual = (decimal)resultado["costomensual"],
-                            Periodo = (int)resultado["periodo"],
-                            Estado = (string)resultado["estado"],
-                            UsuarioCreacion = (string)resultado["usuariocreacion"],
-                            FechaCreacion = (DateTime)resultado["fechacreacion"],
-                            UsuarioModificacion = (string)resultado["usuariomodificacion"],
-                            FechaModificacion = (DateTime)resultado["fechamodificacion"]                           
+                            Periodo = (int)resultado["periodo"] //,
+                            //Estado = (string)resultado["estado"],
+                            //UsuarioCreacion = (string)resultado["usuariocreacion"],
+                            //FechaCreacion = (DateTime)resultado["fechacreacion"],
+                            //UsuarioModificacion = (string)resultado["usuariomodificacion"],
+                            //FechaModificacion = (DateTime)resultado["fechamodificacion"]                           
 
                         };
                     }
@@ -144,6 +145,7 @@ namespace CondominioService.ContratoAquiler.Persistencia
             }
         }
     }
+
     public decimal ObtenerCostoAquilerMensual(int codigoVivienda, DateTime fechaContrato)
         {
             decimal costo = 0;

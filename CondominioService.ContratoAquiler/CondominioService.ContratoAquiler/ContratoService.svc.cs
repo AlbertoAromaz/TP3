@@ -26,23 +26,17 @@ namespace CondominioService.ContratoAquiler
         }
 
         
-        public Dominio.Contrato GenerarContrato(Dominio.Contrato contrato)
+        public Contrato GenerarContrato(Contrato contratoACrear)
         {
-            Contrato contratoACrear = new Contrato()
-            {
-                CodigoResidente = contrato.CodigoResidente,
-                CodigoVivienda = contrato.CodigoVivienda,
-                FechaContrato = contrato.FechaContrato,
-                //FechaIniResidencia = contrato.FechaIniResidencia,
-                CostoMensual = contrato.CostoMensual,
-                Periodo = contrato.Periodo,
-                //Estado = contrato.Estado,
-                //UsuarioCreacion = contrato.UsuarioCreacion,
-                //FechaCreacion = contrato.FechaCreacion,
-                //UsuarioModificacion = contrato.UsuarioModificacion,
-                //FechaModificacion = contrato.FechaModificacion
+            // Obtener codigo
+            Contrato ContratoExiste = contratoDAO.ObtenerContrato(contratoACrear.CodigoContrato);
 
-            };
+            if (ContratoExiste != null)
+            {
+                throw new WebFaultException<string>(
+                    "Contrato imposible", HttpStatusCode.InternalServerError);
+            }
+           
             return ContratoDAO.Crear(contratoACrear);
         }
 
