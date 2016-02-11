@@ -1,4 +1,5 @@
-﻿<%@ ServiceHost Language="C#" 
+﻿<%@ ServiceHost 
+    Language="C#" 
     Debug="true" 
     Service="CondominioService.ContratoAquiler.ContratoService" 
     CodeBehind="ContratoService.svc.cs" 

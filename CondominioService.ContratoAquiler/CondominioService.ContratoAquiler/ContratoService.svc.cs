@@ -1,99 +1,72 @@
-﻿using System;
+﻿using CondominioService.ContratoAquiler.Dominio;
+using CondominioService.ContratoAquiler.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
-using CondominioService.ContratoAquiler.Dominio;
-using CondominioService.ContratoAquiler.Persistencia;
 
 namespace CondominioService.ContratoAquiler
 {
-    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "ContratoService" en el código, en svc y en el archivo de configuración a la vez.
-    // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ContratoService.svc o ContratoService.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class ContratoService : IContratoService
     {
-
-        #region properties
-        private ContratoDAO contratoDAO = null;
+        private ContratoDAO contratoDAO = new ContratoDAO();
         private ContratoDAO ContratoDAO
         {
             get
             {
                 if (contratoDAO == null)
-                    contratoDAO = new ContratoDAO();
-                return contratoDAO;
+                  contratoDAO = new ContratoDAO();
+                  return contratoDAO;                
             }
+
         }
 
-             
-
-
-        #endregion
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="ContratoACrear"></param>
-        /// <returns></returns>
-        public Dominio.Contrato GenerarContrato(Dominio.Contrato ContratoACrear)
+        
+        public Contrato GenerarContrato(Contrato contratoACrear)
         {
+            // Obtener codigo
+            Contrato ContratoExiste = contratoDAO.ObtenerContrato(contratoACrear.CodigoContrato);
 
-            // Generar Contrato
-
-            // Generar Cuotas
-            throw new NotImplementedException();
+            if (ContratoExiste != null)
+            {
+                throw new WebFaultException<string>(
+                    "Contrato imposible", HttpStatusCode.InternalServerError);
+            }
+           
+            return ContratoDAO.Crear(contratoACrear);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="codigoContrato"></param>
-        /// <returns></returns>
-        public Dominio.Contrato ObtenerContrato(string codigoContrato)
+
+        public Dominio.Contrato Obtener(string codigocontrato)
         {
-            throw new NotImplementedException();
+            return contratoDAO.ObtenerContrato(int.Parse(codigocontrato));
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="contratoAModificar"></param>
-        /// <returns></returns>
+
         public Dominio.Contrato ModificarContrato(Dominio.Contrato contratoAModificar)
         {
-            throw new NotImplementedException();
+            return contratoDAO.ModificarContrato(contratoAModificar);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="codigoContrato"></param>
-        public void EliminarAlumno(string codigoContrato)
+        public void EliminarContrato(string codigoContrato)
         {
-            throw new NotImplementedException();
+            contratoDAO.EliminarContrato(int.Parse(codigoContrato));    
+
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+
         public List<Dominio.Contrato> ListarContratos()
         {
-            throw new NotImplementedException();
+            return contratoDAO.ListarContrato();
         }
 
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="codigoVivienda"></param>
-        /// <param name="fechaContrato"></param>
-        /// <returns></returns>
         public decimal ObtenerCostoAquilerMensual(string codigoVivienda, string fechaContrato)
         {
-            return ContratoDAO.ObtenerCostoAquilerMensual(int.Parse(codigoVivienda), DateTime.Parse(fechaContrato));
+            return contratoDAO.ObtenerCostoAquilerMensual(int.Parse(codigoVivienda), DateTime.Parse(fechaContrato));
         }
     }
 }
