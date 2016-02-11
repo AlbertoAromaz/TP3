@@ -616,9 +616,6 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IViviendaService/BuscarVivienda", ReplyAction="http://tempuri.org/IViviendaService/BuscarViviendaResponse")]
         Pecsa.WebAfiliado.Net4.ViviendaWS.Vivienda[] BuscarVivienda(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IViviendaService/ObtenerCostoDeVivienda", ReplyAction="http://tempuri.org/IViviendaService/ObtenerCostoDeViviendaResponse")]
-        decimal ObtenerCostoDeVivienda(int codigoVivienda, System.DateTime fechaContrato);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -670,10 +667,6 @@ namespace Pecsa.WebAfiliado.Net4.ViviendaWS {
         
         public Pecsa.WebAfiliado.Net4.ViviendaWS.Vivienda[] BuscarVivienda(int codigoTipoVivienda, int codigoUbicacion, int numeroVivienda) {
             return base.Channel.BuscarVivienda(codigoTipoVivienda, codigoUbicacion, numeroVivienda);
-        }
-        
-        public decimal ObtenerCostoDeVivienda(int codigoVivienda, System.DateTime fechaContrato) {
-            return base.Channel.ObtenerCostoDeVivienda(codigoVivienda, fechaContrato);
         }
     }
 }

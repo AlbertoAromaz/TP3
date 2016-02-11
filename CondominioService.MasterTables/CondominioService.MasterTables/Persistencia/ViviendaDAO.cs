@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-<<<<<<< HEAD
 using System.Data.SqlClient;
 using CondominioService.MasterTables.Dominio;
+
+
 namespace CondominioService.MasterTables.Persistencia
-=======
-using MySql.Data.MySqlClient;
-using CondominioService.Contrato.Dominio;
-namespace CondominioService.Contrato.Persistencia
->>>>>>> 926ee07cbb64c592e7408bebdf4d9c43ea305b3a
 {
     public class ViviendaDAO:BaseDAO<Vivienda, int>
     {

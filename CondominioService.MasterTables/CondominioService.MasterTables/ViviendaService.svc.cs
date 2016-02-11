@@ -4,10 +4,10 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using CondominioService.Contrato.Dominio;
-using CondominioService.Contrato.Persistencia;
+using CondominioService.MasterTables.Dominio;
+using CondominioService.MasterTables.Persistencia;
 
-namespace CondominioService.Contrato
+namespace CondominioService.MasterTables
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "ViviendaService" en el código, en svc y en el archivo de configuración a la vez.
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ViviendaService.svc o ViviendaService.svc.cs en el Explorador de soluciones e inicie la depuración.
@@ -18,6 +18,7 @@ namespace CondominioService.Contrato
         private const string actionInsertar = "I";
 
         #endregion
+
         #region properties
         private ViviendaDAO viviendaDAO = null;
         private ViviendaDAO ViviendaDAO
@@ -54,7 +55,6 @@ namespace CondominioService.Contrato
 
 
         #endregion
-
 
         #region methods
         /// <summary>

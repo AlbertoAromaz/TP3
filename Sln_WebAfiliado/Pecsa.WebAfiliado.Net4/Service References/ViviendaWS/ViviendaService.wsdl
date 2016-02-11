@@ -49,12 +49,6 @@
   <wsdl:message name="IViviendaService_BuscarVivienda_OutputMessage">
     <wsdl:part name="parameters" element="tns:BuscarViviendaResponse" />
   </wsdl:message>
-  <wsdl:message name="IViviendaService_ObtenerCostoDeVivienda_InputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerCostoDeVivienda" />
-  </wsdl:message>
-  <wsdl:message name="IViviendaService_ObtenerCostoDeVivienda_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerCostoDeViviendaResponse" />
-  </wsdl:message>
   <wsdl:portType name="IViviendaService">
     <wsdl:operation name="CrearVivienda">
       <wsdl:input wsaw:Action="http://tempuri.org/IViviendaService/CrearVivienda" message="tns:IViviendaService_CrearVivienda_InputMessage" />
@@ -81,10 +75,6 @@
     <wsdl:operation name="BuscarVivienda">
       <wsdl:input wsaw:Action="http://tempuri.org/IViviendaService/BuscarVivienda" message="tns:IViviendaService_BuscarVivienda_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IViviendaService/BuscarViviendaResponse" message="tns:IViviendaService_BuscarVivienda_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ObtenerCostoDeVivienda">
-      <wsdl:input wsaw:Action="http://tempuri.org/IViviendaService/ObtenerCostoDeVivienda" message="tns:IViviendaService_ObtenerCostoDeVivienda_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IViviendaService/ObtenerCostoDeViviendaResponse" message="tns:IViviendaService_ObtenerCostoDeVivienda_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IViviendaService" type="tns:IViviendaService">
@@ -142,15 +132,6 @@
     </wsdl:operation>
     <wsdl:operation name="BuscarVivienda">
       <soap:operation soapAction="http://tempuri.org/IViviendaService/BuscarVivienda" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ObtenerCostoDeVivienda">
-      <soap:operation soapAction="http://tempuri.org/IViviendaService/ObtenerCostoDeVivienda" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

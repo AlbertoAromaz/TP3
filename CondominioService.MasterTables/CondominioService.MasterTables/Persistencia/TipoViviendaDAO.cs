@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using CondominioService.Contrato.Dominio;
+using CondominioService.MasterTables.Dominio;
 
-namespace CondominioService.Contrato.Persistencia
+namespace CondominioService.MasterTables.Persistencia
 {
     public class TipoViviendaDAO : BaseDAO<TipoVivienda, int>
     {

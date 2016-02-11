@@ -6,7 +6,7 @@ using NHibernate;
 using NHibernate.Cfg;
 
 
-namespace CondominioService.Contrato.Persistencia
+namespace CondominioService.MasterTables.Persistencia
 {
     public class NHibernateHelper
     {

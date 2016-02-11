@@ -96,19 +96,4 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ObtenerCostoDeVivienda">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="codigoVivienda" type="xs:int" />
-        <xs:element minOccurs="0" name="fechaContrato" type="xs:dateTime" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ObtenerCostoDeViviendaResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ObtenerCostoDeViviendaResult" type="xs:decimal" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
 </xs:schema>

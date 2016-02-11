@@ -4,9 +4,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using CondominioService.Contrato.Dominio;
+using CondominioService.MasterTables.Dominio;
 
-namespace CondominioService.Contrato
+namespace CondominioService.MasterTables
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IUbicacion" en el código y en el archivo de configuración a la vez.
     [ServiceContract]

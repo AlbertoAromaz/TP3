@@ -4,10 +4,10 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using CondominioService.Contrato.Dominio;
-using CondominioService.Contrato.Persistencia;
+using CondominioService.MasterTables.Dominio;
+using CondominioService.MasterTables.Persistencia;
 
-namespace CondominioService.Contrato
+namespace CondominioService.MasterTables
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Ubicacion" en el código, en svc y en el archivo de configuración a la vez.
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Ubicacion.svc o Ubicacion.svc.cs en el Explorador de soluciones e inicie la depuración.

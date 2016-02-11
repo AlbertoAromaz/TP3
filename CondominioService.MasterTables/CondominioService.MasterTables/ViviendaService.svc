@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="CondominioService.Contrato.ViviendaService" CodeBehind="ViviendaService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CondominioService.MasterTables.ViviendaService" CodeBehind="ViviendaService.svc.cs" %>
