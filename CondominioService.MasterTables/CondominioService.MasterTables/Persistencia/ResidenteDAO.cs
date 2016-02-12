@@ -20,7 +20,7 @@ namespace CondominioService.MasterTables.Persistencia
             try
             {
 
-                string sql = "SP_RESIDENTE_LISTAR";
+                string sql = "SP_RESIDENTE_LISTAR"; 
                 using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena))
                 {
                     con.Open();
