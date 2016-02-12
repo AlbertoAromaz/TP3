@@ -13,60 +13,48 @@ namespace CondominioService.ContratoAquiler
 {
     public class ContratoService : IContratoService
     {
-        private ContratoDAO contratoDAO = new ContratoDAO();
-        private ContratoDAO ContratoDAO
+        private ContratoDAO dao = new ContratoDAO();
+
+        private Contrato CrearContrato(Contrato contratoACrear)
         {
-            get
-            {
-                if (contratoDAO == null)
-                  contratoDAO = new ContratoDAO();
-                  return contratoDAO;                
-            }
+            //Contrato ContratoExiste = dao.Obtener(contratoACrear.CodigoContrato);
 
-        }
-
-        
-        public Contrato GenerarContrato(Contrato contratoACrear)
-        {
-            // Obtener codigo
-            Contrato ContratoExiste = contratoDAO.ObtenerContrato(contratoACrear.CodigoContrato);
-
-            if (ContratoExiste != null)
-            {
-                throw new WebFaultException<string>(
-                    "Contrato imposible", HttpStatusCode.InternalServerError);
-            }
-           
-            return ContratoDAO.Crear(contratoACrear);
+            //if (ContratoExiste != null)
+            //{
+            //    throw new WebFaultException<string>(
+            //        "Contrato imposible", HttpStatusCode.InternalServerError);
+            //}
+            return dao.ContratoGenerar(contratoACrear);
         }
 
 
-        public Dominio.Contrato Obtener(string codigocontrato)
+        public Contrato Obtener(string codigocontrato)
         {
-            return contratoDAO.ObtenerContrato(int.Parse(codigocontrato));
+            return dao.ObtenerContrato(int.Parse(codigocontrato));
         }
 
 
-        public Dominio.Contrato ModificarContrato(Dominio.Contrato contratoAModificar)
+        public Contrato ModificarContrato(Contrato contratoAModificar)
         {
-            return contratoDAO.ModificarContrato(contratoAModificar);
+            return dao.ModificarContrato(contratoAModificar);
         }
 
         public void EliminarContrato(string codigoContrato)
         {
-            contratoDAO.EliminarContrato(int.Parse(codigoContrato));    
-
+            dao.EliminarContrato(int.Parse(codigoContrato));    
         }
 
 
-        public List<Dominio.Contrato> ListarContratos()
+        public List<Contrato> ListarContratos()
         {
-            return contratoDAO.ListarContrato();
+            return dao.ListarContrato();
         }
 
         public decimal ObtenerCostoAquilerMensual(string codigoVivienda, string fechaContrato)
         {
-            return contratoDAO.ObtenerCostoAquilerMensual(int.Parse(codigoVivienda), DateTime.Parse(fechaContrato));
+            return dao.ObtenerCostoAquilerMensual(int.Parse(codigoVivienda), DateTime.Parse(fechaContrato));
         }
+
+
     }
 }
