@@ -18,6 +18,9 @@
                     <span>Grabar</span>
                 </asp:HyperLink>
             </span>
+             <span>
+              <asp:LinkButton ID="lkbCancelar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="lkbCancelar_Click"><span>Cancelar</span></asp:LinkButton>
+            </span>
         </div>
     </div>
     <asp:UpdatePanel ID="updateResi" runat="server" UpdateMode="Conditional">

@@ -40,6 +40,12 @@
   <wsdl:message name="IResidenteService_listarResidentes_OutputMessage">
     <wsdl:part name="parameters" element="tns:listarResidentesResponse" />
   </wsdl:message>
+  <wsdl:message name="IResidenteService_buscarResidentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarResidentes" />
+  </wsdl:message>
+  <wsdl:message name="IResidenteService_buscarResidentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarResidentesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IResidenteService">
     <wsdl:operation name="CrearResidente">
       <wsdl:input wsaw:Action="http://tempuri.org/IResidenteService/CrearResidente" message="tns:IResidenteService_CrearResidente_InputMessage" />
@@ -61,6 +67,10 @@
     <wsdl:operation name="listarResidentes">
       <wsdl:input wsaw:Action="http://tempuri.org/IResidenteService/listarResidentes" message="tns:IResidenteService_listarResidentes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IResidenteService/listarResidentesResponse" message="tns:IResidenteService_listarResidentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarResidentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResidenteService/buscarResidentes" message="tns:IResidenteService_buscarResidentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResidenteService/buscarResidentesResponse" message="tns:IResidenteService_buscarResidentes_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IResidenteService" type="tns:IResidenteService">
@@ -106,6 +116,15 @@
     </wsdl:operation>
     <wsdl:operation name="listarResidentes">
       <soap:operation soapAction="http://tempuri.org/IResidenteService/listarResidentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarResidentes">
+      <soap:operation soapAction="http://tempuri.org/IResidenteService/buscarResidentes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

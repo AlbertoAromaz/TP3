@@ -13,14 +13,19 @@ namespace IU.WebCondominios.Net4.Residentes
     public partial class Residente_reg : System.Web.UI.Page
     {
 
+        #region variables
+
         Pecsa.WebAfiliado.Net4.ResidenteWS.ResidenteServiceClient proxy = new Pecsa.WebAfiliado.Net4.ResidenteWS.ResidenteServiceClient();
         Pecsa.WebAfiliado.Net4.ResidenteWS.Residente resultResidente = new Pecsa.WebAfiliado.Net4.ResidenteWS.Residente();
 
+        #endregion
+
+        #region Events
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) 
             {
-                
+                 
                 if (!Validator.IsNull(Session["Residente"]))
                 {
                     Residente objRes = (Residente)Session["Residente"];
@@ -30,6 +35,7 @@ namespace IU.WebCondominios.Net4.Residentes
                 else
                 {
                     txtFechaRegistro.Text = DateTime.Now.ToShortDateString();
+
                 }
             }
         }
@@ -40,13 +46,22 @@ namespace IU.WebCondominios.Net4.Residentes
             {
                 Grabar();
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "dialogMensaje", "mostrarMensaje('Exito al grabar');", true);
-                //Response.Redirect("~/Residente/Residente_lst.aspx", true);
+                
             }
             catch (Exception ex) 
             {
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "dialogMensaje", "mostrarMensaje('" + ex.Message + "');", true);
             }
         }
+
+        protected void lkbCancelar_Click(object sender, EventArgs e)
+        {
+            Session["Residente"] = null;
+            Response.Redirect("~/Residente/Residente_lst.aspx", true);
+        }
+        #endregion
+
+        #region Methods
 
         private void Editar()
         {
@@ -99,32 +114,14 @@ namespace IU.WebCondominios.Net4.Residentes
             }
             else
             {
+                objResidente.Codigo = Convert.ToInt32(txtCodigo.Text);
                 resultResidente = proxy.ModificarResidente(objResidente);                
             }
             
             txtCodigo.Text = resultResidente.Codigo.ToString();
-            //LimpiarControles();
         
         }
 
-        private void LimpiarControles() 
-        {
-            Session["Residente"] = null;
-            //txtCodigo.Text = string.Empty;
-            txtNombres.Text = string.Empty;
-            txtApellidoM.Text = string.Empty;
-            txtApellidoP.Text = string.Empty;
-            txtCelular.Text = string.Empty;
-            txtTelefono.Text = string.Empty;
-            ddlTipoDocumento.Text = "DNI";
-            txtNroDoc.Text = string.Empty;
-            chkEstado.Checked = true;
-            txtCorreo.Text = string.Empty;
-            txtFechaRegistro.Text = DateTime.Now.ToShortDateString();//objResidente.FechaCreacion.ToShortDateString();
-            txtFechaNac.Text = string.Empty;
-            ddlSexo.Text = "F" ;
-        
-        }
-
+        #endregion
     }
 }

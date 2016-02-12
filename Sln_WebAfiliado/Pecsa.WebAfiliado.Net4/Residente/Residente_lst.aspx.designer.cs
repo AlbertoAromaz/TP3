@@ -13,6 +13,15 @@ namespace Pecsa.WebAfiliado.Net4.Residentes {
     public partial class Residente_lst {
         
         /// <summary>
+        /// Control lkbLimpiar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbLimpiar;
+        
+        /// <summary>
         /// Control btnBuscar.
         /// </summary>
         /// <remarks>
@@ -49,13 +58,13 @@ namespace Pecsa.WebAfiliado.Net4.Residentes {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control txtRazonSocial.
+        /// Control txtNombres.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRazonSocial;
+        protected global::System.Web.UI.WebControls.TextBox txtNombres;
         
         /// <summary>
         /// Control Label2.

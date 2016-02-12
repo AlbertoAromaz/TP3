@@ -10,11 +10,14 @@
         <%--<img src="<%: ResolveUrl("~/Images/icons/dark/list.png") %>" alt="" class="titleIcon" />--%>
         <h6>Lista de Residentes</h6>
         <div class="textR">
+              <span>
+              <asp:LinkButton ID="lkbLimpiar" runat="server" CssClass="bFirst buttonYP basicYP" OnClick="lkbLimpiar_Click"><span>Limpiar</span></asp:LinkButton>
+            </span>      
                 <span>
-                    <asp:Button ID="btnBuscar" runat="server"  CssClass="hidden" />
+                    <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" CssClass="hidden" />
                 </span>
                 <span>
-                    <asp:HyperLink ID="lnkBuscar" runat="server" CssClass="bFirst buttonYP basicYP" > <%--<img src="<%: ResolveUrl("~/Images/icons/light/buscar.png") %>" class="icon" alt="">--%><span>Buscar &nbsp;</span> </asp:HyperLink>
+                    <asp:HyperLink ID="lnkBuscar" runat="server" CssClass="bFirst buttonYP basicYP"   NavigateUrl="javascript:jQuery('[id$=btnBuscar]').click();void(0);"> <%--<img src="<%: ResolveUrl("~/Images/icons/light/buscar.png") %>" class="icon" alt="">--%><span>Buscar &nbsp;</span> </asp:HyperLink>
                 </span>
                 <span>
                     <asp:HyperLink ID="lnkNuevo" runat="server" CssClass="bFirst buttonYP basicYP"  NavigateUrl="~/Residente/Residente_reg.aspx"> <%--<img src="<%: ResolveUrl("~/Images/icons/light/nuevo.png") %>" class="icon" alt="">--%><span>Nuevo</span> </asp:HyperLink>
@@ -24,10 +27,10 @@
     <div class="fluid">
         <div class="formRow">
             <span class="span2">
-                <asp:Label ID="Label1" runat="server" Text="Razón Social"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Nombres"></asp:Label>
             </span>
             <span class="span5">
-                <asp:TextBox ID="txtRazonSocial" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtNombres" runat="server"></asp:TextBox>
             </span>
             <span class="span2">
                 <asp:Label ID="Label2" runat="server" Text="Nro Documento"></asp:Label>

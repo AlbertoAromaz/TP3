@@ -18,27 +18,7 @@ namespace Pecsa.WebAfiliado.Net4.Residentes
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
-
-                lstResidente =  proxyResidente.listarResidentes();
-                if (lstResidente != null)
-                {
-                    foreach (var obj in lstResidente)
-                    {
-                        lstRes.Add(new Residente
-                                    {
-                                        Codigo = obj.Codigo,
-                                        Nombres = obj.Nombres + " " + obj.ApellidoPaterno + " " + obj.ApellidoMaterno,
-                                        TipoDocumento = (obj.TipoDocumento== "01"? "DNI" : "C.E"),
-                                        NroDocumento = obj.NroDocumento,
-                                        Telefono = obj.Telefono,
-                                        Celular = obj.Celular,
-                                        Correo = obj.Correo
-                                    });
-                    }
-                }
-               
-                grdListaResidentes.DataSource = lstRes;
-                grdListaResidentes.DataBind();
+                cargarGrilla(); 
             }
             Session["Residente"] = null;
         }
@@ -60,6 +40,42 @@ namespace Pecsa.WebAfiliado.Net4.Residentes
                     }
                 }
             }
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            cargarGrilla();
+        }
+
+        private void cargarGrilla() 
+        {
+            lstResidente = proxyResidente.buscarResidentes(txtNombres.Text , txtNroDocumento.Text);
+            if (lstResidente != null)
+            {
+                foreach (var obj in lstResidente)
+                {
+                    lstRes.Add(new Residente
+                    {
+                        Codigo = obj.Codigo,
+                        Nombres = obj.Nombres + " " + obj.ApellidoPaterno + " " + obj.ApellidoMaterno,
+                        TipoDocumento = (obj.TipoDocumento == "01" ? "DNI" : "C.E"),
+                        NroDocumento = obj.NroDocumento,
+                        Telefono = obj.Telefono,
+                        Celular = obj.Celular,
+                        Correo = obj.Correo
+                    });
+                }
+            }
+
+            grdListaResidentes.DataSource = lstRes;
+            grdListaResidentes.DataBind();
+        
+        }
+
+        protected void lkbLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNroDocumento.Text = string.Empty;
+            txtNombres.Text = string.Empty;
         }
 
     }

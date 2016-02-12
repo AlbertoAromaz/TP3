@@ -79,7 +79,8 @@ namespace CondominioService.MasterTables
                 Telefono = residente.Telefono,
                 Celular = residente.Celular,
                 UsuarioModificacion = residente.UsuarioModificacion,
-                FechaModificacion = residente.FechaModificacion
+                FechaModificacion = residente.FechaModificacion,
+                FechaCreacion = residente.FechaCreacion
             };
             return ResidenteDAO.Modificar(residenteAModificar); 
         }
@@ -93,6 +94,11 @@ namespace CondominioService.MasterTables
         public List<Residente> listarResidentes()
         {
             return ResidenteDAO.ListarTodos().ToList();
+        }
+
+        public List<Residente> buscarResidentes(string nombres, string nroDocumento)  
+        {
+            return ResidenteDAO.ListarResidente(nombres, nroDocumento).ToList();
         }
     }
 }

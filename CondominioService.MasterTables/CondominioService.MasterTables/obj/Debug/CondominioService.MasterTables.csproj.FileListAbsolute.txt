@@ -27,3 +27,12 @@ E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Condomini
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.dll
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.pdb
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.csprojResolveAssemblyReference.cache
+D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\bin\Dominio\Vivienda.hbm.xml
+D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\bin\CondominioService.MasterTables.dll.config
+D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\bin\CondominioService.MasterTables.dll
+D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\bin\CondominioService.MasterTables.pdb
+D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\bin\Iesi.Collections.dll
+D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\bin\MySql.Data.dll
+D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\bin\NHibernate.dll
+D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.dll
+D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.pdb

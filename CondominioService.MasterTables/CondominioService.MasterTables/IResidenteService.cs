@@ -23,5 +23,7 @@ namespace CondominioService.MasterTables
         void EliminarResidente(int codigo);
         [OperationContract]
         List<Residente> listarResidentes();
+        [OperationContract]
+        List<Residente> buscarResidentes(string nombres, string nroDocumento); 
     }
 }
