@@ -116,3 +116,45 @@ E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAf
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\obj\Debug\Pecsa.WebAfiliado.Net4.dll
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\obj\Debug\Pecsa.WebAfiliado.Net4.pdb
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Pecsa.WebAfiliado.Net4.dll.config
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Pecsa.WebAfiliado.Net4.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Pecsa.WebAfiliado.Net4.pdb
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Antlr3.Runtime.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\AspNet.ScriptManager.jQuery.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.AspNet.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.Core.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OAuth.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OpenId.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\EntityFramework.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Microsoft.Web.Infrastructure.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Newtonsoft.Json.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\System.Web.Optimization.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\System.Web.Providers.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\WebGrease.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\System.Net.Http.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Antlr3.Runtime.pdb
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Newtonsoft.Json.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\System.Web.Optimization.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\EntityFramework.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.Core.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OAuth.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OpenId.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\DotNetOpenAuth.AspNet.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\System.Net.Http.xml
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\es\EntityFramework.resources.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\es\System.Web.Providers.resources.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\es\Microsoft.AspNet.Membership.OpenAuth.resources.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\bin\es\System.Net.Http.resources.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\obj\Debug\IU.WebCondominios.Net4.csprojResolveAssemblyReference.cache
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\obj\Debug\Pecsa.WebAfiliado.Net4.dll
+D:\GitHub\ProyectoSD\Sln_WebAfiliado\Pecsa.WebAfiliado.Net4\obj\Debug\Pecsa.WebAfiliado.Net4.pdb

@@ -39,7 +39,8 @@ namespace Pecsa.WebAfiliado.Net4.Residentes
                
                 grdListaResidentes.DataSource = lstRes;
                 grdListaResidentes.DataBind();
-            } 
+            }
+            Session["Residente"] = null;
         }
 
         protected void grdListaResidentes_RowCommand(object sender, GridViewCommandEventArgs e)

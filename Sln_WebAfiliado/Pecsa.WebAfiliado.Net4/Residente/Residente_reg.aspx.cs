@@ -20,7 +20,7 @@ namespace IU.WebCondominios.Net4.Residentes
         {
             if (!IsPostBack) 
             {
-                LimpiarControles();
+                
                 if (!Validator.IsNull(Session["Residente"]))
                 {
                     Residente objRes = (Residente)Session["Residente"];
@@ -40,7 +40,7 @@ namespace IU.WebCondominios.Net4.Residentes
             {
                 Grabar();
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "dialogMensaje", "mostrarMensaje('Exito al grabar');", true);
-                Response.Redirect("~/Residente/Residente_lst.aspx", true);
+                //Response.Redirect("~/Residente/Residente_lst.aspx", true);
             }
             catch (Exception ex) 
             {
@@ -103,13 +103,14 @@ namespace IU.WebCondominios.Net4.Residentes
             }
             
             txtCodigo.Text = resultResidente.Codigo.ToString();
-            LimpiarControles();
+            //LimpiarControles();
         
         }
 
         private void LimpiarControles() 
         {
-            txtCodigo.Text = string.Empty;
+            Session["Residente"] = null;
+            //txtCodigo.Text = string.Empty;
             txtNombres.Text = string.Empty;
             txtApellidoM.Text = string.Empty;
             txtApellidoP.Text = string.Empty;
