@@ -21,7 +21,7 @@ namespace CondominioService.ContratoAquiler.Dominio
         [DataMember]
         public DateTime FechaContrato { get; set; }
 
-        [DataMember(IsRequired = false)]
+        [DataMember]
         public DateTime FechaIniResidencia { get; set; }
 
         [DataMember]
@@ -30,19 +30,19 @@ namespace CondominioService.ContratoAquiler.Dominio
         [DataMember]
         public int Periodo { get; set; }
 
-        [DataMember(IsRequired = false)]
+        [DataMember]
         public string Estado { get; set; }
 
-        [DataMember(IsRequired = false)]
+        [DataMember]
         public string UsuarioCreacion { get; set; }
 
-        [DataMember(IsRequired = false)]
+        [DataMember]
         public DateTime FechaCreacion { get; set; }
 
-        [DataMember(IsRequired = false)]
+        [DataMember]
         public string UsuarioModificacion { get; set; }
 
-        [DataMember(IsRequired = false)]
+        [DataMember]
         public DateTime FechaModificacion { get; set; }     
   
     }

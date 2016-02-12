@@ -9,38 +9,40 @@ namespace CondominioService.ContratoAquiler.Persistencia
 {
     public class ContratoDAO:BaseDAO<Contrato, int>
     {
-    public Contrato GenerarContrato(Contrato contratoAgenerar)
+
+        public Contrato ContratoGenerar(Contrato contratoACrear)
         {
-            Contrato contratoGenerado = null;
-            //string sql = "INSERT INTO t_contrato VALUES (@codc, @codv, @codr, @fecc, @fecir, @cos, @per, @est, @usec, @feccr, @usem, @fecm)";
-            string sql = "INSERT INTO t_contrato VALUES (@codv, @codr, @fecc, @cos, @per)";
-            using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena)) 
-            {
-                con.Open();
-                using (SqlCommand com = new SqlCommand(sql, con))
-                {
-                    //com.Parameters.Add(new SqlParameter("@codc", contratoAgenerar.CodigoContrato));
-                    com.Parameters.Add(new SqlParameter("@codv", contratoAgenerar.CodigoVivienda));
-                    com.Parameters.Add(new SqlParameter("@codr", contratoAgenerar.CodigoResidente));
-                    com.Parameters.Add(new SqlParameter("@fecc", contratoAgenerar.FechaContrato.Date));
-                    //com.Parameters.Add(new SqlParameter("@fecir", contratoAgenerar.FechaIniResidencia));
-                    com.Parameters.Add(new SqlParameter("@cos", contratoAgenerar.CostoMensual));
-                    com.Parameters.Add(new SqlParameter("@per",contratoAgenerar.Periodo));
-                    //com.Parameters.Add(new SqlParameter("@est", contratoAgenerar.Estado));
-                    //com.Parameters.Add(new SqlParameter("@usec",contratoAgenerar.UsuarioCreacion));
-                    //com.Parameters.Add(new SqlParameter("@feccr", contratoAgenerar.FechaCreacion));
-                    //com.Parameters.Add(new SqlParameter("@usem", contratoAgenerar.UsuarioModificacion));
-                    //com.Parameters.Add(new SqlParameter("@fecm", contratoAgenerar.FechaModificacion));
-                    com.ExecuteNonQuery();  
-                }
- 
-            }
-            contratoGenerado = ObtenerContrato(contratoAgenerar.CodigoContrato);
-            return contratoGenerado;       
+            Contrato contratoCreado = null;
+            //string sql = "INSERT INTO t_contrato VALUES (@codcontrato, @codvivienda, @codresidente, @fecccontrato, @fecirresidente, @costo, @periodo, @estado, @usercreador, @feccreacion, @usem, @fecm)";
+            //using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena))
+            //{
+            //    con.Open();
+            //    using (SqlCommand com = new SqlCommand(sql, con))
+            //    {
+            //        com.Parameters.Add(new SqlParameter("@codcontrato", contratoACrear.CodigoContrato));
+            //        com.Parameters.Add(new SqlParameter("@codvivienda", contratoACrear.CodigoVivienda));
+            //        com.Parameters.Add(new SqlParameter("@codresidente", contratoACrear.CodigoResidente));
+            //        com.Parameters.Add(new SqlParameter("@fecccontrato", contratoACrear.FechaContrato.Date));
+            //        com.Parameters.Add(new SqlParameter("@fecirresidente", contratoACrear.FechaIniResidencia));
+            //        com.Parameters.Add(new SqlParameter("@costo", contratoACrear.CostoMensual));
+            //        com.Parameters.Add(new SqlParameter("@periodo", contratoACrear.Periodo));
+            //        com.Parameters.Add(new SqlParameter("@estado", contratoACrear.Estado));
+            //        com.Parameters.Add(new SqlParameter("@usercreador", contratoACrear.UsuarioCreacion));
+            //        com.Parameters.Add(new SqlParameter("@feccreacion", contratoACrear.FechaCreacion));
+            //        com.Parameters.Add(new SqlParameter("@usem", contratoACrear.UsuarioModificacion));
+            //        com.Parameters.Add(new SqlParameter("@fecm", contratoACrear.FechaModificacion));
+            //        com.ExecuteNonQuery();
+            //    }
+
+            //}
+            //contratoCreado = Obtener(contratoACrear.CodigoContrato);
+            return contratoCreado;
         }
+
     public Contrato ObtenerContrato(int codigocontrato)
     {
         Contrato contratoObtenido = null;
+
         string sql = "SELECT * FROM t_contrato WHERE codigocontrato=@codc";
         using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena))
         {
@@ -58,14 +60,14 @@ namespace CondominioService.ContratoAquiler.Persistencia
                             CodigoVivienda = (int)resultado["codigovivienda"],
                             CodigoResidente = (int)resultado["codigoresidente"],
                             FechaContrato = (DateTime)resultado["fechacontrato"],
-                            //FechaIniResidencia = (DateTime)resultado["fechainiresidencia"],
+                            FechaIniResidencia = (DateTime)resultado["fechainiresidencia"],
                             CostoMensual = (decimal)resultado["costomensual"],
-                            Periodo = (int)resultado["periodo"] //,
-                            //Estado = (string)resultado["estado"],
-                            //UsuarioCreacion = (string)resultado["usuariocreacion"],
-                            //FechaCreacion = (DateTime)resultado["fechacreacion"],
-                            //UsuarioModificacion = (string)resultado["usuariomodificacion"],
-                            //FechaModificacion = (DateTime)resultado["fechamodificacion"]                           
+                            Periodo = (int)resultado["periodo"] ,
+                            Estado = (string)resultado["estado"],
+                            UsuarioCreacion = (string)resultado["usuariocreacion"],
+                            FechaCreacion = (DateTime)resultado["fechacreacion"],
+                            UsuarioModificacion = (string)resultado["usuariomodificacion"],
+                            FechaModificacion = (DateTime)resultado["fechamodificacion"]                           
 
                         };
                     }
@@ -76,21 +78,24 @@ namespace CondominioService.ContratoAquiler.Persistencia
 
         return contratoObtenido;
     }
-    public Contrato ModificarContrato(Contrato ContratoAModificar)
+
+    public Contrato ModificarContrato(Contrato contratoAModificar)
     {
         Contrato contratoModificado = null;
-        string sql = "UPDATE t_contrato SET CostoMensual = @cos WHERE codigocontrato = @codc";
+        string sql = "UPDATE t_contrato SET CostoMensual = @cos WHERE codigocontrato = @codc and codigovivienda = @codv and codigoresidente = @codr";
         using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena)) 
         {
             con.Open();
             using (SqlCommand com = new SqlCommand(sql, con))
             {
-                com.Parameters.Add(new SqlParameter("@codc", contratoModificado.CodigoContrato));
-                com.Parameters.Add(new SqlParameter("@cos",contratoModificado.CostoMensual));
+                com.Parameters.Add(new SqlParameter("@codc", contratoAModificar.CodigoContrato));
+                com.Parameters.Add(new SqlParameter("@codv", contratoAModificar.CodigoVivienda));
+                com.Parameters.Add(new SqlParameter("@codr", contratoAModificar.CodigoResidente));
+                com.Parameters.Add(new SqlParameter("@cos", contratoAModificar.CostoMensual));
                 com.ExecuteNonQuery();
             }
         }
-        contratoModificado = ObtenerContrato(ContratoAModificar.CodigoContrato);
+        contratoModificado = ObtenerContrato(contratoAModificar.CodigoContrato);
         return contratoModificado;
     }
 
@@ -136,7 +141,7 @@ namespace CondominioService.ContratoAquiler.Persistencia
                                 UsuarioCreacion = (string)resultado["usuariocreacion"],
                                 FechaCreacion = (DateTime)resultado["fechacreacion"],
                                 UsuarioModificacion = (string)resultado["usuariomodificacion"],
-                                FechaModificacion = (DateTime)resultado["fechamodificacion"]
+                                FechaModificacion =  (DateTime)resultado["fechamodificacion"]
                             });
                         }
                     }
