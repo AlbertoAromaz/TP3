@@ -16,16 +16,16 @@ namespace CondominioService.Facturacion
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="cuotaACrear"></param>
+        /// <param name="codigoContrato"></param>
         /// <returns></returns>
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "CuotaService", ResponseFormat = WebMessageFormat.Json)]
-        Cuota GenerarCuotas(Cuota cuotaACrear);
+        [WebInvoke(Method = "POST", UriTemplate = "CuotaService/{codigoContrato}", ResponseFormat = WebMessageFormat.Json)]
+        List<Cuota> GenerarCuotas(string codigoContrato);
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="codigoContrato"></param>
+        /// <param name="codigoCuota"></param>
         /// <returns></returns>
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "CuotaService/{codigoCuota}", ResponseFormat = WebMessageFormat.Json)]
@@ -34,21 +34,25 @@ namespace CondominioService.Facturacion
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="cuotaAModificar"></param>
+        /// <param name="codigoContrato"></param>
+        /// <param name="codigoResidente"></param>
+        /// <param name="codigoVivienda"></param>
         /// <returns></returns>
         [OperationContract]
-        [WebInvoke(Method = "PUT", UriTemplate = "CuotaService", ResponseFormat = WebMessageFormat.Json)]
-        Cuota RegistrarPago(Cuota cuotaAModificar);
-
-        
+        [WebInvoke(Method = "GET", UriTemplate = "CuotaService/BuscarCuota?codigoContrato={codigoContrato}&codigoResidente={codigoResidente}&codigoVivienda={codigoVivienda}", ResponseFormat = WebMessageFormat.Json)]
+        List<Cuota> BuscarCuota(string codigoContrato, string codigoResidente,string codigoVivienda);
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "CuotaService", ResponseFormat = WebMessageFormat.Json)]
-        List<Cuota> BuscarPagos();
+        [WebInvoke(Method = "GET", UriTemplate = "ContratoService", ResponseFormat = WebMessageFormat.Json)]
+        List<Cuota> ListarCuotas();
+
+        
+
+        
 
         
     }
