@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="CondominioService.Facturacion"
+                   namespace="CondominioService.Facturacion.Dominio"
+                   default-lazy="false">
+  <class name="Cuota" table="t_cuotas">
+    <id  column="CodigoCuota" name="CodigoCuota">
+      <generator class="identity" />
+    </id>
+    <property column="NumSequencial"  name="NumSequencial"/>
+    <property column="CodigoContrato"  name="CodigoContrato"/>
+    <property column="FechaVencimiento"  name="FechaVencimiento"/>
+    <property column="FechaPago"  name="FechaPago"/>
+    <property column="Estado_Cuota"  name="Estado_Cuota"/>
+    <property column="Estado"  name="Estado"/>
+    <property column="UsuarioCreacion"  name="UsuarioCreacion"/>
+    <property column="FechaCreacion"  name="FechaCreacion"/>
+    <property column="UsuarioModificacion"  name="UsuarioModificacion"/>
+    <property column="FechaModificacion"  name="FechaModificacion"/>
+    
+  </class>
+</hibernate-mapping>

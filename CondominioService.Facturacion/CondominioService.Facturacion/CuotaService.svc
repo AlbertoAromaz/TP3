@@ -1,0 +1,6 @@
+﻿<%@ ServiceHost Language="C#" 
+    Debug="true" 
+    Service="CondominioService.Facturacion.CuotaService" 
+    CodeBehind="CuotaService.svc.cs" 
+    Factory="System.ServiceModel.Activation.WebServiceHostFactory"
+    %>
