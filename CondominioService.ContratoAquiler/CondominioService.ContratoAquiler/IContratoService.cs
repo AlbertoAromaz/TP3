@@ -20,7 +20,7 @@ namespace CondominioService.ContratoAquiler
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "ContratoService/{codigoContrato}", ResponseFormat = WebMessageFormat.Json)]
-        Contrato Obtener(string codigocontrato);
+        Contrato ObtenerContrato(string codigocontrato);
 
         [OperationContract]
         [WebInvoke(Method = "PUT", UriTemplate = "ContratoService", ResponseFormat = WebMessageFormat.Json)]
