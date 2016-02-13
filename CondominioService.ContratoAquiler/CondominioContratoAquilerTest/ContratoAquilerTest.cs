@@ -28,7 +28,6 @@ namespace CondominioContratoAquilerTest
             req.ContentType = "application/json";
             var reqStream = req.GetRequestStream();
             reqStream.Write(data, 0, data.Length);
-            //HttpWebResponse res = (HttpWebResponse)req.GetResponse();
             HttpWebResponse res = (HttpWebResponse)req.GetResponse();
             StreamReader reader = new StreamReader(res.GetResponseStream());
             string contratoJson = reader.ReadToEnd();

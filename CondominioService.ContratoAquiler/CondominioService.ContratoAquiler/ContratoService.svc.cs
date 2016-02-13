@@ -27,16 +27,11 @@ namespace CondominioService.ContratoAquiler
             return dao.ContratoGenerar(contratoACrear);
         }
         
-        Contrato IContratoService.CrearContrato(Contrato contratoACrear)
-        {
-            throw new NotImplementedException();
-            //return dao.ContratoGenerar(contratoACrear);
-        }
 
-        public Contrato ObtenerContrato(string codigocontrato)
+        public Contrato Obtener(string codigocontrato)
         {
-            //return dao.ObtenerContrato(int.Parse(codigocontrato));                                
-            return dao.ObtenerContrato("@codigocontrato");                               
+            return dao.Obtener(int.Parse(codigocontrato));                                
+            
         }
 
 
