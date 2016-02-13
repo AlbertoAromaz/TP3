@@ -13,3 +13,12 @@ D:\30\Git\trunk\CondominioService.ContratoAquiler\CondominioService.ContratoAqui
 D:\30\Git\trunk\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.csprojResolveAssemblyReference.cache
 D:\30\Git\trunk\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.dll
 D:\30\Git\trunk\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.pdb
+D:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\CondominioService.ContratoAquiler.dll.config
+D:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\CondominioService.ContratoAquiler.dll
+D:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\CondominioService.ContratoAquiler.pdb
+D:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\Iesi.Collections.dll
+D:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.csprojResolveAssemblyReference.cache
+D:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.dll
+D:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.pdb
+F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.csprojResolveAssemblyReference.cache
+F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.dll

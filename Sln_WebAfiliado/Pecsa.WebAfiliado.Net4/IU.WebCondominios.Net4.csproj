@@ -255,6 +255,8 @@
     <Content Include="Images\icons\light\fullscreen.png" />
     <Content Include="Images\icons\light\home.png" />
     <Content Include="Images\icons\light\pencil.png" />
+    <Content Include="Images\icons\light\procesando.gif" />
+    <Content Include="Images\icons\light\select.png" />
     <Content Include="Images\icons\light\stats.png" />
     <Content Include="Images\icons\light\user.png" />
     <Content Include="Images\icons\light\users.png" />
@@ -308,6 +310,7 @@
     <Content Include="Images\ui\progress_container.png" />
     <Content Include="Images\userPic.png" />
     <Content Include="packages.config" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\WebAfiliadoNet4.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Residente\Residente_lst.aspx" />
@@ -491,7 +494,9 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entidad\Contrato.cs" />
     <Compile Include="Entidad\Residente.cs" />
+    <Compile Include="Entidad\Vivienda.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

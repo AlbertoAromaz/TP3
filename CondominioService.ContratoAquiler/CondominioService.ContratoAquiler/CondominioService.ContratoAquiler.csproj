@@ -43,9 +43,6 @@
       <HintPath>..\Librerias\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="NHibernate">
-      <HintPath>..\Librerias\NHibernate.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -73,12 +70,10 @@
       <DependentUpon>ContratoService.svc</DependentUpon>
     </Compile>
     <Compile Include="Dominio\Contrato.cs" />
-    <Compile Include="Dominio\RepetidoException.cs" />
+    <Compile Include="Dominio\Respuesta.cs" />
     <Compile Include="IContratoService.cs" />
-    <Compile Include="Persistencia\BaseDAO.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
     <Compile Include="Persistencia\ContratoDAO.cs" />
-    <Compile Include="Persistencia\NHibernateHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

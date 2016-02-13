@@ -2,7 +2,7 @@
 CREATE PROC [DBO].[SP_COSTOXVIVIENDA_OBTENER_COSTO_MENSUAL]
 (
 	@codigoVivienda			INT,
-	@fechaContrato			DATE
+	@fechaContrato			SMALLDATETIME
 
 
 )

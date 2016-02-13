@@ -17,20 +17,30 @@ namespace CondominioService.ContratoAquiler
 
         public Contrato CrearContrato(Contrato contratoACrear)
         {
-            Contrato ContratoExiste = dao.Obtener(contratoACrear.CodigoContrato);
+            Respuesta obj = dao.ValidarContrato(contratoACrear.CodigoVivienda, contratoACrear.CodigoResidente, Convert.ToDateTime(contratoACrear.FechaIniResidencia));
 
-            if (ContratoExiste != null)
+            if (obj != null) 
             {
-                throw new WebFaultException<string>(
-                    "Contrato imposible", HttpStatusCode.InternalServerError);
+                if (obj.ExisteVivienda == 0) 
+                {
+                     throw new WebFaultException<string>(
+                    "La vivienda no se encuentra disponible para el periodo indicado", HttpStatusCode.InternalServerError);
+                }else 
+
+                if (obj.ExisteMoroso == 1) 
+                {
+                    throw new WebFaultException<string>(
+                        "Residente con deuda pendiente", HttpStatusCode.InternalServerError);
+                }
             }
+
             return dao.ContratoGenerar(contratoACrear);
         }
         
 
         public Contrato Obtener(string codigocontrato)
         {
-            return dao.Obtener(int.Parse(codigocontrato));                                
+            return dao.ObtenerContrato(codigocontrato);                                
             
         }
 

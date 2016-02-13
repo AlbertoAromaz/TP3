@@ -34,5 +34,6 @@ D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTabl
 D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\bin\Iesi.Collections.dll
 D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\bin\MySql.Data.dll
 D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\bin\NHibernate.dll
+D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.csprojResolveAssemblyReference.cache
 D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.dll
 D:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioService.MasterTables\obj\Debug\CondominioService.MasterTables.pdb
