@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7c4811a3-4bef-4fc6-bbc6-5d2a07655d19" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:3644/ResidenteService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ResidenteService.wsdl" MetadataType="Wsdl" ID="babfc417-6008-4af8-8c14-9c31b8cebdc4" SourceId="1" SourceUrl="http://localhost:3644/ResidenteService.svc?wsdl" />
+    <MetadataFile FileName="ResidenteService.xsd" MetadataType="Schema" ID="9c4bcf13-43fb-4aeb-856a-b2adfee3a0f8" SourceId="1" SourceUrl="http://localhost:3644/ResidenteService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ResidenteService1.xsd" MetadataType="Schema" ID="0240baa0-20f9-42d4-b847-2098eb3665e8" SourceId="1" SourceUrl="http://localhost:3644/ResidenteService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ResidenteService2.xsd" MetadataType="Schema" ID="f6e580ed-c5b3-4031-b7d4-a5b3d82410e2" SourceId="1" SourceUrl="http://localhost:3644/ResidenteService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ResidenteService.disco" MetadataType="Disco" ID="c441ece7-a194-4a73-9055-eb3ef79edef2" SourceId="1" SourceUrl="http://localhost:3644/ResidenteService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
