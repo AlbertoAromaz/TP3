@@ -20,5 +20,10 @@ D:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.Contrat
 D:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.csprojResolveAssemblyReference.cache
 D:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.dll
 D:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.pdb
+F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\CondominioService.ContratoAquiler.dll.config
+F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\CondominioService.ContratoAquiler.dll
+F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\CondominioService.ContratoAquiler.pdb
+F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\bin\Iesi.Collections.dll
 F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.csprojResolveAssemblyReference.cache
 F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.dll
+F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioService.ContratoAquiler\obj\Debug\CondominioService.ContratoAquiler.pdb
