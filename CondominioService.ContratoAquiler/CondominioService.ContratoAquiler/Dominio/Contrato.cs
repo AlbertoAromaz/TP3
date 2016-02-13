@@ -9,41 +9,41 @@ namespace CondominioService.ContratoAquiler.Dominio
     [DataContract]
     public class Contrato
     {
-        [DataMember]
+        [DataMember(IsRequired=false)]
         public int CodigoContrato { get; set; }
 
-        [DataMember]
-        public int CodigoVivienda { get; set; }
+    [DataMember(IsRequired = false)]
+        public string CodigoVivienda { get; set; }
 
-        [DataMember]
-        public int CodigoResidente { get; set; }
+     [DataMember(IsRequired = false)]
+        public string CodigoResidente { get; set; }
 
-        [DataMember]
-        public DateTime FechaContrato { get; set; }
+     [DataMember(IsRequired = false)]
+        public string FechaContrato { get; set; }
 
-        [DataMember]
-        public DateTime FechaIniResidencia { get; set; }
+      [DataMember(IsRequired = false)]
+        public string FechaIniResidencia { get; set; }
 
-        [DataMember]
-        public decimal CostoMensual { get; set; }
+       [DataMember(IsRequired = false)]
+        public string CostoMensual { get; set; }
 
-        [DataMember]
+     [DataMember(IsRequired = false)]
         public int Periodo { get; set; }
 
-        [DataMember]
+     [DataMember(IsRequired = false)]
         public string Estado { get; set; }
 
-        [DataMember]
+        [DataMember(IsRequired = false)]
         public string UsuarioCreacion { get; set; }
 
-        [DataMember]
-        public DateTime FechaCreacion { get; set; }
+        [DataMember(IsRequired = false)]
+        public string FechaCreacion { get; set; }
 
-        [DataMember]
+        [DataMember(IsRequired = false)]
         public string UsuarioModificacion { get; set; }
 
-        [DataMember]
-        public DateTime FechaModificacion { get; set; }     
+        [DataMember(IsRequired = false)]
+        public string FechaModificacion { get; set; }     
   
     }
 }

@@ -15,22 +15,28 @@ namespace CondominioService.ContratoAquiler
     {
         private ContratoDAO dao = new ContratoDAO();
 
-        private Contrato CrearContrato(Contrato contratoACrear)
+        public Contrato CrearContrato(Contrato contratoACrear)
         {
-            //Contrato ContratoExiste = dao.Obtener(contratoACrear.CodigoContrato);
+            Contrato ContratoExiste = dao.Obtener(contratoACrear.CodigoContrato);
 
-            //if (ContratoExiste != null)
-            //{
-            //    throw new WebFaultException<string>(
-            //        "Contrato imposible", HttpStatusCode.InternalServerError);
-            //}
+            if (ContratoExiste != null)
+            {
+                throw new WebFaultException<string>(
+                    "Contrato imposible", HttpStatusCode.InternalServerError);
+            }
             return dao.ContratoGenerar(contratoACrear);
         }
-
-
-        public Contrato Obtener(string codigocontrato)
+        
+        Contrato IContratoService.CrearContrato(Contrato contratoACrear)
         {
-            return dao.ObtenerContrato(int.Parse(codigocontrato));
+            throw new NotImplementedException();
+            //return dao.ContratoGenerar(contratoACrear);
+        }
+
+        public Contrato ObtenerContrato(string codigocontrato)
+        {
+            //return dao.ObtenerContrato(int.Parse(codigocontrato));                                
+            return dao.ObtenerContrato("@codigocontrato");                               
         }
 
 
@@ -54,6 +60,10 @@ namespace CondominioService.ContratoAquiler
         {
             return dao.ObtenerCostoAquilerMensual(int.Parse(codigoVivienda), DateTime.Parse(fechaContrato));
         }
+
+
+
+
 
 
     }
