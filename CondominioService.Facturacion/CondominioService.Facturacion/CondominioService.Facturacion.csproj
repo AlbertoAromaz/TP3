@@ -65,11 +65,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Persistencia\CuotaService.svc" />
+    <Content Include="CuotaService.svc" />
+    <EmbeddedResource Include="Dominio\Cuota.hbm.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Persistencia\CuotaService.svc.cs">
+    <Compile Include="CuotaService.svc.cs">
       <DependentUpon>CuotaService.svc</DependentUpon>
     </Compile>
     <Compile Include="Dominio\Cuota.cs" />

@@ -47,7 +47,7 @@ namespace CondominioService.Facturacion
         /// </summary>
         /// <returns></returns>
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "ContratoService", ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "GET", UriTemplate = "CuotaService", ResponseFormat = WebMessageFormat.Json)]
         List<Cuota> ListarCuotas();
 
         
