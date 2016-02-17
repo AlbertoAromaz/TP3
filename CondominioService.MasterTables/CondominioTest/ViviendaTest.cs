@@ -113,10 +113,10 @@ namespace CondominioTest
             try
             {
                 // 2. Invoca el método a probar
-                viviendaResultado = proxy.CrearVivienda(1, 1, 113, (decimal)120.00, true, 4, 1);
+                viviendaResultado = proxy.CrearVivienda(1, 1, 119, (decimal)120.00, true, 4, 1);
 
                 // 3. Verificar/validar el resultado esperado
-                Assert.AreEqual("4", viviendaResultado.CodigoVivienda.ToString()); // Compara 
+                Assert.AreEqual("1005", viviendaResultado.CodigoVivienda.ToString()); // Compara 
             }
             catch (FaultException<ViviendaWS.RepetidoException> fe)
             { 

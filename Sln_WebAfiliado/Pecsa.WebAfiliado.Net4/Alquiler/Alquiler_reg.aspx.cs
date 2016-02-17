@@ -86,12 +86,41 @@ namespace IU.WebCondominios.Net4
 
         protected void btnGrabar_Click(object sender, EventArgs e)
         {
-            Grabar();
+            string mensaje = ValidarDatos();
+            if (mensaje != "OK") 
+            {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "successProcesar", "mostrarmensaje('" + mensaje + "');", true);
+            }
+            else {
+                Grabar();
+            }
+            
         }
 
         #endregion
 
         #region Methods
+
+        private string ValidarDatos() 
+        {
+            string mensaje = "OK";
+            if (string.IsNullOrEmpty(txtFechaContrato.Text)) 
+            {
+                mensaje = "Dato requerido : FechaContrato";
+                return mensaje;
+            }
+            if (string.IsNullOrEmpty(txtPerAlquiler.Text))
+            {
+                mensaje = "Dato requerido : Periodo";
+                return mensaje;
+            }
+            if (string.IsNullOrEmpty(txtCostoMensual.Text))
+            {
+                mensaje = "Dato requerido : Periodo";
+                return mensaje;
+            }
+            return mensaje;
+        }
         private void cargarCombos() 
         {
             // llenar Tipo Vivienda

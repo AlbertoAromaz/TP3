@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using CondominioService.Facturacion.Dominio;
-
-namespace CondominioService.Facturacion.Persistencia
-{
-    public class CuotaDAO:BaseDAO<Cuota, int>
-    {
-    }
-=======
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +24,7 @@ namespace CondominioService.Facturacion.Persistencia
                 using (SqlCommand com = new SqlCommand(sql, con))
                 {
                     com.CommandType = System.Data.CommandType.StoredProcedure;
+                    com.Parameters.Add(new SqlParameter("@CodigoContrato", codigoContrato));
                     com.ExecuteNonQuery();
                 }
             }
@@ -67,6 +55,9 @@ namespace CondominioService.Facturacion.Persistencia
                     using (SqlCommand com = new SqlCommand(sql, con))
                     {
                         com.CommandType = System.Data.CommandType.StoredProcedure;
+                        com.Parameters.Add(new SqlParameter("@CodigoContrato", codigoContrato));
+                        com.Parameters.Add(new SqlParameter("@CodigoResidente", codigoResidente));
+                        com.Parameters.Add(new SqlParameter("@CodigoVivienda", codigoVivienda));
                         rd = com.ExecuteReader();
                         while (rd.Read())
                         {
@@ -130,10 +121,10 @@ namespace CondominioService.Facturacion.Persistencia
             objCuota.NumSequencial = int.Parse(mysqlDataReader["NumSequencial"].ToString());
             objCuota.CodigoContrato=int.Parse(mysqlDataReader["CodigoContrato"].ToString());
             objCuota.FechaVencimiento = DateTime.Parse(mysqlDataReader["FechaVencimiento"].ToString());
-            if (mysqlDataReader["FechaPago"]!=null)
+            if ((mysqlDataReader["FechaPago"])!=DBNull.Value)
                 objCuota.FechaPago = DateTime.Parse(mysqlDataReader["FechaPago"].ToString());
             objCuota.Estado_Cuota = mysqlDataReader["Estado_Cuota"].ToString();
-            objCuota.Estado = Boolean.Parse(mysqlDataReader["Estado"].ToString());
+            objCuota.Estado = (mysqlDataReader["Estado"].ToString()=="1")?true:false; 
             objCuota.UsuarioCreacion = mysqlDataReader["UsuarioCreacion"].ToString();
             objCuota.UsuarioModificacion = mysqlDataReader["UsuarioModificacion"].ToString();
             objCuota.CodigoResidente = int.Parse(mysqlDataReader["CodigoResidente"].ToString());
@@ -147,5 +138,4 @@ namespace CondominioService.Facturacion.Persistencia
         }
 
     }
->>>>>>> 52d0721f85254feaa743de4d58f4acfc0492816f
 }

@@ -1,58 +1,3 @@
-<<<<<<< HEAD
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
-using CondominioService.Facturacion.Dominio;
-using CondominioService.Facturacion.Persistencia;
-
-namespace CondominioService.Facturacion
-{
-    
-    public class CuotaService : ICuotaService
-    {
-
-        #region properties
-        private CuotaDAO cuotaDAO = null;
-        private CuotaDAO CuotaDAO
-        {
-            get
-            {
-                if (cuotaDAO == null)
-                    cuotaDAO = new CuotaDAO();
-                return cuotaDAO;
-            }
-        }
-
-
-
-
-        #endregion
-
-        public Dominio.Cuota GenerarCuotas(Dominio.Cuota cuotaACrear)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Dominio.Cuota ObtenerCuota(string codigoCuota)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Dominio.Cuota RegistrarPago(Dominio.Cuota cuotaAModificar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Dominio.Cuota> BuscarPagos()
-        {
-            throw new NotImplementedException();
-        }
-    }
-}
-=======
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -92,15 +37,15 @@ namespace CondominioService.Facturacion
         /// </summary>
         /// <param name="codigoContrato"></param>
         /// <returns></returns>
-        public List<Cuota>GenerarCuotas(string codigoContrato)
+        public List<Cuota>GenerarCuotas(Cuota objCuota)
         {
             List<Cuota> lstCuota = new List<Cuota>();
             try
             {
-                if(existeCuota(codigoContrato))
-                    throw new WebFaultException<string>(string.Format("Las cuotas para el contrato: {0} ya fueron generadas.", codigoContrato), HttpStatusCode.InternalServerError);
+                if(existeCuota(objCuota.CodigoContrato.ToString()))
+                    throw new WebFaultException<string>(string.Format("Las cuotas para el contrato: {0} ya fueron generadas.", objCuota.CodigoContrato.ToString()), HttpStatusCode.InternalServerError);
 
-                lstCuota = CuotaDAO.GenerarCuotas(int.Parse(codigoContrato));
+                lstCuota = CuotaDAO.GenerarCuotas(objCuota.CodigoContrato);
             }
             catch {
                 throw;
@@ -109,15 +54,15 @@ namespace CondominioService.Facturacion
             return lstCuota;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="codigoCuota"></param>
-        /// <returns></returns>
-        public Cuota ObtenerCuota(string codigoCuota)
-        {
-            return CuotaDAO.Obtener(int.Parse(codigoCuota));
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="codigoCuota"></param>
+        ///// <returns></returns>
+        //public Cuota ObtenerCuota(string codigoCuota)
+        //{
+        //    return CuotaDAO.Obtener(int.Parse(codigoCuota));
+        //}
 
         /// <summary>
         /// 
@@ -152,4 +97,3 @@ namespace CondominioService.Facturacion
         }
     }
 }
->>>>>>> 52d0721f85254feaa743de4d58f4acfc0492816f

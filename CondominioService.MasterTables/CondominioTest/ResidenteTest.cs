@@ -21,7 +21,7 @@ namespace CondominioTest
             ResidenteWS.Residente objResidente = new ResidenteWS.Residente()
             {
                 TipoDocumento = "01",
-                NroDocumento = "70517084",
+                NroDocumento = "70517584",
                 Nombres = "Lisseth",
                 ApellidoMaterno = "Funes",
                 ApellidoPaterno = "Tasayco",
@@ -35,7 +35,7 @@ namespace CondominioTest
             };
 
             resultResidente = proxy.CrearResidente(objResidente);
-            Assert.AreEqual("5", resultResidente.Codigo);  // compara que devuelva el codigo del nuevo registro  de residente creado
+            Assert.AreEqual("2", resultResidente.Codigo.ToString());  // compara que devuelva el codigo del nuevo registro  de residente creado
 
         }
 

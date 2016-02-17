@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="CondominioService.Facturacion.CuotaService" CodeBehind="CuotaService.svc.cs" %>
-=======
 ﻿<%@ ServiceHost Language="C#" 
     Debug="true" 
     Service="CondominioService.Facturacion.CuotaService" 
     CodeBehind="CuotaService.svc.cs" 
     Factory="System.ServiceModel.Activation.WebServiceHostFactory"
     %>
->>>>>>> 52d0721f85254feaa743de4d58f4acfc0492816f

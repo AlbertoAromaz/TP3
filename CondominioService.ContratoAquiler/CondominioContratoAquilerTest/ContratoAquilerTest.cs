@@ -17,7 +17,7 @@ namespace CondominioContratoAquilerTest
         public void CrearContrato_OK()
         {
              //Prueba de creacion de contrato via HTTP POST
-            string postdata = "{\"CodigoVivienda\":\"1\",\"CodigoResidente\":\"1\",\"FechaContrato\":\"02/12/2016\",\"FechaIniResidencia\":\"02/12/2016\",\"CostoMensual\":\"100.00\",\"Periodo\":\"2016\",\"Estado\":\"1\",\"UsuarioCreacion\":\"AZAMORA\",\"FechaCreacion\":\"02/12/2016\"}";
+            string postdata = "{\"CodigoVivienda\":\"4\",\"CodigoResidente\":\"2\",\"FechaContrato\":\"02/12/2016\",\"FechaIniResidencia\":\"02/12/2016\",\"CostoMensual\":\"100.00\",\"Periodo\":\"6\",\"Estado\":\"1\",\"UsuarioCreacion\":\"AZAMORA\",\"FechaCreacion\":\"02/12/2016\"}";
 
             byte[] data = Encoding.UTF8.GetBytes(postdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:5364/ContratoService.svc/ContratoService");
@@ -32,16 +32,28 @@ namespace CondominioContratoAquilerTest
             JavaScriptSerializer js = new JavaScriptSerializer();
             Contrato contratoCreado = js.Deserialize<Contrato>(contratoJson);
 
-            Assert.AreEqual(5, contratoCreado.CodigoContrato);
-            Assert.AreEqual(1, contratoCreado.CodigoVivienda);
-            Assert.AreEqual(1, contratoCreado.CodigoResidente);
-            Assert.AreEqual("02/12/2016 12:00:00 a.m.", contratoCreado.FechaContrato);
-            Assert.AreEqual("02/12/2016 12:00:00 a.m.", contratoCreado.FechaIniResidencia);
-            Assert.AreEqual("100.00", contratoCreado.CostoMensual);
-            Assert.AreEqual(2016, contratoCreado.Periodo);
-            Assert.AreEqual("1", contratoCreado.Estado);
-            Assert.AreEqual("AZAMORA", contratoCreado.UsuarioCreacion);
-            Assert.AreEqual("02/12/2016 12:00:00 a.m.", contratoCreado.FechaCreacion);
+            //Assert.AreEqual(17, contratoCreado.CodigoContrato);
+            //Assert.AreEqual(4, contratoCreado.CodigoVivienda);
+            //Assert.AreEqual(2, contratoCreado.CodigoResidente);
+            //Assert.AreEqual("02/12/2016 12:00:00 a.m.", contratoCreado.FechaContrato);
+            //Assert.AreEqual("02/12/2016 12:00:00 a.m.", contratoCreado.FechaIniResidencia);
+            //Assert.AreEqual("100.00", contratoCreado.CostoMensual);
+            //Assert.AreEqual(6, contratoCreado.Periodo);
+            //Assert.AreEqual("1", contratoCreado.Estado);
+            //Assert.AreEqual("AZAMORA", contratoCreado.UsuarioCreacion);
+            //Assert.AreEqual("02/12/2016 12:00:00 a.m.", contratoCreado.FechaCreacion);
+
+            string uri = String.Format("http://localhost:7141/CuotaService.svc/CuotaService/{0},{1},{2}", contratoCreado.CodigoContrato, "0", "0");
+            HttpWebRequest req2 = (HttpWebRequest)WebRequest
+           .Create(uri);
+            req2.Method = "GET";
+            HttpWebResponse res2 = (HttpWebResponse)req2.GetResponse();
+            StreamReader reader2 = new StreamReader(res2.GetResponseStream());
+            string cuotaJson = reader2.ReadToEnd();
+            JavaScriptSerializer js2 = new JavaScriptSerializer();
+
+            List<Cuota> lstCuotas = js2.Deserialize<List<Cuota>>(cuotaJson);
+            Assert.AreEqual("6", lstCuotas.Count.ToString());
 
         }
 
@@ -94,7 +106,7 @@ namespace CondominioContratoAquilerTest
         public void CrearContrato_Residente_Moroso()
         {
             //Prueba de creacion de contrato via HTTP POST
-            string postdata = "{\"CodigoVivienda\":\"1\",\"CodigoResidente\":\"1\",\"FechaContrato\":\"02/12/2016\",\"FechaIniResidencia\":\"01/12/2016\",\"CostoMensual\":\"100.00\",\"Periodo\":\"2016\",\"Estado\":\"1\",\"UsuarioCreacion\":\"AZAMORA\",\"FechaCreacion\":\"02/12/2016\"}";
+            string postdata = "{\"CodigoVivienda\":\"1\",\"CodigoResidente\":\"1\",\"FechaContrato\":\"02/12/2016\",\"FechaIniResidencia\":\"12/02/2016\",\"CostoMensual\":\"100.00\",\"Periodo\":\"2016\",\"Estado\":\"1\",\"UsuarioCreacion\":\"AZAMORA\",\"FechaCreacion\":\"02/12/2016\"}";
 
             byte[] data = Encoding.UTF8.GetBytes(postdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:5364/ContratoService.svc/ContratoService");

@@ -146,13 +146,13 @@
        
     <div class="title">
     </div>
-    <div class="fluid">
+    <%--<div class="fluid">
         <div class="formRow">
             <span class="span4">
-                <a href="#" title="" class="wButton greenwB m2"><span>Generar Contrato</span></a>
+                <a href="#" title="" class="wButton greenwB m2" ><span>Generar Contrato</span></a>
             </span>
         </div>    
-    </div>
+    </div>--%>
 
     <div id="modal-Residente">
         <fieldset>

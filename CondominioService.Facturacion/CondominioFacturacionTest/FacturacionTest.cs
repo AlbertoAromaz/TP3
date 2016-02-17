@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace CondominioFacturacionTest
-{
-    /// <summary>
-    /// Descripción resumida de FacturacionTest
-    /// </summary>
-    [TestClass]
-    public class FacturacionTest
-    {
-
-        [TestMethod]
-        public void TestMethod1()
-        {
-            //
-            // TODO: Agregar aquí la lógica de las pruebas
-            //
-        }
-    }
-}
-=======
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
@@ -43,14 +18,20 @@ namespace CondominioFacturacionTest
         [TestMethod]
         public void GenerarCuotasError()
         {
-
+            string postdata = "{\"CodigoContrato\":\"3\"}"; //JSON
+            byte[] data = Encoding.UTF8.GetBytes(postdata);
+            HttpWebRequest req = (HttpWebRequest)WebRequest
+            .Create("http://localhost:7141/CuotaService.svc/CuotaService");
+            req.Method = "POST";
+            req.ContentLength = data.Length;
+            req.ContentType = "application/json";
+            var reqStream = req.GetRequestStream();
+            reqStream.Write(data, 0, data.Length);
+            HttpWebResponse res = null;
+           
             try
             {
-
-                HttpWebRequest reqDel = (HttpWebRequest)WebRequest
-                .Create("http://localhost:7141/CuotaService.svc/CuotaService/3");
-                reqDel.Method = "POST";
-                HttpWebResponse res = (HttpWebResponse)reqDel.GetResponse();
+                res = (HttpWebResponse)req.GetResponse();
                 StreamReader reader = new StreamReader(res.GetResponseStream());
                 string cuotaJson = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
@@ -70,6 +51,48 @@ namespace CondominioFacturacionTest
                 Assert.AreEqual("Las cuotas para el contrato: 3 ya fueron generadas.", mensaje);
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [TestMethod]
+        public void BuscarCuota()
+        {
+
+            HttpWebRequest req = (HttpWebRequest)WebRequest
+            .Create("http://localhost:7141/CuotaService.svc/CuotaService/3,0,0");
+            req.Method = "GET";
+            HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+            StreamReader reader = new StreamReader(res.GetResponseStream());
+            string cuotaJson = reader.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+                        
+            List<Cuota> lstCuotas = js.Deserialize<List<Cuota>>(cuotaJson);
+            Assert.AreEqual("6", lstCuotas.Count.ToString());
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [TestMethod]
+        public void ListarCuotas()
+        {
+            HttpWebRequest req = (HttpWebRequest)WebRequest
+            .Create("http://localhost:7141/CuotaService.svc/CuotaService");
+            req.Method = "GET";
+            HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+            StreamReader reader = new StreamReader(res.GetResponseStream());
+            string cuotaJson = reader.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+
+            List<Cuota> lstCuotas = js.Deserialize<List<Cuota>>(cuotaJson);
+            Assert.AreEqual("6", lstCuotas.Count.ToString());
+
+        }
+
+
+
+
+
     }
 }
->>>>>>> 52d0721f85254feaa743de4d58f4acfc0492816f

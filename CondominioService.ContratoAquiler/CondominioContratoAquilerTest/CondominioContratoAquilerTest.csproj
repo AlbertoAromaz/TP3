@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Contrato.cs" />
     <Compile Include="ContratoAquilerTest.cs" />
+    <Compile Include="Cuota.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Choose>

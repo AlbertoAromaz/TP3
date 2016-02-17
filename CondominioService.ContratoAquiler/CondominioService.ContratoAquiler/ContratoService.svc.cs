@@ -2,12 +2,14 @@
 using CondominioService.ContratoAquiler.Persistencia;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web.Script.Serialization;
 
 namespace CondominioService.ContratoAquiler
 {
@@ -17,24 +19,46 @@ namespace CondominioService.ContratoAquiler
 
         public Contrato CrearContrato(Contrato contratoACrear)
         {
-            Respuesta obj = dao.ValidarContrato(contratoACrear.CodigoVivienda, contratoACrear.CodigoResidente, Convert.ToDateTime(contratoACrear.FechaIniResidencia));
-
-            if (obj != null) 
+            Contrato objCont;
+            try
             {
-                if (obj.ExisteVivienda == 0) 
-                {
-                     throw new WebFaultException<string>(
-                    "La vivienda no se encuentra disponible para el periodo indicado", HttpStatusCode.InternalServerError);
-                }else 
+                Respuesta obj = dao.ValidarContrato(contratoACrear.CodigoVivienda, contratoACrear.CodigoResidente, Convert.ToDateTime(contratoACrear.FechaIniResidencia));
 
-                if (obj.ExisteMoroso == 1) 
+                if (obj != null)
                 {
-                    throw new WebFaultException<string>(
-                        "Residente con deuda pendiente", HttpStatusCode.InternalServerError);
+                    if (obj.ExisteVivienda == 0)
+                    {
+                        throw new WebFaultException<string>(
+                       "La vivienda no se encuentra disponible para el periodo indicado", HttpStatusCode.InternalServerError);
+                    }
+                    else
+
+                        if (obj.ExisteMoroso == 1)
+                        {
+                            throw new WebFaultException<string>(
+                                "Residente con deuda pendiente", HttpStatusCode.InternalServerError);
+                        }
                 }
-            }
 
-            return dao.ContratoGenerar(contratoACrear);
+                objCont = dao.ContratoGenerar(contratoACrear);
+                // Generacion de  Cuotas
+                string postdata = "{\"CodigoContrato\":\"" + objCont.CodigoContrato.ToString() + "\"}"; //JSON
+                byte[] data = Encoding.UTF8.GetBytes(postdata);
+                HttpWebRequest req = (HttpWebRequest)WebRequest
+                .Create("http://localhost:7141/CuotaService.svc/CuotaService");
+                req.Method = "POST";
+                req.ContentLength = data.Length;
+                req.ContentType = "application/json";
+                var reqStream = req.GetRequestStream();
+                reqStream.Write(data, 0, data.Length);
+                req.GetResponse(); 
+            }
+            catch
+            {
+                throw;
+            }
+            
+            return objCont;
         }
         
 
