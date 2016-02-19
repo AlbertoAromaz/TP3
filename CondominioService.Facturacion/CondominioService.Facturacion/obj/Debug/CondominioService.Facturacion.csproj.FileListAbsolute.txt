@@ -5,3 +5,4 @@ E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Condomini
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\bin\NHibernate.dll
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.dll
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.csprojResolveAssemblyReference.cache
