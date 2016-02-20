@@ -34,6 +34,7 @@ BEGIN
 	Where (a.CodigoContrato = @CodigoContrato Or @CodigoContrato = 0)
 	  And (b.CodigoResidente = @CodigoResidente Or @CodigoResidente = 0)
 	  And (b.CodigoVivienda = @CodigoVivienda Or @CodigoVivienda = 0)
+	  --agregar parametros de consultar cuota
 	  And (a.Estado_Cuota = @Estado_Cuota Or @Estado_Cuota = '')
 	  And (a.FechaVencimiento >= @FechaIni Or @FechaIni Is NULL)
 	  And (a.FechaVencimiento <= @FechaFin Or @FechaFin Is NULL)
