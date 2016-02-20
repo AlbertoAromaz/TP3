@@ -137,5 +137,31 @@ namespace CondominioService.Facturacion.Persistencia
 
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="codigoContrato"></param>
+        /// <param name="codigoCuota"></param>
+        /// <returns></returns>
+        public List<Cuota> ActualizarCancelacionCuota(int codigoContrato, int codigoCuota)
+        {
+            List<Cuota> LstCuota = new List<Cuota>();
+            string sql = "SP_CUOTAS_ACTUALIZAR";
+            using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena))
+            {
+                con.Open();
+                using (SqlCommand com = new SqlCommand(sql, con))
+                {
+                    com.CommandType = System.Data.CommandType.StoredProcedure;
+                    com.Parameters.Add(new SqlParameter("@CodigoContrato", codigoContrato));
+                    com.Parameters.Add(new SqlParameter("@codigoCuota", codigoCuota));
+                    com.ExecuteNonQuery();
+                }
+            }
+            LstCuota = BuscarCuota(codigoContrato, 0, 0);
+            return LstCuota;
+
+        }
     }
 }

@@ -91,7 +91,43 @@ namespace CondominioFacturacionTest
         }
 
 
+        [TestMethod]
+        public void actualizarCancelacionCuotasTest()
+        {
+            string postdata = "{\"CodigoContrato\":\"1\",\"CodigoCuota\":\"1\"}"; //JSON
+            byte[] data = Encoding.UTF8.GetBytes(postdata);
+            HttpWebRequest req = (HttpWebRequest)WebRequest
+            .Create("http://localhost:7141/CuotaService.svc/CuotaService");
+            req.Method = "PUT";
+            req.ContentLength = data.Length;
+            req.ContentType = "application/json";
+            var reqStream = req.GetRequestStream();
+            reqStream.Write(data, 0, data.Length);
+            HttpWebResponse res = null;
 
+
+            try
+            {
+                res = (HttpWebResponse)req.GetResponse();
+                StreamReader reader = new StreamReader(res.GetResponseStream());
+                string cuotaJson = reader.ReadToEnd();
+                JavaScriptSerializer js = new JavaScriptSerializer();
+
+                List<Cuota> lstCuotas = js.Deserialize<List<Cuota>>(cuotaJson);
+                Assert.AreEqual("6", lstCuotas.Count.ToString());
+
+            }
+            catch (WebException ex)
+            {
+                HttpStatusCode code = ((HttpWebResponse)ex.Response).StatusCode;
+                string message = ((HttpWebResponse)ex.Response).StatusDescription;
+                StreamReader reader = new StreamReader(ex.Response.GetResponseStream());
+                string error = reader.ReadToEnd();
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                string mensaje = js.Deserialize<string>(error);
+                //Assert.AreEqual("Las cuotas para el contrato: 3 ya fueron actualizadas.", mensaje);
+            }
+        }
 
 
     }

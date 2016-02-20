@@ -6,3 +6,11 @@ E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\Condomini
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.dll
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.pdb
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.csprojResolveAssemblyReference.cache
+D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\bin\CondominioService.Facturacion.dll.config
+D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\bin\CondominioService.Facturacion.dll
+D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\bin\CondominioService.Facturacion.pdb
+D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\bin\Iesi.Collections.dll
+D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\bin\NHibernate.dll
+D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.csprojResolveAssemblyReference.cache
+D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.dll
+D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.pdb

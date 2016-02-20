@@ -54,6 +54,32 @@ namespace CondominioService.Facturacion
             return lstCuota;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="CodigoContrato"></param>
+        /// <param name="CodigoCuota"></param>
+        /// <returns></returns>
+        public List<Cuota> ActualizarCancelacionCuotas(Cuota objCuota)
+        {
+            List<Cuota> lstCuota = new List<Cuota>();
+            try
+            {
+                // if (existeCuota(objCuota.CodigoContrato.ToString()))
+                //     throw new WebFaultException<string>(string.Format("Las cuotas para el contrato: {0} ya fueron generadas.", objCuota.CodigoContrato.ToString()), HttpStatusCode.InternalServerError);
+
+                lstCuota = CuotaDAO.
+                    ActualizarCancelacionCuota(objCuota.CodigoContrato, objCuota.CodigoCuota);
+            }
+            catch
+            {
+                throw;
+            }
+
+            return lstCuota;
+        }
+
         ///// <summary>
         ///// 
         ///// </summary>

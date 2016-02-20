@@ -22,6 +22,18 @@ namespace CondominioService.Facturacion
         [WebInvoke(Method = "POST", UriTemplate = "CuotaService", ResponseFormat = WebMessageFormat.Json)]
         List<Cuota> GenerarCuotas(Cuota objCuota);
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="CodigoContrato"></param>
+        /// <param name="CodigoCuota"></param>
+        /// <returns></returns>
+        [OperationContract]
+        [WebInvoke(Method = "PUT", UriTemplate = "CuotaService", ResponseFormat = WebMessageFormat.Json)]
+        List<Cuota> ActualizarCancelacionCuotas(Cuota objCuota);
+
+
         ///// <summary>
         ///// 
         ///// </summary>
