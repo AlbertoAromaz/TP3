@@ -3,7 +3,10 @@ CREATE PROC [DBO].[SP_CUOTAS_BUSCAR]
 (
 	@CodigoContrato		Int,
 	@CodigoResidente	Int,
-	@CodigoVivienda		Int
+	@CodigoVivienda		Int,
+	@Estado_Cuota		Varchar(20),
+	@FechaIni			Datetime,
+	@FechaFin			Datetime
 )
 AS
 BEGIN
@@ -31,5 +34,8 @@ BEGIN
 	Where (a.CodigoContrato = @CodigoContrato Or @CodigoContrato = 0)
 	  And (b.CodigoResidente = @CodigoResidente Or @CodigoResidente = 0)
 	  And (b.CodigoVivienda = @CodigoVivienda Or @CodigoVivienda = 0)
+	  And (a.Estado_Cuota = @Estado_Cuota Or @Estado_Cuota = '')
+	  And (a.FechaVencimiento >= @FechaIni Or @FechaIni Is NULL)
+	  And (a.FechaVencimiento <= @FechaFin Or @FechaFin Is NULL)
 			
 END
