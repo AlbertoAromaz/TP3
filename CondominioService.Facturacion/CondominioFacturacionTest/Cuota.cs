@@ -51,9 +51,8 @@ namespace CondominioFacturacionTest
 
         public string NombreCompletoVivienda { get; set; }
 
-        public DateTime FechaIni { get; set; }
+        public string Resultado { get; set; }
 
-        
-        public DateTime FechaFin { get; set; }
+        public decimal Monto { get; set; }
     }
 }

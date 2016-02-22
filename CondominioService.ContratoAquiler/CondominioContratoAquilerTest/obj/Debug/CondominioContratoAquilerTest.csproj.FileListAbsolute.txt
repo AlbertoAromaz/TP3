@@ -17,3 +17,4 @@ F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioContratoAquiler
 F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioContratoAquilerTest\obj\Debug\CondominioContratoAquilerTest.csprojResolveAssemblyReference.cache
 F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioContratoAquilerTest\obj\Debug\CondominioContratoAquilerTest.dll
 F:\GitHub\ProyectoSD\CondominioService.ContratoAquiler\CondominioContratoAquilerTest\obj\Debug\CondominioContratoAquilerTest.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.ContratoAquiler\CondominioContratoAquilerTest\obj\Debug\CondominioContratoAquilerTest.csprojResolveAssemblyReference.cache

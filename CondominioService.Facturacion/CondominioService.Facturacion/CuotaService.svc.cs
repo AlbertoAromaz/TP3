@@ -43,7 +43,7 @@ namespace CondominioService.Facturacion
             List<Cuota> lstCuota = new List<Cuota>();
             try
             {
-                if(existeCuota(objCuota.CodigoContrato.ToString()))
+                if(ExisteCuota(objCuota.CodigoContrato.ToString()))
                     throw new WebFaultException<string>(string.Format("Las cuotas para el contrato: {0} ya fueron generadas.", objCuota.CodigoContrato.ToString()), HttpStatusCode.InternalServerError);
 
                 lstCuota = CuotaDAO.GenerarCuotas(objCuota.CodigoContrato);
@@ -59,26 +59,24 @@ namespace CondominioService.Facturacion
         /// <summary>
         /// Este metodo actualiza la fecha de pago y el estado de la cuota a cancelado.
         /// </summary>
-        /// <param name="CodigoContrato"></param>
-        /// <param name="CodigoCuota"></param>
+        /// <param name="objCuota"></param>
         /// <returns></returns>
-        public List<Cuota> ActualizarCancelacionCuotas(Cuota objCuota)
+        public Cuota ActualizarPagoDeCuotas(Cuota objCuota)
         {
-            List<Cuota> lstCuota = new List<Cuota>();
+            Cuota PagoDeCuotaActualizado = new Cuota();
             try
             {
-                // if (existeCuota(objCuota.CodigoContrato.ToString()))
-                //     throw new WebFaultException<string>(string.Format("Las cuotas para el contrato: {0} ya fueron generadas.", objCuota.CodigoContrato.ToString()), HttpStatusCode.InternalServerError);
+                if (EstaCuotaCancelada(objCuota.CodigoCuota))
+                    throw new WebFaultException<string>(string.Format("La cuota seleccionado se encuentra cancelada."), HttpStatusCode.InternalServerError);
 
-                lstCuota = CuotaDAO.
-                    ActualizarCancelacionCuota(objCuota.CodigoContrato, objCuota.CodigoCuota);
+              PagoDeCuotaActualizado =  CuotaDAO.ActualizarPagoDeCuotas(objCuota);
             }
             catch
             {
                 throw;
             }
 
-            return lstCuota;
+            return PagoDeCuotaActualizado;
         }
 
        
@@ -90,12 +88,14 @@ namespace CondominioService.Facturacion
         /// <param name="codigoResidente"></param>
         /// <param name="codigoVivienda"></param>
         /// <returns></returns>
-        public List<Cuota> BuscarCuota(string codigoContrato, string codigoResidente, string codigoVivienda)
+        public List<Cuota> BuscarCuota(string codigoContrato, string codigoResidente, string codigoVivienda, string estadoCuota, string fecIni, string fecFin)
         {
             int iCodigoContrato=(codigoContrato=="")? 0: int.Parse(codigoContrato);
             int iCodigoResidente=(codigoResidente=="")? 0: int.Parse(codigoResidente);
             int iCodigoVivienda=(codigoVivienda=="")? 0: int.Parse(codigoVivienda);
-            return CuotaDAO.BuscarCuota(iCodigoContrato, iCodigoResidente, iCodigoVivienda);
+
+
+            return CuotaDAO.BuscarCuota(iCodigoContrato, iCodigoResidente, iCodigoVivienda, estadoCuota, fecIni, fecIni);
         }
 
         /// <summary>
@@ -140,23 +140,22 @@ namespace CondominioService.Facturacion
         /// </summary>
         /// <param name="codigoContrato"></param>
         /// <returns></returns>
-        internal bool existeCuota(string codigoContrato)
+        internal bool ExisteCuota(string codigoContrato)
         {
-            List<Cuota> lstCuota = BuscarCuota(codigoContrato, string.Empty, string.Empty);
+            List<Cuota> lstCuota = BuscarCuota(codigoContrato, string.Empty, string.Empty, string.Empty, null, null);
             return lstCuota.Count > 0;
 
         }
 
-        public List<Cuota> ConsultarCuota(string codigoContrato, string codigoResidente, string codigoVivienda, string estado, DateTime FechaIni, DateTime FechaFIn)
+        /// <summary>
+        /// Retorna true si la cuota indicada se encuentra cancelada
+        /// </summary>
+        /// <param name="codigoCuota"></param>
+        /// <returns></returns>
+        internal bool EstaCuotaCancelada(int codigoCuota)
         {
-            int iCodigoContrato = (codigoContrato == "") ? 0 : int.Parse(codigoContrato);
-            int iCodigoResidente = (codigoResidente == "") ? 0 : int.Parse(codigoResidente);
-            int iCodigoVivienda = (codigoVivienda == "") ? 0 : int.Parse(codigoVivienda);
-            //int iestado = (estado == "") ? 0 : int.Parse(estado);
-            //int iFechaIni = (codigoVivienda == "") ? 0 : int.Parse(codigoVivienda);
-            //int iFechaFin = (codigoVivienda == "") ? 0 : int.Parse(codigoVivienda);
-            //return CuotaDAO.ConsultarCuota(iCodigoContrato, iCodigoResidente, iCodigoVivienda, estado, DateTime.Parse(FechaIni), DateTime.Parse(FechaFIn));
-            return CuotaDAO.ConsultarCuota(iCodigoContrato, iCodigoResidente, iCodigoVivienda, estado, FechaIni, FechaFIn);
+            List<Cuota> lstCuota = BuscarCuota(string.Empty, codigoCuota.ToString(), string.Empty, string.Empty, null, null);
+            return lstCuota.Any(r => r.Estado_Cuota.Equals("CANCELADO"));
         }
     }
 }

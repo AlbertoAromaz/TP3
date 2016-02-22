@@ -1,0 +1,21 @@
+/*
+	BEGIN TRAN
+	EXEC SP_CUOTAS_ACTUALIZAR 1002
+	SELECT * FROM T_CUOTAS
+
+	ROLLBACK
+*/
+CREATE PROC [DBO].[SP_CUOTAS_ACTUALIZAR]
+(
+	@CodigoCuota	Int
+)
+AS
+BEGIN
+
+	UPDATE t_cuotas SET
+		Estado_Cuota = 'CANCELADO',
+		FechaPago = GETDATE()
+	WHERE CodigoCuota = @CodigoCuota
+		
+
+END

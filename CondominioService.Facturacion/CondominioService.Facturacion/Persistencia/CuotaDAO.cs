@@ -7,14 +7,14 @@ using CondominioService.Facturacion.Dominio;
 
 namespace CondominioService.Facturacion.Persistencia
 {
-    public class CuotaDAO : BaseDAO<Cuota, int>
+    public class CuotaDAO:BaseDAO<Cuota, int>
     {
         /// <summary>
         /// 
         /// </summary>
         /// <param name="codigoContrato"></param>
         /// <returns></returns>
-        public List<Cuota> GenerarCuotas(int codigoContrato)
+        public List<Cuota>GenerarCuotas(int codigoContrato)
         {
             List<Cuota> LstCuota = new List<Cuota>();
             string sql = "SP_CUOTAS_GENERAR";
@@ -28,7 +28,7 @@ namespace CondominioService.Facturacion.Persistencia
                     com.ExecuteNonQuery();
                 }
             }
-            LstCuota = BuscarCuota(codigoContrato, 0, 0);
+            LstCuota = BuscarCuota(codigoContrato, 0, 0,string.Empty,null, null);
             return LstCuota;
 
         }
@@ -37,10 +37,13 @@ namespace CondominioService.Facturacion.Persistencia
         /// 
         /// </summary>
         /// <param name="codigoContrato"></param>
-        /// <param name="codigoVivienda"></param>
         /// <param name="codigoResidente"></param>
+        /// <param name="codigoVivienda"></param>
+        /// <param name="estadoCuota"></param>
+        /// <param name="fecIni"></param>
+        /// <param name="fecFin"></param>
         /// <returns></returns>
-        public List<Cuota> BuscarCuota(int codigoContrato, int codigoResidente, int codigoVivienda)
+        public List<Cuota> BuscarCuota(int codigoContrato, int codigoResidente, int codigoVivienda, string estadoCuota, string fecIni, string fecFin)
         {
             List<Cuota> LstCuota = new List<Cuota>();
             Cuota objCuota;
@@ -58,6 +61,9 @@ namespace CondominioService.Facturacion.Persistencia
                         com.Parameters.Add(new SqlParameter("@CodigoContrato", codigoContrato));
                         com.Parameters.Add(new SqlParameter("@CodigoResidente", codigoResidente));
                         com.Parameters.Add(new SqlParameter("@CodigoVivienda", codigoVivienda));
+                        com.Parameters.Add(new SqlParameter("@Estado_Cuota", estadoCuota));
+                        com.Parameters.Add(new SqlParameter("@FechaIni", fecIni));
+                        com.Parameters.Add(new SqlParameter("@FechaFin", fecFin));
                         rd = com.ExecuteReader();
                         while (rd.Read())
                         {
@@ -71,9 +77,9 @@ namespace CondominioService.Facturacion.Persistencia
             }
             catch
             {
-                throw;
+                throw;            
             }
-
+            
             return LstCuota;
         }
 
@@ -119,19 +125,20 @@ namespace CondominioService.Facturacion.Persistencia
         {
             objCuota.CodigoCuota = int.Parse(mysqlDataReader["CodigoCuota"].ToString());
             objCuota.NumSequencial = int.Parse(mysqlDataReader["NumSequencial"].ToString());
-            objCuota.CodigoContrato = int.Parse(mysqlDataReader["CodigoContrato"].ToString());
+            objCuota.CodigoContrato=int.Parse(mysqlDataReader["CodigoContrato"].ToString());
+            objCuota.Monto = decimal.Parse(mysqlDataReader["CostoMensual"].ToString());
             objCuota.FechaVencimiento = DateTime.Parse(mysqlDataReader["FechaVencimiento"].ToString());
-            if ((mysqlDataReader["FechaPago"]) != DBNull.Value)
+            if ((mysqlDataReader["FechaPago"])!=DBNull.Value)
                 objCuota.FechaPago = DateTime.Parse(mysqlDataReader["FechaPago"].ToString());
             objCuota.Estado_Cuota = mysqlDataReader["Estado_Cuota"].ToString();
-            objCuota.Estado = (mysqlDataReader["Estado"].ToString() == "1") ? true : false;
+            objCuota.Estado = (mysqlDataReader["Estado"].ToString()=="1")?true:false; 
             objCuota.UsuarioCreacion = mysqlDataReader["UsuarioCreacion"].ToString();
             objCuota.UsuarioModificacion = mysqlDataReader["UsuarioModificacion"].ToString();
             objCuota.CodigoResidente = int.Parse(mysqlDataReader["CodigoResidente"].ToString());
             objCuota.NombreCompletoResidente = mysqlDataReader["Residente"].ToString();
             objCuota.CodigoVivienda = int.Parse(mysqlDataReader["CodigoVivienda"].ToString());
             objCuota.NombreCompletoVivienda = mysqlDataReader["Vivienda"].ToString();
-
+                        
 
             return objCuota;
 
@@ -144,71 +151,35 @@ namespace CondominioService.Facturacion.Persistencia
         /// <param name="codigoContrato"></param>
         /// <param name="codigoCuota"></param>
         /// <returns></returns>
-        public List<Cuota> ActualizarCancelacionCuota(int codigoContrato, int codigoCuota)
+        public Cuota ActualizarPagoDeCuotas(Cuota pagoDeCuotaAActualizar)
         {
-            List<Cuota> LstCuota = new List<Cuota>();
-            string sql = "SP_CUOTAS_ACTUALIZAR";
-            using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena))
-            {
-                con.Open();
-                using (SqlCommand com = new SqlCommand(sql, con))
-                {
-                    com.CommandType = System.Data.CommandType.StoredProcedure;
-                    com.Parameters.Add(new SqlParameter("@CodigoContrato", codigoContrato));
-                    com.Parameters.Add(new SqlParameter("@codigoCuota", codigoCuota));
-                    com.ExecuteNonQuery();
-                }
-            }
-            LstCuota = BuscarCuota(codigoContrato, 0, 0);
-            return LstCuota;
-
-
-        }
-
-        /// </summary>
-        /// <param name="codigoContrato"></param>
-        /// <param name="codigoVivienda"></param>
-        /// <param name="codigoResidente"></param>
-        /// /// <param name="estado"></param>
-        /// /// <param name="FechaIni"></param>
-        /// /// <param name="FechaFin"></param>
-        /// <returns></returns>
-        public List<Cuota> ConsultarCuota(int codigoContrato, int codigoResidente, int codigoVivienda, string estado, DateTime FechaIni, DateTime FechaFin)
-        {
-            List<Cuota> LstCuota = new List<Cuota>();
-            Cuota objCuota;
-            SqlDataReader rd;
-
+            Cuota PagoDeCuotaActualizado = new Cuota();
             try
             {
-                string sql = "SP_CUOTAS_BUSCAR";
+
+                string sql = "SP_CUOTAS_ACTUALIZAR";
                 using (SqlConnection con = new SqlConnection(ConexionUtil.ObtenerCadena))
                 {
                     con.Open();
                     using (SqlCommand com = new SqlCommand(sql, con))
                     {
                         com.CommandType = System.Data.CommandType.StoredProcedure;
-                        com.Parameters.Add(new SqlParameter("@CodigoContrato", codigoContrato));
-                        com.Parameters.Add(new SqlParameter("@CodigoResidente", codigoResidente));
-                        com.Parameters.Add(new SqlParameter("@CodigoVivienda", codigoVivienda));
-                        com.Parameters.Add(new SqlParameter("@Estado", estado));
-                        com.Parameters.Add(new SqlParameter("@FechaIni", FechaIni));
-                        com.Parameters.Add(new SqlParameter("@FechaFin", FechaFin));
-                        rd = com.ExecuteReader();
-                        while (rd.Read())
-                        {
-                            objCuota = new Cuota();
-                            AddCuotaToList(objCuota, rd);
-                            LstCuota.Add(objCuota);
-                        }
+                        com.Parameters.Add(new SqlParameter("@codigoCuota", pagoDeCuotaAActualizar.CodigoCuota));
+                        com.ExecuteNonQuery();
+
+                        PagoDeCuotaActualizado = Obtener(pagoDeCuotaAActualizar.CodigoCuota);
+                        PagoDeCuotaActualizado.Resultado = "OK";
                     }
                 }
-
             }
             catch
             {
-                throw;
+                PagoDeCuotaActualizado.Resultado = "ERROR";
             }
+
+            return PagoDeCuotaActualizado;
+            
+
         }
     }
 }

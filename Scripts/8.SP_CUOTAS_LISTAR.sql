@@ -1,11 +1,12 @@
 -- SP_CUOTAS_LISTAR
-CREATE PROC [DBO].[SP_CUOTAS_LISTAR]
+ALTER PROC [DBO].[SP_CUOTAS_LISTAR]
 AS
 BEGIN
 	Select
 		a.CodigoCuota,
 		a.NumSequencial,
 		a.CodigoContrato,
+		B.CostoMensual,
 		a.FechaVencimiento,
 		a.FechaPago,
 		a.Estado_Cuota,

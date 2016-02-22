@@ -7,8 +7,3 @@ D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\Co
 D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.csprojResolveAssemblyReference.cache
 D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.dll
 D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.pdb
-C:\dsd_22022016\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.csprojResolveAssemblyReference.cache
-C:\dsd_22022016\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.dll
-C:\dsd_22022016\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.pdb
-C:\dsd_22022016\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\bin\Debug\CondominioFacturacionTest.dll
-C:\dsd_22022016\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\bin\Debug\CondominioFacturacionTest.pdb

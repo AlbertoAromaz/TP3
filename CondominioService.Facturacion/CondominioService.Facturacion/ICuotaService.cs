@@ -26,12 +26,11 @@ namespace CondominioService.Facturacion
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="CodigoContrato"></param>
-        /// <param name="CodigoCuota"></param>
+        /// <param name="objCuota"></param>
         /// <returns></returns>
         [OperationContract]
         [WebInvoke(Method = "PUT", UriTemplate = "CuotaService", ResponseFormat = WebMessageFormat.Json)]
-        List<Cuota> ActualizarCancelacionCuotas(Cuota objCuota);
+        Cuota ActualizarPagoDeCuotas(Cuota objCuota);
 
 
         ///// <summary>
@@ -49,11 +48,14 @@ namespace CondominioService.Facturacion
         /// <param name="codigoContrato"></param>
         /// <param name="codigoResidente"></param>
         /// <param name="codigoVivienda"></param>
+        /// <param name="estadoCuota"></param>
+        /// <param name="fecIni"></param>
+        /// <param name="fecFin"></param>
         /// <returns></returns>
         [OperationContract]
         //[WebInvoke(Method = "GET", UriTemplate = "CuotaService/BuscarCuota?codigoContrato={codigoContrato}&codigoResidente={codigoResidente}&codigoVivienda={codigoVivienda}", ResponseFormat = WebMessageFormat.Json)]
-        [WebInvoke(Method = "GET", UriTemplate = "CuotaService/{codigoContrato},{codigoResidente},{codigoVivienda}", ResponseFormat = WebMessageFormat.Json)]
-        List<Cuota>BuscarCuota(string codigoContrato, string codigoResidente,string codigoVivienda);
+        [WebInvoke(Method = "GET", UriTemplate = "CuotaService/{codigoContrato},{codigoResidente},{codigoVivienda},{estadoCuota},{fecIni},{fecFin}", ResponseFormat = WebMessageFormat.Json)]
+        List<Cuota> BuscarCuota(string codigoContrato, string codigoResidente, string codigoVivienda, string estadoCuota, string fecIni, string fecFin);
 
         /// <summary>
         /// 
@@ -63,19 +65,8 @@ namespace CondominioService.Facturacion
         [WebInvoke(Method = "GET", UriTemplate = "CuotaService", ResponseFormat = WebMessageFormat.Json)]
         List<Cuota> ListarCuotas();
 
+        
 
-        /// </summary>
-        /// <param name="codigoContrato"></param>
-        /// <param name="codigoResidente"></param>
-        /// <param name="codigoVivienda"></param>
-        /// /// <param name="estado"></param>
-        /// /// <param name="FechaIni"></param>
-        /// /// <param name="FechaFin"></param>
-        /// <returns></returns>
-        [OperationContract]
-        //[WebInvoke(Method = "GET", UriTemplate = "CuotaService/BuscarCuota?codigoContrato={codigoContrato}&codigoResidente={codigoResidente}&codigoVivienda={codigoVivienda}", ResponseFormat = WebMessageFormat.Json)]
-        [WebInvoke(Method = "GET", UriTemplate = "CuotaService/{codigoContrato},{codigoResidente},{codigoVivienda},{estado},{FechaIni},{FechaFin}", ResponseFormat = WebMessageFormat.Json)]
-        List<Cuota> ConsultarCuota(string codigoContrato, string codigoResidente, string codigoVivienda, string estado, DateTime FechaIni, DateTime FechaFin);
         
 
         

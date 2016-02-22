@@ -21,7 +21,7 @@ namespace CondominioFacturacionTest
         [TestMethod]
         public void GenerarCuotasError()
         {
-            string postdata = "{\"CodigoContrato\":\"3\"}"; //JSON
+            string postdata = "{\"CodigoContrato\":\"1008\"}"; //JSON
             byte[] data = Encoding.UTF8.GetBytes(postdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest
             .Create("http://localhost:7141/CuotaService.svc/CuotaService");
@@ -51,7 +51,7 @@ namespace CondominioFacturacionTest
                 string error = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 string mensaje = js.Deserialize<string>(error);
-                Assert.AreEqual("Las cuotas para el contrato: 3 ya fueron generadas.", mensaje);
+                Assert.AreEqual("Las cuotas para el contrato: 1003 ya fueron generadas.", mensaje);
             }
         }
 
@@ -63,7 +63,7 @@ namespace CondominioFacturacionTest
         {
 
             HttpWebRequest req = (HttpWebRequest)WebRequest
-            .Create("http://localhost:7141/CuotaService.svc/CuotaService/3,0,0");
+            .Create("http://localhost:7141/CuotaService.svc/CuotaService/3,0,0,'','',''");
             req.Method = "GET";
             HttpWebResponse res = (HttpWebResponse)req.GetResponse();
             StreamReader reader = new StreamReader(res.GetResponseStream());
@@ -94,12 +94,45 @@ namespace CondominioFacturacionTest
         }
 
         /// <summary>
-        /// Este metodo prueba que se actualice el estado de la cuota a cancelado
+        /// Este metodo prueba que no se actualice el pago porque la cuota ingresada se encuentra cancelada
         /// </summary>
         [TestMethod]
-        public void actualizarCancelacionCuotasTest()
+        public void ActualizarPagoDeCuotas_Error()
         {
-            string postdata = "{\"CodigoContrato\":\"1\",\"CodigoCuota\":\"1\"}"; //JSON
+            string postdata = "{\"CodigoCuota\":\"1002\"}"; //JSON
+            byte[] data = Encoding.UTF8.GetBytes(postdata);
+            HttpWebRequest req = (HttpWebRequest)WebRequest
+            .Create("http://localhost:7141/CuotaService.svc/CuotaService");
+            req.Method = "PUT";
+            req.ContentLength = data.Length;
+            req.ContentType = "application/json";
+            var reqStream = req.GetRequestStream();
+            reqStream.Write(data, 0, data.Length);
+         
+            try
+            {
+                req.GetResponse();
+                
+            }
+            catch (WebException ex)
+            {
+                HttpStatusCode code = ((HttpWebResponse)ex.Response).StatusCode;
+                string message = ((HttpWebResponse)ex.Response).StatusDescription;
+                StreamReader reader = new StreamReader(ex.Response.GetResponseStream());
+                string error = reader.ReadToEnd();
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                string mensaje = js.Deserialize<string>(error);
+                Assert.AreEqual("La cuota seleccionado se encuentra cancelada.", mensaje);
+            }
+        }
+
+        /// <summary>
+        /// Este metodo prueba que el pago de la cuota se realizo correctamente debido a ello actualiza el estado de la cuota a CANCELADO
+        /// </summary>
+        [TestMethod]
+        public void ActualizarPagoDeCuotas_OK()
+        {
+            string postdata = "{\"CodigoCuota\":\"1\"}"; //JSON
             byte[] data = Encoding.UTF8.GetBytes(postdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest
             .Create("http://localhost:7141/CuotaService.svc/CuotaService");
@@ -110,6 +143,7 @@ namespace CondominioFacturacionTest
             reqStream.Write(data, 0, data.Length);
             HttpWebResponse res = null;
 
+            Cuota objCuota = new Cuota();
 
             try
             {
@@ -118,38 +152,16 @@ namespace CondominioFacturacionTest
                 string cuotaJson = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
 
-                List<Cuota> lstCuotas = js.Deserialize<List<Cuota>>(cuotaJson);
-                Assert.AreEqual("6", lstCuotas.Count.ToString());
+               objCuota = js.Deserialize<Cuota>(cuotaJson);
+                Assert.AreEqual("CANCELADO", objCuota.Estado_Cuota.ToString());
 
             }
-            catch (WebException ex)
+            catch 
             {
-                HttpStatusCode code = ((HttpWebResponse)ex.Response).StatusCode;
-                string message = ((HttpWebResponse)ex.Response).StatusDescription;
-                StreamReader reader = new StreamReader(ex.Response.GetResponseStream());
-                string error = reader.ReadToEnd();
-                JavaScriptSerializer js = new JavaScriptSerializer();
-                string mensaje = js.Deserialize<string>(error);
-                //Assert.AreEqual("Las cuotas para el contrato: 3 ya fueron actualizadas.", mensaje);
+                Assert.AreEqual("ERROR", objCuota.Resultado);
             }
         }
 
-        [TestMethod]
-        public void ConsultarCuota()
-        {
-            string postdata = "{\"CodigoContrado\":\"1\",\"CodigoResidente\":\"1\",\"CodigoVivienda\":\"1\",\"Estado\":\"1\",\"FechaIni\":\"\",\"FechaFin\":\"}";
 
-            byte[] data = Encoding.UTF8.GetBytes(postdata);
-            HttpWebRequest req = (HttpWebRequest)WebRequest
-            .Create("http://localhost:7141/CuotaService.svc/CuotaService");
-            req.Method = "GET";
-            HttpWebResponse res = (HttpWebResponse)req.GetResponse();
-            StreamReader reader = new StreamReader(res.GetResponseStream());
-            string cuotaJson = reader.ReadToEnd();
-            JavaScriptSerializer js = new JavaScriptSerializer();
-
-            List<Cuota> lstCuotas = js.Deserialize<List<Cuota>>(cuotaJson);
-            Assert.AreEqual("6", lstCuotas.Count.ToString());
-        }
     }
 }

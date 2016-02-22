@@ -55,10 +55,10 @@ namespace CondominioService.Facturacion.Dominio
         public string NombreCompletoVivienda { get; set; }
 
         [DataMember(IsRequired = false)]
-        public DateTime FechaIni { get; set; }
+        public string Resultado { get; set; }
 
         [DataMember(IsRequired = false)]
-        public DateTime FechaFin { get; set; }
+        public decimal Monto { get; set; }
 
     }
 }

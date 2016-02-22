@@ -1,19 +1,31 @@
--- SP_CUOTAS_BUSCAR 3,0,0
-CREATE PROC [DBO].[SP_CUOTAS_BUSCAR]
+-- SP_CUOTAS_BUSCAR 3,0,0,'','',''
+ALTER PROC [DBO].[SP_CUOTAS_BUSCAR]
 (
 	@CodigoContrato		Int,
 	@CodigoResidente	Int,
 	@CodigoVivienda		Int,
 	@Estado_Cuota		Varchar(20),
-	@FechaIni			Datetime,
-	@FechaFin			Datetime
+	@FechaIni			Varchar(10),
+	@FechaFin			Varchar(10)
 )
 AS
 BEGIN
+	DECLARE
+		@DFechIni	DATETIME,
+		@DFechFin	DATETIME
+
+	IF(@FechaIni='')
+		SET @DFechIni = null
+
+	IF(@FechaFin='')
+	SET @DFechFin = null
+	
+
 	Select
 		a.CodigoCuota,
 		a.NumSequencial,
 		a.CodigoContrato,
+		b.CostoMensual,
 		a.FechaVencimiento,
 		a.FechaPago,
 		a.Estado_Cuota,
@@ -36,7 +48,7 @@ BEGIN
 	  And (b.CodigoVivienda = @CodigoVivienda Or @CodigoVivienda = 0)
 	  --agregar parametros de consultar cuota
 	  And (a.Estado_Cuota = @Estado_Cuota Or @Estado_Cuota = '')
-	  And (a.FechaVencimiento >= @FechaIni Or @FechaIni Is NULL)
-	  And (a.FechaVencimiento <= @FechaFin Or @FechaFin Is NULL)
+	  And (a.FechaVencimiento >= @DFechIni Or @DFechIni Is NULL)
+	  And (a.FechaVencimiento <= @DFechFin Or @DFechFin Is NULL)
 			
 END
