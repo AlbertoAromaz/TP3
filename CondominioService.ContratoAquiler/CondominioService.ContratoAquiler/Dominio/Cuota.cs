@@ -53,5 +53,11 @@ namespace CondominioService.ContratoAquiler.Dominio
 
         [DataMember(IsRequired = false)]
         public string NombreCompletoVivienda { get; set; }
+
+        [DataMember(IsRequired = false)]
+        public string Resultado { get; set; }
+
+        [DataMember(IsRequired = false)]
+        public decimal Monto { get; set; }
     }
 }
