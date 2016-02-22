@@ -10,7 +10,7 @@ namespace CondominioService.Facturacion.Persistencia
         public static string ObtenerCadena
         {
             get{
-                return "Data Source=LP-EDELACRUZ;Initial Catalog=DBCondominio; User ID=sa;Password=123456";
+                return "Data Source=(local);Initial Catalog=DBCondominio; User ID=sa;Password=123456";
             }
         }
     }

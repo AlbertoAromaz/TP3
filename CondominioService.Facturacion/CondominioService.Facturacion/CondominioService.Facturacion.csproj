@@ -46,6 +46,7 @@
     <Reference Include="NHibernate">
       <HintPath>..\Librerias\NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />

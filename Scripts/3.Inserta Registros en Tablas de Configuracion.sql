@@ -32,4 +32,51 @@ INSERT INTO [dbo].[t_costoxvivienda](
 VALUES(1,'20160401','20160531',1200,1,'',GETDATE(),'',GETDATE())
 
 
+
+--- vivienda 2
+INSERT INTO [dbo].[t_costoxvivienda](
+					[CodigoVivienda],[FechaIniVigencia],[FechaFinVigencia],[Costo],[Estado],[UsuarioCreacion],[FechaCreacion],[UsuarioModificacion],[FechaModificacion])
+	   VALUES(2,'20160101','20160131',1000,1,'',GETDATE(),'',GETDATE())
+
+	   
+INSERT INTO [dbo].[t_costoxvivienda](
+					[CodigoVivienda],[FechaIniVigencia],[FechaFinVigencia],[Costo],[Estado],[UsuarioCreacion],[FechaCreacion],[UsuarioModificacion],[FechaModificacion])
+	   VALUES(2,'20160201','20160331',1100,1,'',GETDATE(),'',GETDATE())
+
+INSERT INTO [dbo].[t_costoxvivienda](
+			[CodigoVivienda],[FechaIniVigencia],[FechaFinVigencia],[Costo],[Estado],[UsuarioCreacion],[FechaCreacion],[UsuarioModificacion],[FechaModificacion])
+VALUES(2,'20160401','20160531',1200,1,'',GETDATE(),'',GETDATE())
+
+
+
+--- vivienda 3
+INSERT INTO [dbo].[t_costoxvivienda](
+					[CodigoVivienda],[FechaIniVigencia],[FechaFinVigencia],[Costo],[Estado],[UsuarioCreacion],[FechaCreacion],[UsuarioModificacion],[FechaModificacion])
+	   VALUES(3,'20160101','20160131',1000,1,'',GETDATE(),'',GETDATE())
+
+	   
+INSERT INTO [dbo].[t_costoxvivienda](
+					[CodigoVivienda],[FechaIniVigencia],[FechaFinVigencia],[Costo],[Estado],[UsuarioCreacion],[FechaCreacion],[UsuarioModificacion],[FechaModificacion])
+	   VALUES(3,'20160201','20160331',1100,1,'',GETDATE(),'',GETDATE())
+
+INSERT INTO [dbo].[t_costoxvivienda](
+			[CodigoVivienda],[FechaIniVigencia],[FechaFinVigencia],[Costo],[Estado],[UsuarioCreacion],[FechaCreacion],[UsuarioModificacion],[FechaModificacion])
+VALUES(3,'20160401','20160531',1200,1,'',GETDATE(),'',GETDATE())
+
+
+-- Vivienda 4
+INSERT INTO [dbo].[t_costoxvivienda](
+					[CodigoVivienda],[FechaIniVigencia],[FechaFinVigencia],[Costo],[Estado],[UsuarioCreacion],[FechaCreacion],[UsuarioModificacion],[FechaModificacion])
+	   VALUES(4,'20160101','20160131',1000,1,'',GETDATE(),'',GETDATE())
+
+	   
+INSERT INTO [dbo].[t_costoxvivienda](
+					[CodigoVivienda],[FechaIniVigencia],[FechaFinVigencia],[Costo],[Estado],[UsuarioCreacion],[FechaCreacion],[UsuarioModificacion],[FechaModificacion])
+	   VALUES(4,'20160201','20160331',1100,1,'',GETDATE(),'',GETDATE())
+
+INSERT INTO [dbo].[t_costoxvivienda](
+			[CodigoVivienda],[FechaIniVigencia],[FechaFinVigencia],[Costo],[Estado],[UsuarioCreacion],[FechaCreacion],[UsuarioModificacion],[FechaModificacion])
+VALUES(4,'20160401','20160531',1200,1,'',GETDATE(),'',GETDATE())
+
+
 SELECT * FROM T_COSTOXVIVIENDA

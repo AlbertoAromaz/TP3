@@ -15,6 +15,9 @@ namespace CondominioFacturacionTest
     public class FacturacionTest
     {
 
+        /// <summary>
+        /// Este metodo prueba que el sistema no permita generar cuotas de aquiler que ya fueron generadas
+        /// </summary>
         [TestMethod]
         public void GenerarCuotasError()
         {
@@ -53,7 +56,7 @@ namespace CondominioFacturacionTest
         }
 
         /// <summary>
-        /// 
+        /// Este metodo que se pueda buscar una cuota segun los criterios ingresados
         /// </summary>
         [TestMethod]
         public void BuscarCuota()
@@ -72,7 +75,7 @@ namespace CondominioFacturacionTest
         }
 
         /// <summary>
-        /// 
+        /// Este metodo prueba que se puedan listar cuotas
         /// </summary>
         [TestMethod]
         public void ListarCuotas()
@@ -90,7 +93,9 @@ namespace CondominioFacturacionTest
 
         }
 
-
+        /// <summary>
+        /// Este metodo prueba que se actualice el estado de la cuota a cancelado
+        /// </summary>
         [TestMethod]
         public void actualizarCancelacionCuotasTest()
         {

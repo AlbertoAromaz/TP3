@@ -8,6 +8,7 @@ using CondominioService.Facturacion.Dominio;
 using CondominioService.Facturacion.Persistencia;
 using System.ServiceModel.Web;
 using System.Net;
+using System.Messaging;
 
 namespace CondominioService.Facturacion
 {
@@ -33,7 +34,7 @@ namespace CondominioService.Facturacion
         #endregion
 
         /// <summary>
-        /// 
+        /// Este metodo genera la cuotas mensuales de aquiler segun el contrato
         /// </summary>
         /// <param name="codigoContrato"></param>
         /// <returns></returns>
@@ -56,7 +57,7 @@ namespace CondominioService.Facturacion
 
 
         /// <summary>
-        /// 
+        /// Este metodo actualiza la fecha de pago y el estado de la cuota a cancelado.
         /// </summary>
         /// <param name="CodigoContrato"></param>
         /// <param name="CodigoCuota"></param>
@@ -80,18 +81,10 @@ namespace CondominioService.Facturacion
             return lstCuota;
         }
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="codigoCuota"></param>
-        ///// <returns></returns>
-        //public Cuota ObtenerCuota(string codigoCuota)
-        //{
-        //    return CuotaDAO.Obtener(int.Parse(codigoCuota));
-        //}
+       
 
         /// <summary>
-        /// 
+        /// Este metodo busca las cuotas segun el criterio seleccionado
         /// </summary>
         /// <param name="codigoContrato"></param>
         /// <param name="codigoResidente"></param>
@@ -105,13 +98,45 @@ namespace CondominioService.Facturacion
             return CuotaDAO.BuscarCuota(iCodigoContrato, iCodigoResidente, iCodigoVivienda);
         }
 
+        /// <summary>
+        /// Este metodo sincroniza la generación de cuotas que no fueron creadas debido a disponibilidad del servicio. Asi  mismo, lista las cuotas generadas.
+        /// </summary>
+        /// <returns></returns>
         public List<Cuota> ListarCuotas()
         {
+            SincronizarGeneracionCuotas();
             return CuotaDAO.ListarCuotas();
         }
 
+
         /// <summary>
-        /// 
+        /// Sincroniza la cuotas que no se hayan generado
+        /// </summary>
+        internal void SincronizarGeneracionCuotas()
+        {
+
+            string ruta = @".\private$\CondominioTransaction";
+            if (!MessageQueue.Exists(ruta))
+                MessageQueue.Create(ruta);
+
+            MessageQueue cola = new MessageQueue(ruta);
+            cola.Formatter = new XmlMessageFormatter(new Type[] { typeof(Cuota) });
+
+            int cantidad = cola.GetAllMessages().Count();
+            int n = 0;
+            while (n < cantidad)
+            {
+
+                Message mensaje = cola.Receive();
+                Cuota cuotaACrear = (Cuota)mensaje.Body;
+
+                GenerarCuotas(cuotaACrear);
+                n++;
+            }
+        }
+
+        /// <summary>
+        /// Este metodo verifica si la cuota ya existe
         /// </summary>
         /// <param name="codigoContrato"></param>
         /// <returns></returns>
