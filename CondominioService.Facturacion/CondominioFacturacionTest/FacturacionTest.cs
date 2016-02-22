@@ -134,6 +134,22 @@ namespace CondominioFacturacionTest
             }
         }
 
+        [TestMethod]
+        public void ConsultarCuota()
+        {
+            string postdata = "{\"CodigoContrado\":\"1\",\"CodigoResidente\":\"1\",\"CodigoVivienda\":\"1\",\"Estado\":\"1\",\"FechaIni\":\"\",\"FechaFin\":\"}";
 
+            byte[] data = Encoding.UTF8.GetBytes(postdata);
+            HttpWebRequest req = (HttpWebRequest)WebRequest
+            .Create("http://localhost:7141/CuotaService.svc/CuotaService");
+            req.Method = "GET";
+            HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+            StreamReader reader = new StreamReader(res.GetResponseStream());
+            string cuotaJson = reader.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+
+            List<Cuota> lstCuotas = js.Deserialize<List<Cuota>>(cuotaJson);
+            Assert.AreEqual("6", lstCuotas.Count.ToString());
+        }
     }
 }

@@ -14,3 +14,6 @@ D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\Co
 D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.dll
 D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.pdb
 E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.csprojResolveAssemblyReference.cache
+C:\dsd_22022016\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.csprojResolveAssemblyReference.cache
+C:\dsd_22022016\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.dll
+C:\dsd_22022016\ProyectoSD\CondominioService.Facturacion\CondominioService.Facturacion\obj\Debug\CondominioService.Facturacion.pdb

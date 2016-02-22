@@ -146,5 +146,17 @@ namespace CondominioService.Facturacion
             return lstCuota.Count > 0;
 
         }
+
+        public List<Cuota> ConsultarCuota(string codigoContrato, string codigoResidente, string codigoVivienda, string estado, DateTime FechaIni, DateTime FechaFIn)
+        {
+            int iCodigoContrato = (codigoContrato == "") ? 0 : int.Parse(codigoContrato);
+            int iCodigoResidente = (codigoResidente == "") ? 0 : int.Parse(codigoResidente);
+            int iCodigoVivienda = (codigoVivienda == "") ? 0 : int.Parse(codigoVivienda);
+            //int iestado = (estado == "") ? 0 : int.Parse(estado);
+            //int iFechaIni = (codigoVivienda == "") ? 0 : int.Parse(codigoVivienda);
+            //int iFechaFin = (codigoVivienda == "") ? 0 : int.Parse(codigoVivienda);
+            //return CuotaDAO.ConsultarCuota(iCodigoContrato, iCodigoResidente, iCodigoVivienda, estado, DateTime.Parse(FechaIni), DateTime.Parse(FechaFIn));
+            return CuotaDAO.ConsultarCuota(iCodigoContrato, iCodigoResidente, iCodigoVivienda, estado, FechaIni, FechaFIn);
+        }
     }
 }
