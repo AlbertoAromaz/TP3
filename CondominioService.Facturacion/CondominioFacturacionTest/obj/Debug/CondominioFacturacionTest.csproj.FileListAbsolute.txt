@@ -7,3 +7,4 @@ D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\Co
 D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.csprojResolveAssemblyReference.cache
 D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.dll
 D:\UPC\SistemasDistribuidos\proyecto\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.pdb
+E:\Evelyn\Personal\Capacitacion\UPC\2.Sistemas Distribuidos\ProyectoSD\CondominioService.Facturacion\CondominioFacturacionTest\obj\Debug\CondominioFacturacionTest.csprojResolveAssemblyReference.cache

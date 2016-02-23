@@ -90,12 +90,33 @@ namespace CondominioService.Facturacion
         /// <returns></returns>
         public List<Cuota> BuscarCuota(string codigoContrato, string codigoResidente, string codigoVivienda, string estadoCuota, string fecIni, string fecFin)
         {
-            int iCodigoContrato=(codigoContrato=="")? 0: int.Parse(codigoContrato);
-            int iCodigoResidente=(codigoResidente=="")? 0: int.Parse(codigoResidente);
-            int iCodigoVivienda=(codigoVivienda=="")? 0: int.Parse(codigoVivienda);
+
+            List<Cuota> lstCuota = new List<Cuota>();
+            try
+            {
+                if (   (codigoContrato.Equals(string.Empty) || codigoContrato.Equals("0"))
+                     &&(codigoResidente.Equals(string.Empty) || codigoResidente.Equals("0"))
+                     && (codigoVivienda.Equals(string.Empty) || codigoVivienda.Equals("0"))
+                     && (estadoCuota.Equals("0"))
+                     && (fecIni.Equals("0"))
+                     && (fecFin.Equals("0"))
+                    )
+                    throw new WebFaultException<string>(string.Format("Debe ingresar al menos un criterio de busqueda."), HttpStatusCode.InternalServerError);
 
 
-            return CuotaDAO.BuscarCuota(iCodigoContrato, iCodigoResidente, iCodigoVivienda, estadoCuota, fecIni, fecIni);
+               // Debe ingresar al menos un criterio de busqueda
+                int iCodigoContrato = (codigoContrato == "") ? 0 : int.Parse(codigoContrato);
+                int iCodigoResidente = (codigoResidente == "") ? 0 : int.Parse(codigoResidente);
+                int iCodigoVivienda = (codigoVivienda == "") ? 0 : int.Parse(codigoVivienda);
+
+                lstCuota =CuotaDAO.BuscarCuota(iCodigoContrato, iCodigoResidente, iCodigoVivienda, estadoCuota, fecIni, fecFin); 
+            }
+            catch
+            {
+                throw;
+            }
+                
+            return lstCuota;
         }
 
         /// <summary>
@@ -142,7 +163,7 @@ namespace CondominioService.Facturacion
         /// <returns></returns>
         internal bool ExisteCuota(string codigoContrato)
         {
-            List<Cuota> lstCuota = BuscarCuota(codigoContrato, string.Empty, string.Empty, string.Empty, null, null);
+            List<Cuota> lstCuota = BuscarCuota(codigoContrato, "0", "0", "0", "0", "0");
             return lstCuota.Count > 0;
 
         }
@@ -154,7 +175,7 @@ namespace CondominioService.Facturacion
         /// <returns></returns>
         internal bool EstaCuotaCancelada(int codigoCuota)
         {
-            List<Cuota> lstCuota = BuscarCuota(string.Empty, codigoCuota.ToString(), string.Empty, string.Empty, null, null);
+            List<Cuota> lstCuota = BuscarCuota(string.Empty, codigoCuota.ToString(), string.Empty, "0", "0", "0");
             return lstCuota.Any(r => r.Estado_Cuota.Equals("CANCELADO"));
         }
     }

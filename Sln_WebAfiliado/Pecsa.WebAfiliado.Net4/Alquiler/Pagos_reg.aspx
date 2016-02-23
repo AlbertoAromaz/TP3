@@ -61,22 +61,21 @@
                           <ContentTemplate>
                               <asp:GridView ID="grdListaCuotas" runat="server" AutoGenerateColumns="False" ShowHeader="true" 
                                             ShowHeaderWhenEmpty="True" CssClass="sTable" 
-                                            Width="100%"  DataKeyNames="CodigoContrato,CodigoCuota, Importe" >
+                                            Width="100%"  DataKeyNames="CodigoContrato,CodigoCuota, Monto"  >
                                   <Columns>
                                       <asp:TemplateField>
                                           <ItemTemplate>
-                                              <asp:CheckBox ID="chkElegir" runat="server" />
+                                              <asp:CheckBox ID="chkElegir" runat="server" AutoPostBack="true" OnCheckedChanged="chkElegir_CheckedChanged" />
                                           </ItemTemplate>
                                           <HeaderStyle Width="30px" />
                                           <ItemStyle HorizontalAlign="Center" />
                                       </asp:TemplateField>
-                                      <asp:BoundField HeaderText="Contrato" DataField="CodigoContrato" ControlStyle-CssClass="hidden" />
-                                      <asp:BoundField HeaderText="Cuota" DataField="CodigoCuota" ControlStyle-CssClass="hidden"/>
+                                      
                                       <asp:BoundField HeaderText="# Cuota" DataField="NumSequencial" ControlStyle-Width="30px" />
                                       <asp:BoundField HeaderText="vivienda" DataField="NombreCompletoVivienda" />
                                       <asp:BoundField HeaderText="Residente" DataField="NombreCompletoResidente" />
-                                      <asp:BoundField HeaderText="Importe" DataField="Importe" />
-                                      <asp:BoundField HeaderText="Estado" DataField="Estado" />
+                                      <asp:BoundField HeaderText="Importe" DataField="Monto" />
+                                      <asp:BoundField HeaderText="Estado" DataField="Estado_Cuota" />
                                       <asp:BoundField HeaderText="Fec. Vencimiento" DataField="FechaVencimiento" />                                      
                                     <asp:BoundField HeaderText="Fec. Pago" DataField="FechaPago" />                                      
                                   </Columns>
@@ -94,7 +93,15 @@
                       <asp:Label ID="Label3" runat="server" Text="Total a Pagar"></asp:Label>
                   </span>
                   <span class="span2">
-                      <asp:TextBox ID="txtTotalAPagar" runat="server" Enabled="false"></asp:TextBox>
+                      <asp:UpdatePanel ID="updateSaldo" runat="server" UpdateMode="Conditional">
+                          <ContentTemplate>
+                              <asp:TextBox ID="txtTotalAPagar" runat="server" Enabled="false"></asp:TextBox>
+                          </ContentTemplate>
+                          <Triggers>
+                              <asp:AsyncPostBackTrigger ControlID="btnRegistrarPago" EventName="Click" />
+                               <asp:AsyncPostBackTrigger ControlID="grdListaCuotas"  EventName="RowCommand" />
+                          </Triggers>
+                      </asp:UpdatePanel>
                   </span>
                   <span>
                       <asp:Button ID="btnRegistrarPago" runat="server" CssClass="hidden" OnClick="btnRegistrarPago_Click" />

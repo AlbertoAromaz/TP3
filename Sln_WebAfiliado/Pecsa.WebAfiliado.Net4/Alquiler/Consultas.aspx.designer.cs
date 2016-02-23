@@ -11,7 +11,7 @@ namespace IU.WebCondominios.Net4 {
     
     
     public partial class Consultas {
-        
+
         /// <summary>
         /// Control Label3.
         /// </summary>
@@ -20,16 +20,16 @@ namespace IU.WebCondominios.Net4 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
-        /// Control ddlUbicacion.
+        /// Control ddlVivienda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlUbicacion;
-        
+        protected global::System.Web.UI.WebControls.DropDownList ddlVivienda;
+
         /// <summary>
         /// Control Label4.
         /// </summary>
@@ -38,7 +38,7 @@ namespace IU.WebCondominios.Net4 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// Control ddlEstado.
         /// </summary>
@@ -47,7 +47,16 @@ namespace IU.WebCondominios.Net4 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
-        
+
+        /// <summary>
+        /// Control lkbBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbBuscar;
+
         /// <summary>
         /// Control Label7.
         /// </summary>
@@ -56,16 +65,25 @@ namespace IU.WebCondominios.Net4 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
-        
+
         /// <summary>
-        /// Control txtResidente.
+        /// Control ddlResidente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtResidente;
-        
+        protected global::System.Web.UI.WebControls.DropDownList ddlResidente;
+
+        /// <summary>
+        /// Control lkbLimpiar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbLimpiar;
+
         /// <summary>
         /// Control Label8.
         /// </summary>
@@ -74,16 +92,16 @@ namespace IU.WebCondominios.Net4 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-        
+
         /// <summary>
-        /// Control TextBox3.
+        /// Control txtFecIni.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtFecIni;
+
         /// <summary>
         /// Control Label9.
         /// </summary>
@@ -92,16 +110,16 @@ namespace IU.WebCondominios.Net4 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-        
+
         /// <summary>
-        /// Control TextBox2.
+        /// Control txtFecFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtFecFin;
+
         /// <summary>
         /// Control UpdatePanel1.
         /// </summary>
@@ -110,7 +128,7 @@ namespace IU.WebCondominios.Net4 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// Control grdListaCuotasxCobrar.
         /// </summary>

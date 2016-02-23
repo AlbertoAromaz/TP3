@@ -85,6 +85,15 @@ namespace IU.WebCondominios.Net4 {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
+        /// Control updateSaldo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel updateSaldo;
+        
+        /// <summary>
         /// Control txtTotalAPagar.
         /// </summary>
         /// <remarks>

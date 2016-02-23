@@ -21,3 +21,9 @@ F:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioTest\bin\Debug\Con
 F:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioTest\obj\Debug\CondominioTest.csprojResolveAssemblyReference.cache
 F:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioTest\obj\Debug\CondominioTest.dll
 F:\GitHub\ProyectoSD\CondominioService.MasterTables\CondominioTest\obj\Debug\CondominioTest.pdb
+D:\GitHub_vFinal\ProyectoSD\CondominioService.MasterTables\CondominioTest\bin\Debug\CondominioTest.dll.config
+D:\GitHub_vFinal\ProyectoSD\CondominioService.MasterTables\CondominioTest\bin\Debug\CondominioTest.dll
+D:\GitHub_vFinal\ProyectoSD\CondominioService.MasterTables\CondominioTest\bin\Debug\CondominioTest.pdb
+D:\GitHub_vFinal\ProyectoSD\CondominioService.MasterTables\CondominioTest\obj\Debug\CondominioTest.csprojResolveAssemblyReference.cache
+D:\GitHub_vFinal\ProyectoSD\CondominioService.MasterTables\CondominioTest\obj\Debug\CondominioTest.dll
+D:\GitHub_vFinal\ProyectoSD\CondominioService.MasterTables\CondominioTest\obj\Debug\CondominioTest.pdb

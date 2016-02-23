@@ -28,7 +28,7 @@ namespace CondominioService.Facturacion.Persistencia
                     com.ExecuteNonQuery();
                 }
             }
-            LstCuota = BuscarCuota(codigoContrato, 0, 0,string.Empty,null, null);
+            LstCuota = BuscarCuota(codigoContrato, 0, 0, "0", "0", "0");
             return LstCuota;
 
         }

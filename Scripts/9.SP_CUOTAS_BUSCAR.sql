@@ -1,4 +1,6 @@
--- SP_CUOTAS_BUSCAR 3,0,0,'','',''
+-- SP_CUOTAS_BUSCAR 3,0,0,'cancelado','0','0'
+
+--exec SP_CUOTAS_BUSCAR @CodigoContrato=3,@CodigoResidente=0,@CodigoVivienda=0,@Estado_Cuota=N'''''',@FechaIni=N'''''',@FechaFin=N''''''
 ALTER PROC [DBO].[SP_CUOTAS_BUSCAR]
 (
 	@CodigoContrato		Int,
@@ -14,12 +16,16 @@ BEGIN
 		@DFechIni	DATETIME,
 		@DFechFin	DATETIME
 
-	IF(@FechaIni='')
-		SET @DFechIni = null
+	IF(@FechaIni!='0')
+	BEGIN 
+		SET @DFechIni = CAST(@FechaIni AS datetime)
+	END
 
-	IF(@FechaFin='')
-	SET @DFechFin = null
+	IF(@FechaFin!='0')
+		SET @DFechFin = CAST(@FechaFin AS datetime)
 	
+	IF(@Estado_Cuota = 'TODOS')
+		Set @Estado_Cuota = '0'
 
 	Select
 		a.CodigoCuota,
@@ -47,7 +53,7 @@ BEGIN
 	  And (b.CodigoResidente = @CodigoResidente Or @CodigoResidente = 0)
 	  And (b.CodigoVivienda = @CodigoVivienda Or @CodigoVivienda = 0)
 	  --agregar parametros de consultar cuota
-	  And (a.Estado_Cuota = @Estado_Cuota Or @Estado_Cuota = '')
+	  And (a.Estado_Cuota = @Estado_Cuota Or @Estado_Cuota = '0')
 	  And (a.FechaVencimiento >= @DFechIni Or @DFechIni Is NULL)
 	  And (a.FechaVencimiento <= @DFechFin Or @DFechFin Is NULL)
 			

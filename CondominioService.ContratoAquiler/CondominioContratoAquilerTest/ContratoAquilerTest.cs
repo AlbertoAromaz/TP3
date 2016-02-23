@@ -20,7 +20,7 @@ namespace CondominioContratoAquilerTest
         public void CrearContrato_ConCuotasOnLine_OK()
         {
              //Prueba de creacion de contrato via HTTP POST
-            string postdata = "{\"CodigoVivienda\":\"3\",\"CodigoResidente\":\"3\",\"FechaContrato\":\"21/02/2016\",\"FechaIniResidencia\":\"21/02/2016\",\"CostoMensual\":\"1100.00\",\"Periodo\":\"6\",\"Estado\":\"1\",\"UsuarioCreacion\":\"AZAMORA\",\"FechaCreacion\":\"21/02/2016\"}";
+            string postdata = "{\"CodigoVivienda\":\"4\",\"CodigoResidente\":\"4\",\"FechaContrato\":\"21/02/2016\",\"FechaIniResidencia\":\"21/02/2016\",\"CostoMensual\":\"1100.00\",\"Periodo\":\"6\",\"Estado\":\"1\",\"UsuarioCreacion\":\"AZAMORA\",\"FechaCreacion\":\"21/02/2016\"}";
 
             byte[] data = Encoding.UTF8.GetBytes(postdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://localhost:5364/ContratoService.svc/ContratoService");
@@ -36,7 +36,7 @@ namespace CondominioContratoAquilerTest
             Contrato contratoCreado = js.Deserialize<Contrato>(contratoJson);
            // Assert.AreEqual(4, contratoCreado.CodigoContrato);
 
-            string uri = String.Format("http://localhost:7141/CuotaService.svc/CuotaService/{0},{1},{2}", contratoCreado.CodigoContrato, "0", "0");
+            string uri = String.Format("http://localhost:7141/CuotaService.svc/CuotaService/{0},{1},{2},{3},{4},{5}", contratoCreado.CodigoContrato, "0", "0", "0", "0", "0");
             HttpWebRequest req2 = (HttpWebRequest)WebRequest
            .Create(uri);
             req2.Method = "GET";
@@ -83,8 +83,7 @@ namespace CondominioContratoAquilerTest
             
 
             // Resultado: valido con el metodo buscar que se hayan creado las cuotas para el contrato creado
-
-            string uriBuscarCuotas = String.Format("http://localhost:7141/CuotaService.svc/CuotaService/{0},{1},{2}", contratoCreado.CodigoContrato, "0", "0");
+            string uriBuscarCuotas = string.Format("http://localhost:7141/CuotaService.svc/CuotaService/{0},{1},{2},{3},{4},{5}", contratoCreado.CodigoContrato.ToString(), 0, 0, 0, 0, 0);
             HttpWebRequest reqBuscarCuotas = (HttpWebRequest)WebRequest
            .Create(uriBuscarCuotas);
             reqBuscarCuotas.Method = "GET";

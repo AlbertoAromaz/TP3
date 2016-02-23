@@ -33,6 +33,7 @@ namespace CondominioService.MasterTables.Dominio
         [DataMember]
         public int NroBano { get; set; }
 
+        [DataMember]
         public string NombreVivienda { get; set; }
 
         [DataMember]
